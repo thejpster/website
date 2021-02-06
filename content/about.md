@@ -8,7 +8,19 @@ template = "static-page.html"
 
 I am a husband and father of two, living in the town of St Ives, Cambridgeshire, England.
 
-We have two cats and a dog. I have a a growing collection of old computers, including:
+We have two cats and a dog. I have a a growing collection of old computers and an old Jaguar.
+
+I successfully stood for election to [St Ives Town Council](https://www.stivestowncouncil.gov.uk) as an Independent in 2016 and again in 2018. In 2019 my fellow Town Councillors elected me as Deputy Town Mayor, and in 2020 as Town Mayor.
+
+For my day job, I have spent over 15 years as an Embedded Systems Consultant for several Cambridge based product design consultancies. I am currently working at [42 Technology](https://42technology.com) in St Ives.
+
+## Technical Skills
+
+I have delivered client projects on everything from the smallest Microchip PIC, to huge multi-core Arm Cortex-A based SoCs. I can program in Rust, C, C++, Python, JavaScript, BASIC, Perl, PHP and SQL.
+
+## Computers
+
+My collection currently includes:
 
 * Commodore 128D
    * JiffyDOS (for C128, C64 and 1571)
@@ -19,13 +31,14 @@ We have two cats and a dog. I have a a growing collection of old computers, incl
    * SCSI2SD
    * PDS Ethernet Card
    * External MediaVision Reno SCSI CD-ROM
-   * StyleWriter II
+   * Apple StyleWriter II
 * Amstrad PCW9512
    * 3" CF2DD Drive A:
    * Gotek Drive B:
    * Daisywheel Printer
 * BBC Micro Model B
    * BeebMMC SD Card interface
+   * Panasonic Centronics dot-matrix printer
 * Sega MegaDrive
 * Microsoft Xbox
 * Nintendo Wii
@@ -34,34 +47,19 @@ We have two cats and a dog. I have a a growing collection of old computers, incl
 * Sony Playstation 3
 * Sony Playstation 4
 
-I succesfully stood for election to [St Ives Town Council](https://www.stivestowncouncil.gov.uk) as an Independent in 2016 and again in 2018. In 2019 my fellow Town Councillors elected me as Deputy Town Mayor, and in 2020 as Town Mayor.
+My day-to-day laptop is an Acer Swift 3 (SF314-51), running [Pop OS!](https://pop.system76.com). I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003.
 
-For my day job, I have spent over 15 years as an Embedded Systems Consultant for several Cambridge based product design consultancies. I am currently working at [42 Technology](https://42technology.com) in St Ives.
+## Cars
 
-## **Technical Skills**
+I have a 1995 Jaguar Sovereign 3.2 LWB (long wheel-base), which I purchased at the end of 2011. Its condition varies as time and funds allow, but when it working order it is used for family trips at the weekend.
 
-I have delievered client projects using the following systems and technologies:
+I owned an electric Nissan Leaf for three years, but currently just have the Jaguar, and the use of my wife's electric MG 5.
 
-* **Embedded Systems**
-    * Arm Cortex-M
-        * Nordic Semiconductor nRF52 series
-        * ST Micro STM32 series
-        * Texas Instruments Tiva-C series
-        * Silicon Labs EFM32 series
-    * Arm 11 / Arm Cortex-A
-        * Beagleboard X15 (Texas Instruments Sitara AM57x series)
-        * Raspberry Pi (Broadcom BCM283x series)
-        * Beagleboard Black (Texas Instruments AM335x series)
-    * Atmel AVR
-        * ATmega series
-        * ATxmega series
-    * Microchip PIC
-        * PIC18 series
-        * PIC24 series
-* **Programming Languages**
-    * Rust, C, C++, Python, Bash
+## Model Railways
 
-## **Personal Projects**
+My N-Gauge model railway was dismantled in 2018 owing to a lack of space. I still have a collection of rolling stock and landscaping items in storage, and when time and funds allow, a new layout will be created. My preferred location and era for modelling is Warwickshire and the West Midlands circa 2000-2004 (which is where and when I was at University), so I have several Chiltern and Virgin Voyager DMUs. I am a member of the N Gauge Society.
+
+## Personal Projects
 
 ### Rust
 
@@ -91,7 +89,7 @@ I wrote a pure-Rust firmware for the Cortex-M4 sub-system in the Texas Instrumen
 
 The source code is [on Github](https://github.com/thejpster/rust-beagleboardx15-demo) 
 
-## **Contact**
+## Contact
 
 You can contact me via:
 

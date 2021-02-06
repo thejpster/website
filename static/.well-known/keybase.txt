@@ -1,0 +1,164 @@
+==================================================================
+https://keybase.io/thejpster
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://thejpster.org.uk
+  * I am thejpster (https://keybase.io/thejpster) on keybase.
+  * I have a public key with fingerprint FF7F 3424 4175 4EBA EC51  9754 82E9 1671 169F 3E1A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010172615cbeb7596e71123bdc6cc0fb0069ebd340f4f5d0b91d4b312207c187c71b0a",
+      "fingerprint": "ff7f342441754ebaec51975482e91671169f3e1a",
+      "host": "keybase.io",
+      "key_id": "82e91671169f3e1a",
+      "kid": "01014f8a2e85ff334a1a0c0b8b5c7ff5039982f48425c88a46eaa91203e6e6a21e000a",
+      "uid": "4a7bd06461b3e8062e3b22f1457d4219",
+      "username": "thejpster"
+    },
+    "merkle_root": {
+      "ctime": 1612630683,
+      "hash_meta": "8959e6d6cc1f645934dfa998c7a9e4accc85e47970289e694695998b0b32c921",
+      "seqno": 19031107
+    },
+    "revoke": {
+      "sig_ids": [
+        "55568e68a6a87201b92f9d72d372424897b288590ced5eb8f3495e004aacfb5c0f"
+      ]
+    },
+    "service": {
+      "hostname": "thejpster.org.uk",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1612630690,
+  "expire_in": 157680000,
+  "prev": "49cc0a9d96c927c3883e01dedddf946d1449a13cc38e94d6263df351bc214e60",
+  "seqno": 80,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMQDAnicbZN7TBVHFMYBFSs+YwhFE2uyaIsFcWZ29jHUqtWilsRHY9CKwnV2dxYW
+5O5l716sopYS6wMJKr4KSBD6EBVDRaumWmsRm2Jra2tIan1QSRpqrFYhoqiNnSVt
+TEz/2sd85zvf/M5My9B+YVHhxTdj8mNqpowO/655dShs2Uvn6woFzTZWCsmFQi7r
+e7DlBgu6vlzLEJIFAAFUkAwlXWOaIhGZKRAiUTN0WdeBqQEgE6YZIgYmNiUDaAQa
+WBMhQkDRoaroCtQAFRIF0/JnMSfgWH6X25qmYooYYQwVCTONMl2ChL+qiBEo8xYy
+MUUGvcJsO+hV8HAaDbIky+b/+IevL97/6J/lxqZKEVMl0xRFTCEFOtBUTdIV05SA
+SIiKTKxiJOmqSrHMKCUQAZHJTKYIMgD6cof67DBVNAPIWIaayFQgIyZqCJkQS4qB
+ESSeMMgcP81jXO1ms5xA0GWOsCZRyGNO7nLmc2zb9ejqruVpoAyRLAJZFfkOaTDb
+l8dc6m2ISITJBocLTRlLRMSGSXlUXaGEYarruioxrBAFIJULCZZ5AVE1oIlIJwjy
+IEGW77d5BwJECIHCIziswM5lXveglcXBBYXkJYIkSbLKZJXKVFUQgBpBJjEUZIgK
+4pNRiaIhVZUI0JkhMU3l8yISp4Ip1U1OEZhCxhqvm1Ng6X3m3qSeJ5BkO1lJoVwe
+K+DYrq3by/lqtusGgskeHHdlwJOvYJrvXyOfZvkNflZ4RQFzgpbt51vhyue4EZAo
+sHcDlsN8lqeQFFnlEwNeH1bgTYzw80mJQWSORdFFVRUZgAYzDMPk1AyIMaFQ1PkK
+I9iQuathihLUdAQxk8EzkCo3dWkW9+T0/NQNOUxY0/z10v5h4VFhkQMivEsUFjVo
+xH9Xa2/X8Kdzl8W2jE7df/L+lI5P4x5WJMTXzlk650bC2YrBg0Otf8dtGDJj0Ip1
+B85OziuL9f1xqbTflcrj+8vbivq/kDl289YvE4pfPjZqd8aS9oPV7HaprFamz8yY
+O6912OCLY/HG60VKbM73Ldk5J8dPaLlhhWrzztTnJjfVp3UccS81TN1RNP9m0g4S
+MSHl7q34sKsJ9r5phwNP09vq6zddjijVLrahyeW/3KvaisacnFj9VUXavkXp/Uf3
+/qDp0fnln8RfGJiz7GBk5+vjz6dPGvj4wdQnUYEx/TalCV2HR3anuIlXhMbbs67j
+8SeuNc4QD86LGnWmtrs5HJVt6G4opK/9ufuvO+63haXvHBiyv7UHtK+dOiJz8aKS
+6lvxnamRC0JvPxpqxaWOXe07hsouNtb0nEtbuPnQqfduVTaX9dLftj8hD5piNj9+
+MXP20bvnLu8pqrJeWb8xRWqctK7J7BlwWmrvaJt+/ac7Vd3z9xXv3N754cJtnx0f
+dKzY71x5eKGXPbr3zfsr9nTtulanDVSqf7zqfpQPRn4eHf/BLpy5+Ojvhz6OHm6P
+o4+ikzNPVM+KMxPrImefXpciZdTEdf3avr7kiPPmGzGbTvvWn5pfUttRlnTvLd+M
+KUdWVRbHtkYsWFQljvp51eotvRH+7eeP3m+oePX246ZtA7bdLJ/eOCe1Z9iWksSJ
+4y437NxbH1vZeXba2i9qg/8AS3ECAQ==
+=S5CV
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/thejpster
+
+==================================================================
+
+==================================================================
+https://keybase.io/thejpster
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://thejpster.uk
+  * I am thejpster (https://keybase.io/thejpster) on keybase.
+  * I have a public key with fingerprint FF7F 3424 4175 4EBA EC51  9754 82E9 1671 169F 3E1A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010172615cbeb7596e71123bdc6cc0fb0069ebd340f4f5d0b91d4b312207c187c71b0a",
+      "fingerprint": "ff7f342441754ebaec51975482e91671169f3e1a",
+      "host": "keybase.io",
+      "key_id": "82e91671169f3e1a",
+      "kid": "01014f8a2e85ff334a1a0c0b8b5c7ff5039982f48425c88a46eaa91203e6e6a21e000a",
+      "uid": "4a7bd06461b3e8062e3b22f1457d4219",
+      "username": "thejpster"
+    },
+    "service": {
+      "hostname": "thejpster.uk",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1612631597,
+  "expire_in": 157680000,
+  "prev": "841354984b8e964ceeea5505751652b69e3b41f20f8f6547ee2b1ac28e0f72b1",
+  "seqno": 81,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNxAnicbVJ9TFVlGL8XyAELkVsgmTY9l2UhsPOe73NFZCIOi5KBCRR5O++57+Ee
+kXsv9wscGkggGyjopKUugWJA6abjYgmsWRCE6OXDTIUlUtpKJEsFxOJjncNqba2/
+3ud93t/v9/ye5326g3w1gdqS8bC8sLq4FdrLncddmndeGIguxKDVtAczFGI5aPFA
+u03I4TTmyCbMgOEAByzBAFqECLI0zyAWAIKEJpERRVyCOM7wCJpICpcoiTbhkAcm
+CpKAIHBWBBwrsgDiAhaFSbIlG9ltdtniVGQliZVIiqAowNIUggISacArIUcgHjBK
+CYaXSARUotnqUBmKOSg4UIxsVXLKxbho73/w//qmJE4gEEdLEklSAhBwEYccpEVW
+kmic5HmOkCiOImiR4wSKQYLAAwInEYMYgQAIxxd9uxblKIGFJpyhGABJxOEMgUhI
+EBKgaNZEEYBXgQ5ktwi5SEE7zWiXzeFEdmxfFKak3bKI1MmqrfwXEuPKUcg2u9Vp
+Fa27lRez02lzGFSmc49NheYjaPxbxAhli0kZpMJwI7tDtlowA1CQolNWVQEDCIYE
+NM9GYajAJtuRUVYRNMtwSju4Wge51bFRgKQpnqMgh3iGEhFCAk3jNEsDhiag8qUk
+pIBE4BInMTTFIkRAIIgEh3CJVUJMbSvPYsUMHFB8CtmKpkPOtghOlx1h+7o6s/w0
+2kDNkqd81A3TBAYs+2fvvi4Nng89n1Vx9heLzR1+soyOONRi8K8c2hT/bNf+HrjT
+Ol225aOGxqbczyfX9i2JKl2gt06lsWTVSP/B6ulkc9PHSzfE2ic3aDO6jSf6+/1A
+woAuwTP0c89wZOOnPd7h2u3szviLqGywde+dhWAp4OHWu9aUFnNXgiXs4dLeO5Fb
+ymqeS+tIb489vzn7iVVaweuCDmf+SZhqyktofUdswJXRSM/I67Y3sorezifiCxq7
+Wq+3LTSMJHvT07896z9aOHuvzRuXdrM08cRyl7DRPh2fWdNSPNN5tb7PJ4S7fCa1
+Kqjav0///O2w6IQfVr7oA29He1Y1N008ODZetKN2/c03T1fADvrA5soE/5lMsvFc
+ljbZfcqnfVB//dH97WOe5lM7LoQEZMxUHE2Z05XfGz/mlk/PbdPsXR2y1hyQb9Qc
+HRqTRw6dS8375qttdvPG4eX7yyfeu/E4pPf7hqofpfsDrzxd7wg/qB/Y1KFL9E36
+7G5oWJ0vbjuckxKzciIutK85WXs1taj30YMrs5Gv7nKn1Udyt2rXVV37whvh0Hmq
+0mu9uVz9rcT3gyvfvfZrijk5yJv908SF0rozJydfXjWVpp/9Tv/7kYLYJ9We8Azz
+a+1Jzxy/NNg6tz50Osm7Wme5EZxZ/WXFkYlLY71+a0reiiheU7zuYsQHHy4bpbs/
+mfrjwNhvj1+ab5t3ubi/AM4pwBk=
+=N1GV
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/thejpster
+
+==================================================================

@@ -6,11 +6,7 @@ template = "static-page-cv.html"
 
 # Curriculum Vitae
 
-I am an Embedded Systems engineer specialising in safe, secure, reliable
-embedded systems design and development. I have a background in Local
-Government, having been elected to St Ives Town Council twice, and having
-served as Deputy Town Mayor and Town Mayor. I am also an experienced and
-accomplished public speaker.
+I am an Embedded Systems engineer specialising in safe, secure, reliable embedded systems design and development. I have a background in Local Government, having been elected to St Ives Town Council twice, and having served as Deputy Town Mayor and Town Mayor. I am also an experienced public speaker.
 
 ## **Technical Experience**
 
@@ -18,66 +14,66 @@ In the course of my career I have worked with a huge variety of embedded systems
 
 * **Processor Families**
     * Arm Cortex-M
-        * Nordic Semiconductor nRF52
+        * Nordic Semiconductor nRF52, nRF91
         * ST Micro STM32
-        * Texas Instruments Tiva-C
+        * Texas Instruments Tiva-C, CC1310
         * Silicon Labs EFM32
-    * Arm 11 / Arm Cortex-A
+    * Arm Cortex-A/ARM11
         * Texas Instruments Sitara AM335x
         * Texas Instruments Sitara AM57x
         * Texas Instruments DaVinci DM81x
         * Broadcom BCM283x
-    * Atmel AVR
-        * ATmega
-        * ATxmega
-    * Microchip PIC
-        * PIC18
-        * PIC24
     * SPARC
         * Gaisler LEON3 (SPARC V8)
     * Cambridge Consultants XAP2
         * CSR BlueCore
     * DSP
         * Texas Instruments C66x
+    * Other Microcontrollers
+        * Atmel ATmega, ATxmega
+        * Microchip PIC18, PIC24
+        * ST Micro STM8
 * **Programming Languages**
     * Rust
     * C
     * C++
-    * Python
+    * Python (inc Django)
     * PHP
     * Perl
     * Java
     * JavaScript
     * Bash
     * SQL
+    * Delphi / Pascal
 * **System Software**
-    * Linux (Buildroot)
+    * Linux (Buildroot/Debian/Ubuntu/CentOS/Arch)
     * U-Boot
     * Mentor Graphics Nucleus
     * FreeRTOS
+    * Zephyr
     * Bluestack
     * TI SYS/BIOS
 * **Communications Technologies**
     * L-Band Satellite
     * Bluetooth Classic
-    * Proprietary ISM band radio
+    * Proprietary Sub-1GHz (ISM band)
     * Wi-Fi
-    * NB-IoT
-    * LTE Cat-M
-    * Bluetooth LE
-    * 802.15.4 UWB
+    * NB-IoT and  LTE Cat-M
+    * Bluetooth (Classic and LE)
+    * 802.15.4
+    * Ultra-wideband
 
 ## **Work Experience**
 
 ### 42 Technology
 
 > **Senior Consultant, Electronics and Software Group**
-> <br>*Jan 2019 - Present*
+> <br>*Jan 2019 - Nov 2021*
 
 42 Technology (<http://www.42technology.com>) is a product design and
 development consultancy.
 
-My role includes:
+My role included:
 
 * Embedded firmware development in Rust, C, C++ and Assembly Language
 * Systems Engineering and requirements analysis
@@ -118,7 +114,7 @@ My role included:
 * Interviewing candidates
 * Lectures and articles
 
-### H&#77;G&zwj;CC
+### HM GCC
 
 > **Engineer**
 > <br>*Aug 2007 - Apr 2009*
@@ -126,8 +122,7 @@ My role included:
 > **Graduate Engineer**
 > <br>*Aug 2004 - Aug 2006*
 
-H&zwj;&#77;&zwj;G&zwj;C&zwj;C provides electronics and software to support the
-communication needs of the British Government.
+HM GCC provides electronics and software to support the communication needs of the British Government.
 
 My role included:
 
@@ -139,7 +134,7 @@ My role included:
 ### University of Warwick, Department of Computer Science
 
 > **Software Developer**
-> <br>*Jul 2004 - Sep 2003*
+> <br>*Jul 2003 - Sep 2003*
 
 I worked on the BOSS On-line Submission System, an open-source coursework submission server and client UI written in Java.
 
@@ -148,44 +143,43 @@ I worked on the BOSS On-line Submission System, an open-source coursework submis
 ### St Ives Town Council
 
 > **Town Mayor of St Ives**
-> <br>*2020/21*
+> <br>*2020 - 2021*
 
 > **Deputy Town Mayor of St Ives**
-> <br>*2019/20*
+> <br>*2019 - 2020*
 
 > **Chair of the Property Committee**
-> <br>*2017/18 - 2020/21*
+> <br>*2017 - 2022*
 
 > **Vice-Chair of the Norris Museum and Library Trust Committee**
-> <br>*2019/20 - Present*
+> <br>*2019 - 2022*
 
 > **Vice-Chair of the Property Committee**
-> <br>*2016/17*
+> <br>*2016 - 2017*
+
+> **Vice-Chair of the Personnel Committee**
+> <br>*2021 - 2022*
 
 > **Member of the Property Committee**
-> <br>*2016/17 - Present*
-
-> **Member of the Amenities Committee**
-> <br>*2019/20*
-
-> **Member of the Planning Committee**
-> <br>*2019/20*
+> <br>*2016 - 2022*
 
 > **Member of the Personnel Committee**
-> <br>*2016/17 - 2018/19*
+> <br>*2016 - 2019; 2021 - 2022*
+
+> **Member of the Amenities Committee**
+> <br>*2019 - 2020*
+
+> **Member of the Planning Committee**
+> <br>*2019 - 2020*
 
 > **Member of the Promotion and Publicity Committee**
-> <br>*2016/17 - 2018/19*
+> <br>*2016 - 2019*
 
 > **Town Councillor (Independent)**
 > <br>*May 2016 (two year term)*
 > <br>*May 2018 (four year term)*
 
-St Ives is a historic Market Town in Huntingdonshire, and the Town Council has
-been in existence since 1974 (although it was preceded by St Ives Borough
-Council, which was founded in 1874). The Town Council has around 11 staff and
-provides services to the 17,000 residents of St Ives. These services include
-maintaining the following buildings and facilities:
+St Ives is a historic Market Town in Huntingdonshire, and the Town Council has been in existence since 1974 (although it was preceded by St Ives Borough Council, which was founded in 1874). The Town Council has around 11 staff and provides services to the 17,000 residents of St Ives. These services include maintaining the following buildings and facilities:
 
 * The Town Hall, Market Hill
 * The Corn Exchange, The Pavement
@@ -197,10 +191,7 @@ maintaining the following buildings and facilities:
 * Slepe Hall Field
 * Eight children's play areas
 
-As Chair of various committees, and as Town Mayor (i.e. Chair of the Town
-Council), I have extensive experience in conducting formal meetings, decision
-making and public events. I am independent, open-minded, and always try to
-ensure that discussions lead to a productive outcome.
+As Chair of various committees, and as Town Mayor (i.e. Chair of the Town Council), I have extensive experience in conducting formal meetings, decision making and public events. I am independent, open-minded, and always try to ensure that discussions lead to a productive outcome.
 
 ### Rust Embedded Working Group
 

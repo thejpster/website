@@ -26,12 +26,11 @@ My collection currently includes:
    * JiffyDOS (for C128, C64 and 1571)
    * External Pi1541
    * CGA to SCART adaptor
-* Apple Macintosh LC II
-   * Apple Colour Monitor
-   * SCSI2SD
-   * PDS Ethernet Card
-   * External MediaVision Reno SCSI CD-ROM
-   * Apple StyleWriter II
+* Apple iMac G4 (white half-sphere or 'lampshade')
+   * 886 MHz G4
+   * Original 60GB hard drive, keyboard, mouse and speakers
+* Apple Powerbook G4 1GHz
+   * SD2IDE replacement drive
 * Amstrad PCW9512
    * 3" CF2DD Drive A:
    * Gotek Drive B:
@@ -46,8 +45,11 @@ My collection currently includes:
 * Sony Playstation 2
 * Sony Playstation 3
 * Sony Playstation 4
+* Mesh Computers XP1900+
+   * GeForce 3
+   * SoundBlaster Audigy
 
-My day-to-day laptop is an Acer Swift 3 (SF314-51), running [Pop OS!](https://pop.system76.com). I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003.
+My day-to-day laptop is an Dell Inspiron 7400, running Ubuntu. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003.
 
 ## Cars
 

@@ -276,6 +276,11 @@ Listed in alphabetical order.
 * Berlin, 2019, *IoT with Rust and the nRF9160 - more secure and lower power!* ([meetingembedded.com](https://meetingembedded.com/2019/Schedule.html))
 * Berlin, 2018, *Remoteprocs in Rust* ([meetingembedded.com](https://meetingembedded.com/2018/Schedule.html))
 
+### New Electronics
+
+* Print and on-line, March 2021, *Cooking up a connected product* ([newelectronics.co.uk](https://www.newelectronics.co.uk/electronics-technology/cooking-up-a-connected-product/235439/))
+* Online, October 2021, *42 Technology helps develop smarter monitoring for remote farms* ([newelectronics.co.uk](https://www.newelectronics.co.uk/electronics-news/42-technology-helps-develop-smarter-monitoring-for-remote-farms/241609/))
+
 ### Oxidize
 
 * On-line, Oxidize 1K (2020), *How We Got QUIC Running on the nRF9160 Before Everyone Else* ([oxidizeconf.com](https://oxidizeconf.com/oxidize-1k/))

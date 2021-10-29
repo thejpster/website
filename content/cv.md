@@ -196,7 +196,7 @@ As Chair of various committees, and as Town Mayor (i.e. Chair of the Town Counci
 ### Rust Embedded Working Group
 
 > **Member**
-> <br>*2018 - 2020 (currently on hiatus)*
+> <br>*2018 - Present*
 
 ### Cambridge and District Classic Car Club
 

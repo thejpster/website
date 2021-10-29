@@ -53,9 +53,9 @@ My day-to-day laptop is an Dell Inspiron 7400, running Ubuntu. I've used a varie
 
 ## Cars
 
-I have a 1995 Jaguar Sovereign 3.2 LWB (long wheel-base), which I purchased at the end of 2011. Its condition varies as time and funds allow, but when it working order it is used for family trips at the weekend.
+I used to own a 1995 Jaguar Sovereign 3.2 LWB (long wheel-base), between 2011 and 2021.
 
-I owned an electric Nissan Leaf for three years, but currently just have the Jaguar, and the use of my wife's electric MG 5.
+I owned an electric Nissan Leaf for three years, but currently just have the use of my wife's electric MG 5.
 
 ## Model Railways
 

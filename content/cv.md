@@ -65,6 +65,21 @@ In the course of my career I have worked with a huge variety of embedded systems
 
 ## **Work Experience**
 
+### Ferrous Systems
+
+> **Senior Embedded Engineer**
+> <br>*Dec 2021 to Present*
+
+Ferrous Systems (<https://www.ferrous-systems.com>) is a Rust-language consultancy and training provider. 
+
+My role includes:
+
+* Providing Rust-language training to clients
+* Improving the training material
+* Working on open-source projects
+* Providing help and support on Rust to clients
+* Lectures and articles
+
 ### 42 Technology
 
 > **Senior Consultant, Electronics and Software Group**

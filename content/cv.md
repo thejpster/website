@@ -169,11 +169,11 @@ I worked on the BOSS On-line Submission System, an open-source coursework submis
 > **Vice-Chair of the Norris Museum and Library Trust Committee**
 > <br>*2019 - 2022*
 
-> **Vice-Chair of the Property Committee**
-> <br>*2016 - 2017*
-
 > **Vice-Chair of the Personnel Committee**
 > <br>*2021 - 2022*
+
+> **Vice-Chair of the Property Committee**
+> <br>*2016 - 2017*
 
 > **Member of the Property Committee**
 > <br>*2016 - 2022*
@@ -252,6 +252,7 @@ Listed in alphabetical order.
 
 ### ACCU
 
+* Bristol, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([accu.org]https://accu.org/conf-main/main/) ([youtube.com](https://www.youtube.com/watch?v=hD7ZMOYy0zI))
 * Bristol, 2019, *Monotron - a 1980s style home computer written in Rust* ([accu.org](https://accu.org/conf-previous/2019/sessions/)) ([youtube.com](https://www.youtube.com/watch?v=BmjqAhRtvHI))
 * Bristol, 2018, *Grease: A Message-Passing Approach to Protocol Stacks in Rust* ([accu.org](https://accu.org/conf-previous/2018/sessions/))
 
@@ -266,6 +267,7 @@ Listed in alphabetical order.
 
 ### Centre for Computing History
 
+* Cambridge, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([computinghistory.co.uk](http://www.computinghistory.org.uk/det/67361/TechTalk-Jonathan-Pallant-Neotron-writing-a-single-tasking-DOS-for-Arm-microcontrollers-in-Rust-Thursday-12th-May-2022/))
 * Cambridge, 2019, *Rust Tutorial with Jonathan Pallant* ([computinghistory.org.uk](https://www.computinghistory.org.uk/det/51020/Rust-Tutorial-with-Jonathan-Pallant/))
 * Cambridge, 2017, *Coding as an Art Form* ([youtube.com](https://youtu.be/oL60-8GPgpg))
 
@@ -324,6 +326,14 @@ Listed in alphabetical order.
 ### RustFest
 
 * Paris, 2018, *Monotron: Making a 80s style computer with a $20 dev kit* ([paris.rustfest.eu](https://paris.rustfest.eu/talks/)) ([youtube.com](https://www.youtube.com/watch?v=pTEYqpcQ6lg))
+
+### Safety Critical Systems Club
+
+* London, 2022, *Rust for Safety Critical Systems* (last-minute stand-in)
+
+### UK Embedded
+
+* Coventry, 2022, *The Rust Programming Language and its applicability today on the development on secure, high-performance embedded systems* ([ukembedded.co.uk](https://www.ukembedded.co.uk/agenda))
 
 ### University of Cambridge
 

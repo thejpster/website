@@ -4,5 +4,7 @@ set -euo pipefail
 
 rm -rf ./public
 zola build
-scp -r ./public/* ./public/.well-known thejpster@yali.mythic-beasts.com:www/www.thejpster.org.uk/
 
+# run `rclone config` to configure an SFTP endpoint called yali if this is a new machine
+
+rclone sync -v ./public yali:/home/thejpster/www/www.thejpster.org.uk/

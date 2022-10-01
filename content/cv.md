@@ -70,14 +70,14 @@ In the course of my career I have worked with a huge variety of embedded systems
 > **Senior Embedded Engineer**
 > <br>*Dec 2021 to Present*
 
-Ferrous Systems (<https://www.ferrous-systems.com>) is a Rust-language consultancy and training provider. 
+Ferrous Systems (<https://www.ferrous-systems.com>) is a Rust programming language consultancy and training provider. 
 
 My role includes:
 
-* Providing Rust-language training to clients
+* Providing Rust training to clients
+* Providing Rust consultancy and development services to clients
 * Improving the training material
 * Working on open-source projects
-* Providing help and support on Rust to clients
 * Lectures and articles
 
 ### 42 Technology
@@ -91,7 +91,7 @@ development consultancy.
 My role included:
 
 * Embedded firmware development in Rust, C, C++ and Assembly Language
-* Systems Engineering and requirements analysis
+* Systems Engineering and Requirements Analysis
 * Staff training
 * Sales and proposals
 * Improving Software Development processes
@@ -104,10 +104,10 @@ My role included:
 > <br>*Jan 2018 - Jan 2019*
 
 > **Principal Engineer, Wireless and Digital Services**
-> <br>*Jan 2015 - Dec 2017*
+> <br>*Jan 2015 - Jan 2017*
 
 > **Senior Engineer, Wireless Software**
-> <br>*Apr 2009 - Dec 2014*
+> <br>*Apr 2009 - Jan 2014*
 
 Cambridge Consultants (<http://www.cambridgeconsultants.com>) is one of the
 original Cambridge-based product design and development consultancies, founded
@@ -125,23 +125,24 @@ My role included:
 * Sales and proposals
 * Improving Software Development processes
 * Product delivery and integration at client facilities
-* Designing and developing an in-house CI system based on Django and VMware ESXi
+* Designing and developing an in-house CI system based on Python/Django and VMware ESXi
 * Interviewing candidates
 * Lectures and articles
 
 ### HM GCC
 
 > **Engineer**
-> <br>*Aug 2007 - Apr 2009*
+> <br>*2006 - 2009*
 
 > **Graduate Engineer**
-> <br>*Aug 2004 - Aug 2006*
+> <br>*2004 - 2006*
 
 HM GCC provides electronics and software to support the communication needs of the British Government.
 
 My role included:
 
 * Embedded firmware development in C, C++ and Assembly Language
+* Desktop application development in C++, Delphi and C#
 * Designing and developing a stock management system
 * Systems Engineering and requirements analysis
 * System Test
@@ -149,9 +150,16 @@ My role included:
 ### University of Warwick, Department of Computer Science
 
 > **Software Developer**
-> <br>*Jul 2003 - Sep 2003*
+> <br>*Summer 2003*
 
-I worked on the BOSS On-line Submission System, an open-source coursework submission server and client UI written in Java.
+I worked on the BOSS On-line Submission System, an open-source coursework submission server and client UI written in Java and using PostgreSQL.
+
+### HouseWeb.co.uk
+
+> **Web Developer**
+> <br>*Summer 2001 and Summar 2002*
+
+Developer for an early on-line property sales portal. Web development in Perl, PHP, HTML and JavaScript.
 
 ## **Local Government and Community Groups**
 
@@ -191,8 +199,8 @@ I worked on the BOSS On-line Submission System, an open-source coursework submis
 > <br>*2016 - 2019*
 
 > **Town Councillor (Independent)**
-> <br>*May 2016 (two year term)*
-> <br>*May 2018 (four year term)*
+> <br>*Elected May 2016 (two year term)*
+> <br>*Elected May 2018 (four year term)*
 
 St Ives is a historic Market Town in Huntingdonshire, and the Town Council has been in existence since 1974 (although it was preceded by St Ives Borough Council, which was founded in 1874). The Town Council has around 11 staff and provides services to the 17,000 residents of St Ives. These services include maintaining the following buildings and facilities:
 
@@ -203,7 +211,7 @@ St Ives is a historic Market Town in Huntingdonshire, and the Town Council has b
 * Hill Rise Cemetery, Hill Rise
 * Hill Rise Allotments, Hill Rise
 * Warner's Park and Warner's Park Pavilion, Park Lane
-* Slepe Hall Field
+* Slepe Hall Field, Ramsey Road
 * Eight children's play areas
 
 As Chair of various committees, and as Town Mayor (i.e. Chair of the Town Council), I have extensive experience in conducting formal meetings, decision making and public events. I am independent, open-minded, and always try to ensure that discussions lead to a productive outcome.
@@ -212,6 +220,8 @@ As Chair of various committees, and as Town Mayor (i.e. Chair of the Town Counci
 
 > **Member**
 > <br>*2018 - Present*
+
+I helped found the Rust Embedded Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attend the weekly meetings, as well as review and submit PRs on their [Github page](https://github.com/rust-embedded).
 
 ### Cambridge and District Classic Car Club
 
@@ -233,6 +243,29 @@ The Cambridge and District Classic Car Club was founded in 1995 and is a multi-m
 
 > **IT Officer**
 > <br>*2002/2003*
+
+## Open Source Developer
+
+Outside of work (and occassionally in work), I have developed the following open-source projects:
+
+* The Monotron - a single-board computer based around the Texas Instruments Tiva-C Launchpad, written in Rust
+* The Neotron Project - a family of single-board computers with Arm processors that run the Neotron OS
+* monotron-synth - a three-channel basic wavetable synthesiser, used on the Monotron
+* vga-framebuffer - a VGA-over-SPI rendering engine, used on the Monotron
+* beagleboard-x15 - a demo for the Beagleboard X15 which exchanges messages between Linux on the Cortex-A core, and a bare-metal Embedded Rust application on the embedded Cortex-M4 IPU
+* rp2040-hal - a HAL and set of Board Support Packages for the Raspberry Pi Pico and other RP2040 based boards
+* tm4c-hal - a HAL and set of Board Support Packages for the Texas Instruments Tiva-C Launchpad and other TM4C123/TM4C129 based boards
+* grease - a message-passing application framework for building layered protocol stacks in Rust
+* embedded-sdmmc - a SD/MMC block device driver and FAT16/FAT32 implementation written in Rust
+* multi-map - a two-key hashmap, written in Rust
+* pc-keyboard - a Scancode decoder for PC XT, AT and PS/2 keyboards, written in Rust
+* zube - an Open Source ASIC design for interfacing with Z80 CPU, developed as part of zero2asic and built on Google's MPW3 shuttle
+* illyria - a stop-and-wait ARQ using postcard + COBS as a serialisation mechanism, in Rust
+* pyvmlib - a Python library for interacting with VMware ESXi servers
+* tockloader-proto-rs - an implementation of the tockloader protocol, in Rust
+* rushtttp - an HTTP server written in Rust
+
+These works and more can be found at my [Github account](https://github.com/thejpster).
 
 ## **Education**
 
@@ -292,6 +325,10 @@ Listed in alphabetical order.
 
 * Berlin, 2019, *IoT with Rust and the nRF9160 - more secure and lower power!* ([meetingembedded.com](https://meetingembedded.com/2019/Schedule.html))
 * Berlin, 2018, *Remoteprocs in Rust* ([meetingembedded.com](https://meetingembedded.com/2018/Schedule.html))
+
+## NDC TechTown
+
+* Kongsberg, 2022, *Neotron – why write a brand new 'DOS' for Arm in Rust* ([ndctechtown.com]https://ndctechtown.com/agenda/neotron-why-write-a-brand-new-dos-for-arm-in-rust-0cpw/0487cdpyzdg)
 
 ### New Electronics
 

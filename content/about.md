@@ -12,7 +12,9 @@ We have two cats and a dog. I have a a growing collection of old computers and a
 
 I successfully stood for election to [St Ives Town Council](https://www.stivestowncouncil.gov.uk) as an Independent in 2016 and again in 2018. In 2019 my fellow Town Councillors elected me as Deputy Town Mayor, and in 2020 as Town Mayor.
 
-For my day job, I have spent over 15 years as an Embedded Systems Consultant for several Cambridge based product design consultancies. I am currently working at [42 Technology](https://42technology.com) in St Ives.
+For my day job, I have spent over 15 years as an Embedded Systems Consultant for several Cambridge based product design consultancies. I am currently working at [Ferrous Systems](https://ferrous-systems.com) remotely from my home town of St Ives, providing consulting and training in Rust.
+
+I currently sit on the Rust Leadership Council.
 
 ## Technical Skills
 
@@ -35,9 +37,14 @@ My collection currently includes:
    * 3" CF2DD Drive A:
    * Gotek Drive B:
    * Daisywheel Printer
-* BBC Micro Model B
-   * BeebMMC SD Card interface
+* Amstrad CPC464
+* BBC Master
+   * 3.5" floppy drive
    * Panasonic Centronics dot-matrix printer
+* Pentium III @ 450 MHz
+   * Diamond Viper V770 Ultra
+   * SoundBlaster AWE64
+   * Adaptec AHA-2940UW SCSI card
 * Sega MegaDrive
 * Microsoft Xbox
 * Nintendo Wii
@@ -45,11 +52,8 @@ My collection currently includes:
 * Sony Playstation 2
 * Sony Playstation 3
 * Sony Playstation 4
-* Mesh Computers XP1900+
-   * GeForce 3
-   * SoundBlaster Audigy
 
-My day-to-day laptop is an Dell Inspiron 7400, running Ubuntu. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003.
+My day-to-day laptop is an Dell Inspiron 7400, running Fedora. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003.
 
 ## Cars
 

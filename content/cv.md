@@ -326,9 +326,9 @@ Listed in alphabetical order.
 * Berlin, 2019, *IoT with Rust and the nRF9160 - more secure and lower power!* ([meetingembedded.com](https://meetingembedded.com/2019/Schedule.html))
 * Berlin, 2018, *Remoteprocs in Rust* ([meetingembedded.com](https://meetingembedded.com/2018/Schedule.html))
 
-## NDC TechTown
+### NDC TechTown
 
-* Kongsberg, 2022, *Neotron – why write a brand new 'DOS' for Arm in Rust* ([ndctechtown.com]https://ndctechtown.com/agenda/neotron-why-write-a-brand-new-dos-for-arm-in-rust-0cpw/0487cdpyzdg)
+* Kongsberg, 2022, *Neotron – why write a brand new 'DOS' for Arm in Rust* ([ndctechtown.com](https://ndctechtown.com/agenda/neotron-why-write-a-brand-new-dos-for-arm-in-rust-0cpw/0487cdpyzdg))
 
 ### New Electronics
 

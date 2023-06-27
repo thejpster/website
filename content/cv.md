@@ -163,6 +163,20 @@ Developer for an early on-line property sales portal. Web development in Perl, P
 
 ## **Local Government and Community Groups**
 
+### The Rust Project
+
+> **Member of the Rust Leadership Council**
+> <br>*2023 - Present*
+
+Council representative for the Launching Pad Team.
+
+### Rust Embedded Working Group
+
+> **Member**
+> <br>*2018 - Present*
+
+I helped found the Rust Embedded Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attend the weekly meetings, as well as review and submit PRs on their [Github page](https://github.com/rust-embedded).
+
 ### St Ives Town Council
 
 > **Town Mayor of St Ives**
@@ -216,13 +230,6 @@ St Ives is a historic Market Town in Huntingdonshire, and the Town Council has b
 
 As Chair of various committees, and as Town Mayor (i.e. Chair of the Town Council), I have extensive experience in conducting formal meetings, decision making and public events. I am independent, open-minded, and always try to ensure that discussions lead to a productive outcome.
 
-### Rust Embedded Working Group
-
-> **Member**
-> <br>*2018 - Present*
-
-I helped found the Rust Embedded Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attend the weekly meetings, as well as review and submit PRs on their [Github page](https://github.com/rust-embedded).
-
 ### Cambridge and District Classic Car Club
 
 > **Chair**
@@ -250,6 +257,7 @@ Outside of work (and occassionally in work), I have developed the following open
 
 * The Monotron - a single-board computer based around the Texas Instruments Tiva-C Launchpad, written in Rust
 * The Neotron Project - a family of single-board computers with Arm processors that run the Neotron OS
+* neotron-loader - an ELF parser that doesn't require the ELF data to already be in RAM
 * monotron-synth - a three-channel basic wavetable synthesiser, used on the Monotron
 * vga-framebuffer - a VGA-over-SPI rendering engine, used on the Monotron
 * beagleboard-x15 - a demo for the Beagleboard X15 which exchanges messages between Linux on the Cortex-A core, and a bare-metal Embedded Rust application on the embedded Cortex-M4 IPU

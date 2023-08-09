@@ -4,11 +4,16 @@ base_url = "https://thejpster.org.uk"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+# Enable RSS
+generate_feed = true
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-# https://www.getzola.org/themes/after-dark/
-# theme = "after-dark"
+# It's a git submodule
+theme = "lightspeed"
+
+title = "JP's Website"
 
 taxonomies = [
     # You can enable/disable RSS
@@ -23,3 +28,11 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+author = "Jonathan 'theJPster' Pallant"
+
+footer_links = [
+    {url = "$BASE_URL/about", name = "About Me"},
+    {url = "$BASE_URL/blog", name = "Blog"},
+    {url = "$BASE_URL/atom.xml", name = "RSS"},
+    {url = "$BASE_URL/cv", name = "My CV"},
+]

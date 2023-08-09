@@ -10,4 +10,3 @@ This is the website for Jonathan 'theJPster' Pallant. Check out the [about me](.
 
 Some (semi) regular updates can be found on my [blog](./blog).
 
-You can also checkout my Social Media accounts in the sidebar.

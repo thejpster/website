@@ -13,6 +13,8 @@ build_search_index = true
 # It's a git submodule
 theme = "lightspeed"
 
+title = "JP's Website"
+
 taxonomies = [
     # You can enable/disable RSS
     {name = "categories", rss = true},

@@ -13,7 +13,14 @@
     <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml") | safe }}">
 
     {% set data = load_data(path="public/style.css", format="plain") -%}
-    <style>{{ data | safe }}</style>
+    <style>
+    {{ data | safe }}
+    a,
+    a:visited {
+      color: blue;
+    }
+    </style>
+    
 
     {% block seo -%}
       <meta property="og:site_name" content="{% block ogsitename %}{{config.title}}{% endblock ogsitename %}">

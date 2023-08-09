@@ -6,69 +6,72 @@ template = "static-page-cv.html"
 
 # Curriculum Vitae
 
-I am an Embedded Systems engineer specialising in safe, secure, reliable embedded systems design and development. I have a background in Local Government, having been elected to St Ives Town Council twice, and having served as Deputy Town Mayor and Town Mayor. I am also an experienced public speaker.
+I am an Embedded Systems engineer specialising in safe, secure, reliable embedded systems design and development. I have a background in Local Government, having been elected to St Ives Town Council twice, and having served as Deputy Town Mayor and Town Mayor. I am also an experienced public speaker. In 2023 I joined the new Rust Leadership Council as the representative for the *Launching Pad* team.
 
 ## **Technical Experience**
 
 In the course of my career I have worked with a huge variety of embedded systems, including the following:
 
 * **Processor Families**
-    * Arm Cortex-M
-        * Nordic Semiconductor nRF52, nRF91
-        * ST Micro STM32
-        * Texas Instruments Tiva-C, CC1310
-        * Silicon Labs EFM32
-    * Arm Cortex-A/ARM11
-        * Texas Instruments Sitara AM335x
-        * Texas Instruments Sitara AM57x
-        * Texas Instruments DaVinci DM81x
-        * Broadcom BCM283x
-    * SPARC
-        * Gaisler LEON3 (SPARC V8)
-    * Cambridge Consultants XAP2
-        * CSR BlueCore
-    * DSP
-        * Texas Instruments C66x
-    * Other Microcontrollers
-        * Atmel ATmega, ATxmega
-        * Microchip PIC18, PIC24
-        * ST Micro STM8
+  * Arm Cortex-M
+    * Raspberry Pi RP2040
+    * Nordic Semiconductor nRF52, nRF91
+    * ST Micro STM32
+    * Texas Instruments Tiva-C, CC1310
+    * Silicon Labs EFM32
+  * Arm Cortex-A/ARM11
+    * Texas Instruments Sitara AM335x
+    * Texas Instruments Sitara AM57x
+    * Texas Instruments DaVinci DM81x
+    * Broadcom BCM283x
+  * SPARC
+    * Gaisler LEON3 (SPARC V8)
+  * Cambridge Consultants XAP2
+    * CSR BlueCore 5
+  * RISC-V
+    * Espressif ESP32-C3
+    * StarFive JH7100
+  * DSP
+    * Texas Instruments C66x
+  * Other Microcontrollers
+    * Atmel ATmega, ATxmega
+    * Microchip PIC18, PIC24
+    * ST Micro STM8
 * **Programming Languages**
-    * Rust
-    * C
-    * C++
-    * Python (inc Django)
-    * PHP
-    * Perl
-    * Java
-    * JavaScript
-    * Bash
-    * SQL
-    * Delphi / Pascal
+  * Rust
+  * C
+  * C++
+  * Python (inc Django)
+  * PHP
+  * Perl
+  * Java
+  * JavaScript
+  * Bash
+  * SQL
+  * Delphi / Pascal
 * **System Software**
-    * Linux (Buildroot/Debian/Ubuntu/CentOS/Arch)
-    * U-Boot
-    * Mentor Graphics Nucleus
-    * FreeRTOS
-    * Zephyr
-    * Bluestack
-    * TI SYS/BIOS
+  * Linux (Buildroot/Debian/Ubuntu/CentOS/Arch)
+  * U-Boot
+  * Mentor Graphics Nucleus
+  * FreeRTOS
+  * Zephyr
+  * mynewt
+  * Bluestack
+  * TI SYS/BIOS
 * **Communications Technologies**
-    * L-Band Satellite
-    * Bluetooth Classic
-    * Proprietary Sub-1GHz (ISM band)
-    * Wi-Fi
-    * NB-IoT and  LTE Cat-M
-    * Bluetooth (Classic and LE)
-    * 802.15.4
-    * Ultra-wideband
+  * L-Band Satellite
+  * Proprietary Sub-1GHz (ISM band)
+  * Wi-Fi
+  * NB-IoT and LTE Cat-M
+  * Bluetooth (Classic and LE)
+  * 802.15.4
+  * Ultra-wideband
 
 ## **Work Experience**
 
 ### Ferrous Systems
 
-> **Senior Embedded Engineer**
-> <br>*Dec 2021 to Present*
+#### Senior Embedded Engineer - *Dec 2021 to Present*
 
 Ferrous Systems (<https://www.ferrous-systems.com>) is a Rust programming language consultancy and training provider. 
 
@@ -82,8 +85,7 @@ My role includes:
 
 ### 42 Technology
 
-> **Senior Consultant, Electronics and Software Group**
-> <br>*Jan 2019 - Nov 2021*
+#### Senior Consultant, Electronics and Software Group - *Jan 2019 - Nov 2021*
 
 42 Technology (<http://www.42technology.com>) is a product design and
 development consultancy.
@@ -100,14 +102,11 @@ My role included:
 
 ### Cambridge Consultants
 
-> **Senior Consultant, Wireless and Digital Services**
-> <br>*Jan 2018 - Jan 2019*
+#### Senior Consultant, Wireless and Digital Services - *Jan 2018 - Jan 2019*
 
-> **Principal Engineer, Wireless and Digital Services**
-> <br>*Jan 2015 - Jan 2017*
+#### Principal Engineer, Wireless and Digital Services - *Jan 2015 - Jan 2017*
 
-> **Senior Engineer, Wireless Software**
-> <br>*Apr 2009 - Jan 2014*
+#### Senior Engineer, Wireless Software - *Apr 2009 - Jan 2014*
 
 Cambridge Consultants (<http://www.cambridgeconsultants.com>) is one of the
 original Cambridge-based product design and development consultancies, founded
@@ -131,11 +130,9 @@ My role included:
 
 ### HM GCC
 
-> **Engineer**
-> <br>*2006 - 2009*
+#### Engineer: 2006 - 2009
 
-> **Graduate Engineer**
-> <br>*2004 - 2006*
+#### Graduate Engineer: 2004 - 2006
 
 HM GCC provides electronics and software to support the communication needs of the British Government.
 
@@ -149,15 +146,13 @@ My role included:
 
 ### University of Warwick, Department of Computer Science
 
-> **Software Developer**
-> <br>*Summer 2003*
+#### Software Developer - *Summer 2003*
 
 I worked on the BOSS On-line Submission System, an open-source coursework submission server and client UI written in Java and using PostgreSQL.
 
 ### HouseWeb.co.uk
 
-> **Web Developer**
-> <br>*Summer 2001 and Summar 2002*
+#### Web Developer - *Summer 2001 and Summer 2002*
 
 Developer for an early on-line property sales portal. Web development in Perl, PHP, HTML and JavaScript.
 
@@ -165,56 +160,43 @@ Developer for an early on-line property sales portal. Web development in Perl, P
 
 ### The Rust Project
 
-> **Member of the Rust Leadership Council**
-> <br>*2023 - Present*
+#### Member of the Rust Leadership Council: 2023 - Present
 
 Council representative for the Launching Pad Team.
 
 ### Rust Embedded Working Group
 
-> **Member**
-> <br>*2018 - Present*
+#### Member: 2018 - Present
 
 I helped found the Rust Embedded Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attend the weekly meetings, as well as review and submit PRs on their [Github page](https://github.com/rust-embedded).
 
 ### St Ives Town Council
 
-> **Town Mayor of St Ives**
-> <br>*2020 - 2021*
+#### Town Mayor of St Ives: 2020 - 2021
 
-> **Deputy Town Mayor of St Ives**
-> <br>*2019 - 2020*
+#### Deputy Town Mayor of St Ives: 2019 - 2020
 
-> **Chair of the Property Committee**
-> <br>*2017 - 2022*
+#### Chair of the Property Committee: 2017 - 2022
 
-> **Vice-Chair of the Norris Museum and Library Trust Committee**
-> <br>*2019 - 2022*
+#### Vice-Chair of the Norris Museum and Library Trust Committee: 2019 - 2022
 
-> **Vice-Chair of the Personnel Committee**
-> <br>*2021 - 2022*
+#### Vice-Chair of the Personnel Committee: 2021 - 2022
 
-> **Vice-Chair of the Property Committee**
-> <br>*2016 - 2017*
+#### Vice-Chair of the Property Committee: 2016 - 2017
 
-> **Member of the Property Committee**
-> <br>*2016 - 2022*
+#### Member of the Property Committee: 2016 - 2022
 
-> **Member of the Personnel Committee**
-> <br>*2016 - 2019; 2021 - 2022*
+#### Member of the Personnel Committee: 2016 - 2019; 2021 - 2022
 
-> **Member of the Amenities Committee**
-> <br>*2019 - 2020*
+#### Member of the Amenities Committee: 2019 - 2020
 
-> **Member of the Planning Committee**
-> <br>*2019 - 2020*
+#### Member of the Planning Committee: 2019 - 2020
 
-> **Member of the Promotion and Publicity Committee**
-> <br>*2016 - 2019*
+#### Member of the Promotion and Publicity Committee: 2016 - 2019
 
-> **Town Councillor (Independent)**
-> <br>*Elected May 2016 (two year term)*
-> <br>*Elected May 2018 (four year term)*
+#### Town Councillor (Independent)
+
+I was elected to St Ives Town Council twice, in May 2016 (for a two year term) and in 2018 (for a four year term).
 
 St Ives is a historic Market Town in Huntingdonshire, and the Town Council has been in existence since 1974 (although it was preceded by St Ives Borough Council, which was founded in 1874). The Town Council has around 11 staff and provides services to the 17,000 residents of St Ives. These services include maintaining the following buildings and facilities:
 
@@ -232,24 +214,19 @@ As Chair of various committees, and as Town Mayor (i.e. Chair of the Town Counci
 
 ### Cambridge and District Classic Car Club
 
-> **Chair**
-> <br>*2013 - 2016*
+#### Chair: 2013 - 2016
 
-> **Vice-Chair**
-> <br>*2013*
+#### Vice-Chair: 2013
 
-> **Membership Secretary**
-> <br>*2010 - 2013*
+#### Membership Secretary: 2010 - 2013
 
-> **IT Officer**
-> <br>*2009 - 2016*
+#### IT Officer: 2009 - 2016
 
 The Cambridge and District Classic Car Club was founded in 1995 and is a multi-marque club offering regular club-nights and organised attendance at local car shows.
 
 ### Warwick Student Cinema
 
-> **IT Officer**
-> <br>*2002/2003*
+#### IT Officer: 2002/2003
 
 ## Open Source Developer
 
@@ -279,13 +256,11 @@ These works and more can be found at my [Github account](https://github.com/thej
 
 ### University of Warwick
 
-> **MEng in Computer Systems Engineering (first-class)**
-> <br>*2000/01 - 2003/04*
+#### MEng in Computer Systems Engineering (first-class): 2000/01 - 2003/04
 
 ### Hills Road Sixth Form College, Cambridge
 
-> **Computing (A), Maths (A), Further Maths (A), Physics (A)**
-> <br>*1998/99 - 1999/00*
+#### Computing (A), Maths (A), Further Maths (A), Physics (A) - *1998/99 - 1999/00*
 
 ## Articles and Appearances
 
@@ -311,6 +286,11 @@ Listed in alphabetical order.
 * Cambridge, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([computinghistory.co.uk](http://www.computinghistory.org.uk/det/67361/TechTalk-Jonathan-Pallant-Neotron-writing-a-single-tasking-DOS-for-Arm-microcontrollers-in-Rust-Thursday-12th-May-2022/))
 * Cambridge, 2019, *Rust Tutorial with Jonathan Pallant* ([computinghistory.org.uk](https://www.computinghistory.org.uk/det/51020/Rust-Tutorial-with-Jonathan-Pallant/))
 * Cambridge, 2017, *Coding as an Art Form* ([youtube.com](https://youtu.be/oL60-8GPgpg))
+
+### The Coriolis Effect Show, with Bil Herd and Ben Jordan
+
+* On-line, June 2022, <https://www.youtube.com/watch?v=Fgv_8H3h4Q8>
+* On-line, December 2022, <https://www.youtube.com/watch?v=X1-mt4mrZ9E>
 
 ### Electronics Weekly
 

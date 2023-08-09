@@ -8,13 +8,13 @@ template = "static-page.html"
 
 I am a husband and father of two, living in the town of St Ives, Cambridgeshire, England.
 
-We have two cats and a dog. I have a a growing collection of old computers and an old Jaguar.
+We have two cats and a dog. I have a a growing collection of old computers and memories of an old Jaguar.
 
 I successfully stood for election to [St Ives Town Council](https://www.stivestowncouncil.gov.uk) as an Independent in 2016 and again in 2018. In 2019 my fellow Town Councillors elected me as Deputy Town Mayor, and in 2020 as Town Mayor.
 
 For my day job, I have spent over 15 years as an Embedded Systems Consultant for several Cambridge based product design consultancies. I am currently working at [Ferrous Systems](https://ferrous-systems.com) remotely from my home town of St Ives, providing consulting and training in Rust.
 
-I currently sit on the Rust Leadership Council.
+In 2023 I joined the new Rust Leadership Council as the representative for the *Launching Pad* team.
 
 ## Technical Skills
 
@@ -25,35 +25,43 @@ I have delivered client projects on everything from the smallest Microchip PIC, 
 My collection currently includes:
 
 * Commodore 128D
-   * JiffyDOS (for C128, C64 and 1571)
-   * External Pi1541
-   * CGA to SCART adaptor
+  * JiffyDOS (for C128, C64 and 1571)
+  * External Pi1541
+  * CGA to SCART adaptor
 * Apple iMac G4 (white half-sphere or 'lampshade')
-   * 886 MHz G4
-   * Original 60GB hard drive, keyboard, mouse and speakers
+  * 886 MHz G4
+  * Original 60GB hard drive, keyboard, mouse and speakers
 * Apple Powerbook G4 1GHz
-   * SD2IDE replacement drive
+  * SD2IDE replacement drive
 * Amstrad PCW9512
-   * 3" CF2DD Drive A:
-   * Gotek Drive B:
-   * Daisywheel Printer
+  * 3" CF2DD Drive A:
+  * Gotek Drive B:
+  * Daisywheel Printer
 * Amstrad CPC464
+* Acorn RiscPC 600
+  * 486 PC card
+  * Twin-slice case
 * BBC Master
-   * 3.5" floppy drive
-   * Panasonic Centronics dot-matrix printer
+  * 3.5" floppy drive
+  * Panasonic Centronics dot-matrix printer
+* Dell Precision T3400 Workstation
+  * Core 2 Duo
+  * Windows XP
+  * nVidia Quadro 600
 * Pentium III @ 450 MHz
-   * Diamond Viper V770 Ultra
-   * SoundBlaster AWE64
-   * Adaptec AHA-2940UW SCSI card
+  * Windows 98 / MS-DOS 6.22 dual-boot
+  * Diamond Viper V770 Ultra
+  * SoundBlaster AWE64
+  * Adaptec AHA-2940UW SCSI card
 * Sega MegaDrive
 * Microsoft Xbox
 * Nintendo Wii
-   * With Gamecube memory module and controllers
+  * With Gamecube memory module and controllers
 * Sony Playstation 2
 * Sony Playstation 3
 * Sony Playstation 4
 
-My day-to-day laptop is an Dell Inspiron 7400, running Fedora. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003.
+My day-to-day laptop is an Dell Inspiron 7400, running Windows 11. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003, but these days I need to share the laptop with my family.
 
 ## Cars
 
@@ -69,7 +77,7 @@ My N-Gauge model railway was dismantled in 2018 owing to a lack of space. I stil
 
 ### Rust
 
-I have been a huge fan of the Rust programming language since the 1.0 days. As part of this, I produced some [workshop material](https://github.com/thejpster/pi-workshop-rs) for the Raspberry Pi Party 2017. I've also delivered several Embedded Rust training workshops, and it's been a key theme of my projects over the last five years.
+I have been a huge fan of the Rust programming language since the 1.0 days. As part of this, I produced some [workshop material](https://github.com/thejpster/pi-workshop-rs) for the Raspberry Pi Party 2017. I've also delivered several Embedded Rust training workshops, and it's been a key theme of my projects over the last seven years. In 2021 I was lucky enough to join Ferrous Systems, where I write and teach Rust full-time. In 2023 I was also invited to join the Rust Leadership Council as the representative for the *Launching Pad* team.
 
 ### Monotron
 
@@ -79,7 +87,7 @@ You can see more on my [Github](https://github.com/thejpster/monotron).
 
 ### Neotron
 
-Monotron has been followed by Neotron - a family of Arm Cortex-M powered systems which share an OS, through the use of a custom BIOS acting as a hardware abstraction layer.
+Monotron has been followed by Neotron - a family of Arm Cortex-M powered systems which share an OS, through the use of a custom BIOS acting as a hardware abstraction layer. The lead system is powered by a Raspberry Pi Pico microcontroller board and has VGA output, PS/2 keyboard and 16-bit stereo audio.
 
 You can see more at <https://github.com/neotron-compute>.
 
@@ -99,9 +107,9 @@ The source code is [on Github](https://github.com/thejpster/rust-beagleboardx15-
 
 You can contact me via:
 
-* Github - [@thejpster](https://github.com/thejpster)
-* Twitter - [@therealjpster](https://twitter.com/therealjpster)
-* Facebook - [@jonathan.pallant](https://facebook.com/jonathan.pallant)
-* Keybase - [@thejpster](https://keybase.io/thejpster)
+* Github - [@thejpster](https://github.com/thejpster), or [@jonathanpallant](https://github.com/jonathanpallant) if I'm at work
 * E-mail - website [&#65;T] thejpster.org.uk
-
+* Mastodon - [@thejpster@hachyderm.io](https://hachyderm.io/@thejpster)
+* Twitter - [@therealjpster](https://twitter.com/therealjpster) (Defunct)
+* Facebook - [@jonathan.pallant](https://facebook.com/jonathan.pallant) (Defunct)
+* Keybase - [@thejpster](https://keybase.io/thejpster) (Defunct)

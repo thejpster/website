@@ -15,9 +15,10 @@
     {% set data = load_data(path="public/style.css", format="plain") -%}
     <style>
     {{ data | safe }}
-    a,
-    a:visited {
+    a, a:visited {
       color: blue;
+      text-decoration-style: dotted;
+      text-decoration-line: underline;
     }
     </style>
     

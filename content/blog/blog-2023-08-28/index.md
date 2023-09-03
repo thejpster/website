@@ -29,6 +29,8 @@ We're going to talk about:
     - [Apple's Disk II](#apple-s-disk-ii)
     - [Commodore](#commodore)
 - [A Comparison Table](#a-comparison-table)
+- [References](#references)
+- [Edits 2023-09-03](#edits-2023-09-03)
 
 # The Physical Disks
 
@@ -37,7 +39,7 @@ There are four main sizes of Floppy Disk.
 * The 8" *Floppy Disk*, which is the oldest and dates from the very early 1970s. It's a black plastic sleeve around 200mm by 200mm, encasing a thin disc of flexible magnetic material (known as a *biscuit*). The sleeve has a small hole in it so the biscuit can be accessed by the read/write head in the floppy disk drive. There is also a hole in the centre of both the sleeve and the biscuit, so that the motor spindle can clamp down on to the biscuit in order to rotate it (typically clockwise). Disks and drives can store varying amounts of data depending on their design and specification, from 80 KiB to 1184 KiB.
 * The 5.25" *Minifloppy* or *Mini Diskette* is like an 8" disk but shrunk down to around 130mm x 130mm. It has the same kind of sleeve and biscuit - just smaller. Again, disks and drives can store varying amounts of data depending on their design, from 180 KiB to 1200 KiB.
 * The 3" *Compact Floppy Disk* (or *CF-2*) has a hard plastic shell surrounding the biscuit, and the access window is covered by a metal shutter that is moved out of the way by sliding a mechanism accessed from the edge of the shell. Instead of just a central hole, there is a strong, thick, plastic circle for engaging with the drive motor. Came in single-sided, 40-track versions storing 180 KiB of data and double-sided 80-track versions that hold 720 KiB.
-* The 3.5" *Micro Floppy Disk* (or *MF2*) also has a plastic shell that is somewhere between the 5.25" and 3" in terms of stiffness. The size is 90mm x 93mm. Like the 3" there is a metal shutter but it sits outside of the sleeve rather than within it, so it can be easily moved by hand to access the biscuit. The biscuit has a metal hub in the centre, for engaging with the drive motor. All mechanisms are 80-track, but being so popular, there are a wide variety of formats leading to it storing between 400 KiB and 2880 KiB of data.
+* The 3.5" *Micro Floppy Disk* (or *MF2*) also has a plastic shell that is somewhere between the 5.25" and 3" in terms of stiffness. The size is 90mm x 93mm. Like the 3" there is a metal shutter but it sits outside of the sleeve rather than within it, so it can be easily moved by hand to access the biscuit. The biscuit has a metal hub in the centre, for engaging with the drive motor. The very earliest mechanisms (e.g. Epson [PF10]) were 40-track but almost all drives are 80-track. Being so popular, there are a wide variety of formats leading to it storing between 400 KiB and 2880 KiB of data per disk.
 
 # The Mechanisms
 
@@ -59,7 +61,7 @@ The read/write head is quite small compared to our disks. If it was fixed in pos
 
 8" and 5.25" disks usually have 35 or 40 tracks, with the head stepping at 48 tracks per inch (tpi). Some later mechanisms could step at 100 tpi, typically resulting in 77 tracks, whilst some others moved at 96 tpi for up to 80 tracks. Annoyingly the 100 tpi and 96 tpi systems were sort-of compatible on the outer (lower numbered) tracks, but became less reliable as you moved towards the centre of the floppy disk and the track and head moved out of alignment.
 
-3" disks were 40-track or 80-track, and 3.5" disks always have 80 tracks (or perhaps slightly more if you wanted to push the mechanism and the media)
+3" drives were 40-track or 80-track. 3.5" drives were almost all 80-track (or perhaps slightly more if you wanted to push the mechanism and the media) but there were some very early 40-track units from Epson, like the [PF10].
 
 Moving the head back to Track 0 usually triggers some kind of sensor so the Disk Drive Controller knows that it has reached the edge of the disk and doesn't accidentally move the head too far and off the edge of the biscuit. Cheaper drives, like those famously designed for the Commodore 64 and Apple II drives, skipped this sensor and replaced it with a hard stop that prevented the head moving to far. If the disk drive controller wanted to ensure the head was at Track Zero, it would step the head backwards at least as many times as there were tracks on disk, causing a distinctive *rat-tat-tat-tat-tat* noise as the head banged against the stop.
 
@@ -79,7 +81,7 @@ Most drives implement the same interface as the very early drive mechanisms, des
 
 The Shugart Interface has either 50 pins or 34 pins and allows you to connect the *floppy disk controller* to the *floppy disk drive* with a piece of ribbon cable that can be up to around 500mm in length. The controller is in charge of making the drive move move the head in and out, and generating or receiving the electrical signals from the read/write head.
 
-8" drives use a 50 pin PCB edge connector. 5.25" drives use a 34 pin PCB edge connector, and 3" and 3.5" drives use a 32-pin IDC pin header connector. All three are basically electrically equivalent; the 8" drives just need a small adapter to use the newer 34-pin interface, and you can get cables that have both IDC Card Edge and IDC Pin Header connectors, allowing you to use the appropriate one for your drive.
+8" drives use a 50 pin PCB edge connector. 5.25" drives use a 34 pin PCB edge connector, and 3" and 3.5" drives use a 34-pin IDC pin header connector. All three are basically electrically equivalent; the 8" drives just need a small adapter to use the newer 34-pin interface, and you can get cables that have both IDC Card Edge and IDC Pin Header connectors, allowing you to use the appropriate one for your drive.
 
 ### Standard Shugart Pinout
 
@@ -111,26 +113,16 @@ Note: D>C means the signal is an output from the Drive and an input on the Contr
 
 Supports two drives on one cable. Because it was assumed the IBM drives could not be modified to listen to different `/DSx` enable signals, all drives are set to `DS1` and the cable is twisted between pins 8 and 16, swapping `/MOTEA` with `/MOTEB` and swapping `/DRVSA` with `/DRVSB` - thus allowing two drives on one cable.
 
-Note: D>C means the signal is an output from the Drive and an input on the Controller, whilst C>D is the opposite.
+Note: D>C means the signal is an output from the Drive and an input on the Controller, whilst C>D is the opposite. Unlisted pins do the same thing as on the Shugart interface.
 
 |  Pin  |   Name    | Dir  | Function                        |
 | :---: | :-------: | :--- | :------------------------------ |
 |   2   | `/REDWC`  | C>D  | Select Reduced Write Density    |
 |   4   |    N/C    | N/A  | N/A                             |
-|   6   |    N/C    | N/A  | N/A                             |
-|   8   | `/INDEX`  | D>C  | Index hole detected             |
 |  10   | `/MOTEA`  | C>D  | Enable Motor for Drive A        |
 |  12   | `/DRVSA`  | C>D  | Select Drive A                  |
 |  14   | `/DRVSB`  | C>D  | Select Drive B                  |
 |  16   | `/MOTEB`  | C>D  | Enable Motor for Drive B        |
-|  18   |  `/DIR`   | C>D  | Set head stepper direction      |
-|  20   |  `/STEP`  | C>D  | A pulse moves the head one step |
-|  22   | `/WDATA`  | C>D  | Data to be written              |
-|  24   | `/WGATE`  | C>D  | Enable writing of data          |
-|  26   | `/TRK00`  | D>C  | Head is at Track 0 position     |
-|  28   |  `/WPT`   | D>C  | Disk is write protected         |
-|  30   | `/RDATA`  | D>C  | Data read from the disk         |
-|  32   | `/SIDE1`  | C>D  | Select which side               |
 |  34   | `/DSKCHG` | D>C  | Indicates disk has been changed |
 
 All the odd numbered pins are connected to Ground. The `/REDWC` signal is unused on 3.5" drives as it can auto-detect the kind of media inserted (more on that later).
@@ -269,3 +261,20 @@ Here is a comparison table of some common formats.
 
 Note that 3.5" High Density floppies in an IBM PC are often called "1.44MB" but they are in fact 1440 KiB or 1.40625 MiB. I presume a marketing person at some point didn't understand the difference between a binary-kibibyte of 1024 bytes (which is what all the prior drives are measured in and is a natural consequence of the 256/512/1024 byte sectors) and a decimal-kilobyte of 1000 bytes. You therefore end up with a nonsense number that uses a 'Megabyte' worth 1,024,000 (1024 * 1000) bytes. Calling it "1.4MB" would have been accurate (to within one decimal place) - the extra "4" is redundant and wrong. But, sadly, if you point this out, people get angry with you for spoiling their fun or something.
 
+## References
+
+* Wikipedia: [Floppy disk](https://en.wikipedia.org/wiki/Floppy_disk)
+* Wikipedia: [List of floppy formats](https://en.wikipedia.org/wiki/List_of_floppy_disk_formats)
+* Wikipedia: [Commodore 1541](https://en.wikipedia.org/wiki/Commodore_1541)
+* Wikipedia: [Floppy disk drive interface](https://en.wikipedia.org/wiki/Floppy_disk_drive_interface)
+* Cowlark's FluxEngine pages talk about the Epson [PF10]
+
+[PF10]: https://cowlark.com/fluxengine/doc/disk-epsonpf10.html
+
+
+## Edits 2023-09-03
+
+* Removed duplicates from IBM pinout table
+* Corrected 32-pin IDC to 34-pin IDC
+* Note that yes, there was like one 40-track 3.5" drive from Epson at the very start
+* Added some references

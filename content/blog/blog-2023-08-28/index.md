@@ -230,9 +230,9 @@ Here is a comparison table of some common formats.
 | Acorn DFS (DSSD)      | 5.25" |  SD   |  40   |   2   |   10    |       256 |          200 |
 | Acorn DFS (SSDD)      | 5.25" |  SD   |  80   |   1   |   10    |       256 |          200 |
 | Acorn DFS (DSDD)      | 5.25" |  SD   |  80   |   2   |   10    |       256 |          400 |
-| Acorn ADFS (S)        | 5.25" |  DD   |  40   |   1   |   10    |       256 |          160 |
-| Acorn ADFS (M)        | 5.25" |  DD   |  80   |   1   |   10    |       256 |          320 |
-| Acorn ADFS (L)        | 5.25" |  DD   |  80   |   2   |   10    |       256 |          640 |
+| Acorn ADFS (S)        | 5.25" |  DD   |  40   |   1   |   16    |       256 |          160 |
+| Acorn ADFS (M)        | 5.25" |  DD   |  80   |   1   |   16    |       256 |          320 |
+| Acorn ADFS (L)        | 5.25" |  DD   |  80   |   2   |   16    |       256 |          640 |
 | Acorn ADFS (D/E)      | 3.5"  |  DD   |  80   |   2   |    5    |      1024 |          800 |
 | Acorn ADFS (F)        | 3.5"  |  HD   |  80   |   2   |   10    |      1024 |         1600 |
 | Amstrad PCW8256       |  3"   |  DD   |  40   |   1   |    9    |       512 |          180 |
@@ -268,6 +268,7 @@ Note that 3.5" High Density floppies in an IBM PC are often called "1.44MB" but 
 * Wikipedia: [Commodore 1541](https://en.wikipedia.org/wiki/Commodore_1541)
 * Wikipedia: [Floppy disk drive interface](https://en.wikipedia.org/wiki/Floppy_disk_drive_interface)
 * Cowlark's FluxEngine pages talk about the Epson [PF10]
+* mdfs.net: [Acorn 8-Bit ADFS Filesystem Structure](https://mdfs.net/Docs/Comp/Disk/Format/ADFS)
 
 [PF10]: https://cowlark.com/fluxengine/doc/disk-epsonpf10.html
 

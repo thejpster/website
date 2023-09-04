@@ -30,7 +30,7 @@ We're going to talk about:
     - [Commodore](#commodore)
 - [A Comparison Table](#a-comparison-table)
 - [References](#references)
-- [Edits 2023-09-03](#edits-2023-09-03)
+- [Edits](#edits)
 
 # The Physical Disks
 
@@ -145,9 +145,13 @@ Most 5.25" disks (those called *single-density* or *double-density*) can reliabl
 
 ## Hard and Soft Sectors
 
-Most disk drive controllers divide up each endlessly looping linear track (and hence endlessly looping stream of bits) into numbered *sectors*. Each sector has a fixed number of payload bytes (usually 256, 512 or 1024) plus a sector ID and something to uniquely indicate this is the *start-of-sector* (that you can also *never* see inside valid sector data).
+Most disk drive controllers divide up each endlessly looping linear track (and hence endlessly looping stream of bits) into numbered *sectors*. Each sector has a fixed number of payload bytes (usually 256, 512 or 1024) plus a checksum and a sector ID.
 
-The earliest drives had physical holes punched into the edge of the biscuit (before Track 0), and the drive could indicate when these index holes were seen, thus allowing the controller to time the reading or writing of each sector. These are so-called *hard sector floppy disks*. Later drives removed this feature; the controllers simply read each sector header in turn to work out the angle of the biscuit at any given moment, and hence when to read or write the desired sector. Either way, you also need to leave a gap between sectors, to allow for small errors in the speed of rotation (which would then affect precisely how many degrees each sector took up out of the full 360 degree track). After all, a sector overflowing into the one after is a recipe for data loss.
+When writing to the disk, it is important the floppy disk controller sends signals to the read/write head at precisely the correct time to avoid corrupting any data that already exists within that track and on that side. Early 8" systems did not have good timing accuracy, and so the position of each sector was physically marked with a hole in the biscuit. An additional hole would mark which sector was Sector 0.  These holes could be detected with an optical sensor via a hole in the sleeve, which would cause a pulse to be sent to the floppy controller every time one was passed. These are so-called *hard sector* disks. On an 8" floppy disk, these index holes were slightly off-centre. This meant that if you flipped over your single sided disk and attempted to write to the reverse side, the index hole would no longer line up with the sensor and the disk would not work. Disks designed to be flipped would have two index holes, and some enterprising users took their standard single-sided disks apart and simply punched a second index hole in the correct place.
+
+Once floppy controllers got sufficiently good at reading data off the disk in real-time, it was sufficient to have one single *index hole* in the biscuit to mark the start of the track. The start of each sector was indicated using a unique sequence of bits on disk that could never occur in user data. These are so called *soft-sector* disks. The IBM PC only supported this kind, as did most systems from the late 1970s and on.
+
+The hard shelled 3" and 3.5" disks don't have index holes. Instead, there is an offset hole in the metal or plastic hub which the drive motor engages with to rotate the biscuit. This is used by the floppy drive mechanism to generate the index pulse instead.
 
 ## FM Encoding
 
@@ -272,10 +276,17 @@ Note that 3.5" High Density floppies in an IBM PC are often called "1.44MB" but 
 
 [PF10]: https://cowlark.com/fluxengine/doc/disk-epsonpf10.html
 
+## Edits
 
-## Edits 2023-09-03
+### 2023-09-03
 
 * Removed duplicates from IBM pinout table
 * Corrected 32-pin IDC to 34-pin IDC
 * Note that yes, there was like one 40-track 3.5" drive from Epson at the very start
 * Added some references
+
+### 2023-09-04
+
+* Correct ADFS sector counts from 10 to 16
+* Revised notes about index holes and hard/soft sectors
+* Added some more references

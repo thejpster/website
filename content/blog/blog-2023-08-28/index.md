@@ -16,6 +16,7 @@ We're going to talk about:
     - [Standard Shugart Pinout](#standard-shugart-pinout)
     - [IBM PC Pinout](#ibm-pc-pinout)
   - [Rotation Speed](#rotation-speed)
+  - [Write Protection](#write-protection)
 - [The Flux Transitions](#the-flux-transitions)
   - [Hard and Soft Sectors](#hard-and-soft-sectors)
   - [FM Encoding](#fm-encoding)
@@ -131,9 +132,15 @@ The subtle differences between these two standards explain why you can't just st
 
 ## Rotation Speed
 
-Almost all drives rotate the biscuit at 300 rpm, except 8" drives, and the "High Density" 5.25" drives from the IBM PC/AT, which both use 360 rpm.
+Almost all drives rotate the biscuit at 300 rpm. The exceptions are 8" drives, the "High Density" 5.25" drives from the IBM PC/AT, and the 3.5" drives on the NEC PC-98, which all use 360 rpm.
 
-Also of note are early Apple Macintosh 3.5" drives, which vary the drive rpm according to which track is being accessed. I guess this was an attempt to equalise the linear speed of the biscuit past the head (note that Track 0 is much longer than Track 80, yet in a standard drive they go past the head in the exact the same amount of time), but it only really serves to make the disks completely unreadable in anything except another Macintosh variable-speed drive.
+Also of note are early Apple Macintosh 3.5" drives, which vary the drive rpm according to which track is being accessed. I guess this was an attempt to equalise the linear speed of the biscuit past the head (note that Track 0 is much longer than Track 80, yet in a standard drive they go past the head in the exact the same amount of time), but it only really serves to make the disks completely unreadable in anything except another Macintosh variable-speed drive. This was especially evident when the iMac removed the internal floppy drive and required people to buy USB Floppy Drives instead. Invariably, these did not support the variable-speed operation and so early Macintosh disks were unreadable.
+
+## Write Protection
+
+Disks can be physically marked as *write protected*. This will trigger a sensor, which will send a signal to the floppy controller, telling it that writing to this disk should not be allowed.
+
+8" disks had a hole in the sleeve which *prevented* writing - you could cover the hole with tape to make the disk writable. 5.25" disks had a hole in the sleeve which *enabled* writing and you would cover the hole with tape to make the disk read-only. Also, these holes were only on one side so if you were trying to flip your single sided 5.25" floppy disks, you would need to punch a second hole otherwise they would be unwritable. 3" and 3.5" drives had a plastic tab which could be moved to reveal or close a hole, so no tape was required.
 
 # The Flux Transitions
 
@@ -290,3 +297,6 @@ Note that 3.5" High Density floppies in an IBM PC are often called "1.44MB" but 
 * Correct ADFS sector counts from 10 to 16
 * Revised notes about index holes and hard/soft sectors
 * Added some more references
+* Mention write protection
+* Mention PC-98 and its 360rpm 3.5" disks
+

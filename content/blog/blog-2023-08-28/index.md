@@ -264,7 +264,17 @@ The Commodore 1541 was perhaps the most famous Commodore disk drive, being desig
 
 # A Comparison Table
 
+<script lang="text/javascript">
+document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
+function theDomHasLoaded(e) {
+  let table = document.getElementById("comparison-table").children[0];
+  table.classList.add("sortable");
+}
+</script>
+
 Here is a comparison table of some common formats.
+
+<div id="comparison-table">
 
 | Year  | Machine                | Media | Encoding  |   rpm   |  Trks  | Sides | Sec/Trk | SecSz (B) | DiskSz (KiB) |
 | :---: | :--------------------- | :---: | :-------: | :-----: | :----: | :---: | :-----: | --------: | -----------: |
@@ -298,6 +308,8 @@ Here is a comparison table of some common formats.
 | 1989  | Acorn ADFS (F)         | 3.5"  |  **HD**   |   300   | **80** | **2** |   10    |      1024 |         1600 |
 | 1991  | IBM PS/2 (PC-DOS 5.0)  | 3.5"  |  **ED**   |   300   | **80** | **2** |   36    |       512 |         2880 |
 | 1992  | Commodore Amiga 4000   | 3.5"  |  **HD**   |   300   | **80** | **2** |   22    |       512 |         1760 |
+
+</div>
 
 * SD = FM Encoding at 125 kbit/sec, see [*Single Density*](#fm-encoding)
 * DD = MFM Encoding at 250 kbit/sec, see [*Double Density*](#double-density)

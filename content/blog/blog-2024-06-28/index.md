@@ -1,6 +1,6 @@
 +++
 title = "Playing ProTracker files"
-date = "2024-06-14"
+date = "2024-06-28"
 +++
 
 You can now buy Neotron Pico boards direct from Elecrow. See <https://www.elecrow.com/neotron-pico-rev-1-1-assembled.html>. I have very limited stocks, and they are priced at $99 each, for a PCB with all components fitted except the RP2040 and the CR2023 coin-cell. It's Open Source hardware and there's loads of detail on the [Github page](https://github.com/neotron-compute/neotron-pico).

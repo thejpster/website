@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-site:
+  blog-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +22,9 @@ jobs:
           HTACCESS_PASS: ${{ secrets.HTACCESS_PASS }}
         run: |
           echo ${HTACCESS_PASS} | htpasswd -i -c ./public/.htpasswd jonathan
+      - run: |
+          sudo apt-get -y update && sudo apt-get -y install lftp
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}
         run: |
-          rsync -av --delete --rsh="/usr/bin/sshpass -p ${SSH_PASS} ssh -o StrictHostKeyChecking=no -l thejpster" ./public/ thejpster@yali.mythic-beasts.com:/home/thejpster/www/preview.thejpster.org.uk --dry-run
+          lftp -u thejpster,${SSH_PASS} -e "mirror -R -v -c -e ./public /home/thejpster/www/preview.thejpster.org.uk ; bye" yali.mythic-beasts.com

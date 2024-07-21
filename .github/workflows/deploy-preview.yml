@@ -1,0 +1,36 @@
+name: blog-deploy-preview
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  zola-lftp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
+      - run: |
+         sed -i 's~https://thejpster.org.uk~https://preview.thejpster.org.uk~g' config.toml
+      - run: zola build
+      - env:
+          HTACCESS_PASS: ${{ secrets.HTACCESS_PASS }}
+        run: |
+          echo ${HTACCESS_PASS} | htpasswd -i -c ./public/.htpasswd jonathan
+          cat > ./public/.htaccess << EOF
+          AuthName "Blog Preview Protected"
+          AuthType Basic
+          AuthUserFile /home/thejpster/www/preview.thejpster.org.uk/.htpasswd
+          Require valid-user
+          EOF
+      - run: |
+          sudo apt-get -y update && sudo apt-get -y install lftp
+      - env:
+          SSH_PASS: ${{ secrets.YALI_PASS }}
+        run: |
+          lftp -c "set sftp:auto-confirm yes ; open --user thejpster --password ${SSH_PASS} sftp://yali.mythic-beasts.com ; set net:timeout 10 ; mirror -R -v -c -e ./public /home/thejpster/www/preview.thejpster.org.uk ; bye"

@@ -3,6 +3,8 @@ title = "The Rust Society"
 date = "2024-02-09"
 +++
 
+## Intro
+
 What follows are some thoughts I've had swirling around in my head for a while.
 
 Note that whilst I am (at the time of writing) a member of the Rust Leadership Council (the t-launching-pad representative) and a staff member at Ferrous Systems, I write this purely from my own perspective.

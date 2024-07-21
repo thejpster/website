@@ -33,4 +33,4 @@ jobs:
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}
         run: |
-          lftp -u thejpster,${SSH_PASS} -e "mirror -R -v -c -e ./public /home/thejpster/www/preview.thejpster.org.uk ; bye" yali.mythic-beasts.com
+          lftp -u thejpster,${SSH_PASS} -e "set net:timeout 10 ; mirror --ignore-time -R -v -c -e ./public /home/thejpster/www/preview.thejpster.org.uk ; bye" sftp://yali.mythic-beasts.com

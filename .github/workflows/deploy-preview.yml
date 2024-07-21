@@ -1,4 +1,4 @@
-name: blog-deploy
+name: blog-deploy-preview
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  blog-deploy:
+  zola-lftp:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

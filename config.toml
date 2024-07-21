@@ -5,7 +5,7 @@ base_url = "https://thejpster.org.uk"
 compile_sass = true
 
 # Enable RSS
-generate_feed = true
+generate_feeds = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true

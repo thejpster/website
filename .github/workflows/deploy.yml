@@ -22,6 +22,12 @@ jobs:
           HTACCESS_PASS: ${{ secrets.HTACCESS_PASS }}
         run: |
           echo ${HTACCESS_PASS} | htpasswd -i -c ./public/.htpasswd jonathan
+          cat > ./public/.htaccess << EOF
+          AuthName "Blog Preview Protected"
+          AuthType Basic
+          AuthUserFile /home/thejpster/www/preview.thejpster.org.uk/.htpasswd
+          Require valid-user
+          EOF
       - run: |
           sudo apt-get -y update && sudo apt-get -y install lftp
       - env:

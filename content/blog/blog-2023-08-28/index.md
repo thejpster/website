@@ -3,42 +3,9 @@ title = "Everything I know about floppy disks"
 date = "2023-08-28"
 +++
 
+## Intro
+
 Floppy disk drives are curious things. We know them as the slots that ingest those small almost-square plastic "floppy disks" and we only really see them now in Computer Museums. But there's a lot going on in that humble square of plastic and I wanted to write down what I've learned so far.
-
-We're going to talk about:
-
-- [The Physical Disks](#the-physical-disks)
-- [The Mechanisms](#the-mechanisms)
-  - [Sides](#sides)
-  - [Tracks](#tracks)
-    - [8" Drives](#8-drives)
-    - [5.25" Drives](#5-25-drives)
-    - [3" Drives](#3-drives)
-    - [3.5" Drives](#3-5-drives)
-  - [Inserting and Removing the Floppy Disk](#inserting-and-removing-the-floppy-disk)
-  - [Interfaces](#interfaces)
-    - [Standard Shugart 34 Pin Pinout](#standard-shugart-34-pin-pinout)
-    - [IBM PC Pinout](#ibm-pc-pinout)
-  - [Rotation Speed](#rotation-speed)
-  - [Write Protection](#write-protection)
-- [The Flux Transitions](#the-flux-transitions)
-  - [Hard and Soft Sectors](#hard-and-soft-sectors)
-  - [FM Encoding](#fm-encoding)
-  - [MFM Encoding](#mfm-encoding)
-    - [Double Density](#double-density)
-    - [Quad Density](#quad-density)
-    - [High Density 5.25"](#high-density-5-25)
-    - [High Density 3.5"](#high-density-3-5)
-    - [Extended Density 3.5"](#extended-density-3-5)
-  - [Group Coded Recording (GCR) Encoding](#group-coded-recording-gcr-encoding)
-    - [Apple's Disk II](#apple-s-disk-ii)
-    - [Commodore](#commodore)
-- [A Comparison Table](#a-comparison-table)
-  - [References](#references)
-  - [Edits](#edits)
-    - [2023-09-03](#2023-09-03)
-    - [2023-09-04](#2023-09-04)
-    - [2023-09-09](#2023-09-09)
 
 # The Physical Disks
 

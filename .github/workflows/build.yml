@@ -1,5 +1,6 @@
-name: blog-ci
+name: blog-build
 on: [push]
+
 jobs:
   build-site:
     runs-on: ubuntu-latest

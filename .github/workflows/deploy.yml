@@ -1,0 +1,28 @@
+name: blog-deploy
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
+      - run: |
+         sed -i 's~https://thejpster.org.uk~https://preview.thejpster.org.uk~g' config.toml
+      - run: zola build
+      - env:
+          HTACCESS_PASS: ${{ secrets.HTACCESS_PASS }}
+        run: |
+          echo ${HTACCESS_PASS} | htpasswd -i -c ./public/.htpasswd jonathan
+      - env:
+          SSH_PASS: ${{ secrets.YALI_PASS }}
+        run: |
+          rsync -av --delete --rsh="/usr/bin/sshpass -p ${SSH_PASS} ssh -o StrictHostKeyChecking=no -l thejpster" ./public/ thejpster@yali.mythic-beasts.com:/home/thejpster/www/preview.thejpster.org.uk --dry-run

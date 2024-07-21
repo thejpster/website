@@ -21,4 +21,4 @@ jobs:
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}
         run: |
-          lftp -c "set sftp:auto-confirm yes ; open --user thejpster --password ${SSH_PASS} sftp://yali.mythic-beasts.com ; set net:timeout 10 ; mirror -R -v -c -e ./public /home/thejpster/www/preview.thejpster.org.uk ; bye"
+          lftp -c "set sftp:auto-confirm yes ; open --user thejpster --password ${SSH_PASS} sftp://yali.mythic-beasts.com ; set net:timeout 10 ; mirror -R -v -c -e ./public /home/thejpster/www/www.thejpster.org.uk ; bye"

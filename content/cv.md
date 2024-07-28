@@ -50,9 +50,10 @@ In the course of my career I have worked with a huge variety of embedded systems
   * SQL
   * Delphi / Pascal
 * **System Software**
-  * Linux (Buildroot/Debian/Ubuntu/CentOS/Arch)
+  * Linux (Build-root/Debian/Ubuntu/CentOS/Arch)
   * U-Boot
   * Mentor Graphics Nucleus
+  * ThreadX
   * FreeRTOS
   * Zephyr
   * mynewt
@@ -73,15 +74,16 @@ In the course of my career I have worked with a huge variety of embedded systems
 
 #### Senior Embedded Engineer - *Dec 2021 to Present*
 
-Ferrous Systems (<https://www.ferrous-systems.com>) is a Rust programming language consultancy and training provider. 
+Ferrous Systems (<https://www.ferrous-systems.com>) is a Rust programming language consultancy and training provider.
 
 My role includes:
 
-* Providing Rust training to clients
-* Providing Rust consultancy and development services to clients
-* Improving the training material
-* Working on open-source projects
-* Lectures and articles
+* Providing Rust training to clients.
+* Providing Rust consultancy and development services to clients.
+* Contributing to Ferrocene, the safety-qualified Rust compiler, and Knurling, the open-source Rust Embedded toolset.
+* Improving the training material.
+* Working on open-source projects.
+* Lectures and articles.
 
 ### 42 Technology
 
@@ -156,19 +158,72 @@ I worked on the BOSS On-line Submission System, an open-source coursework submis
 
 Developer for an early on-line property sales portal. Web development in Perl, PHP, HTML and JavaScript.
 
+## Open Source Development
+
+Outside of work (and occasionally in work), I have developed the following open-source projects:
+
+* [Neotron Pico] - a microATX single-board computer powered by a Raspberry Pi Pico microcontroller
+* [Neotron OS] - a portable MS-DOS alike single-tasking OS, written in Rust
+* [Neotron Pico BIOS] - the BIOS for the Neotron Pico, with SD Card, Audio and software-generated bitmap and text mode video
+* [The Monotron] - a single-board computer based around the Texas Instruments Tiva-C Launchpad, written in Rust
+* [tlv320aic23] - a driver for the Texas Instruments TLV320AIC23B audio CODEC
+* [nau88c22] - a driver for the Nuvoton NAU88C22 audio CODEC
+* [embedded-sdmmc] - a SD/MMC block device driver and FAT16/FAT32 implementation written in Rust
+* [cmsim] - a simple Arm processor simulator, written in Rust, supporting Armv6-M. Able to boot Neotron OS.
+* [neotron-loader] - a `no_std` ELF parser that doesn't require the ELF data to already be in RAM
+* [neotracker] - a 4-channel ProTracker parser written in `no_std` Rust, with example player
+* [monotron-synth] - a three-channel basic `no_std` wave-table synthesiser, used on The Monotron
+* [vga-framebuffer] - a `no_std` VGA-over-SPI rendering engine, used on The Monotron
+* [rust-beagleboard-x15] - a demo for the Beagleboard X15 which exchanges messages between Linux on the Cortex-A core, and a bare-metal Embedded Rust application on the embedded Cortex-M4 IPU
+* [tm4c-hal] - a HAL and set of Board Support Packages for the Texas Instruments Tiva-C Launchpad and other TM4C123/TM4C129 based boards
+* [grease] - a message-passing application framework for building layered protocol stacks in Rust
+* [multi-map] - a two-key hashmap, written in Rust
+* [pc-keyboard] - a Scan-code decoder for PC XT, AT and PS/2 keyboards, written in Rust
+* [zube] - an Open Source ASIC design for interfacing with Z80 CPU, developed as part of zero2asic and built on Google's MPW3 shuttle
+* [illyria] - a stop-and-wait ARQ using postcard + COBS as a serialisation mechanism, in Rust
+* [pyvmlib] - a Python library for interacting with VMware ESXi servers
+* [tockloader-proto-rs] - an implementation of the `tockloader` protocol, in Rust
+* [rushttp] - an HTTP server written in Rust
+
+[Neotron Pico]: https://github.com/neotron-compute/neotron-pico
+[Neotron OS]: https://github.com/neotron-compute/neotron-os
+[Neotron Pico BIOS]: https://github.com/neotron-compute/neotron-pico-bios
+[embedded-sdmmc]: https://github.com/rust-embedded-community/embedded-sdmmc-rs
+[The Monotron]: https://github.com/thejpster/monotron
+[tlv320aic23]: https://github.com/neotron-compute/tlv320aic23
+[nau88c22]: https://github.com/thejpster/nau88c22
+[cmsim]: https://github.com/thejpster/cmsim
+[neotron-loader]: https://github.com/neotron-compute/neotron-loader
+[monotron-synth]: https://github.com/thejpster/monotron-synth
+[vga-framebuffer]: https://github.com/thejpster/vga-framebuffer-rs
+[tm4c-hal]: https://github.com/rust-embedded-community/tm4c-hal
+[grease]: https://github.com/thejpster/grease
+[multi-map]: https://github.com/rust-embedded-community/multi-map
+[pc-keyboard]: https://github.com/rust-embedded-community/pc-keyboard
+[zube]: https://github.com/thejpster/zube
+[illyria]: https://github.com/thejpster/illyria
+[pyvmlib]: https://github.com/cambridgeconsultants/pyvmlib
+[rust-beagleboard-x15]: https://github.com/thejpster/rust-beagleboard-x15
+[tockloader-proto-rs]: https://github.com/thejpster/tockloader-proto-rs
+[rushttp]: https://github.com/thejpster/rushttp
+
+These works and more can be found at my [personal Github account](https://github.com/thejpster), or my [corporate Github account](https://github.com/jonathanpallant).
+
 ## **Local Government and Community Groups**
 
 ### The Rust Project
 
-#### Member of the Rust Leadership Council: 2023 - Present
+#### Member of the Rust Leadership Council: 2023 - 2024
 
 Council representative for the Launching Pad Team.
 
-### Rust Embedded Working Group
+#### Embedded Devices Working Group: 2018 - 2024
 
-#### Member: 2018 - Present
+I helped found Rust's Embedded Devices Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attended the weekly meetings, as well as reviewed and submitted PRs on their [Github page](https://github.com/rust-embedded).
 
-I helped found the Rust Embedded Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attend the weekly meetings, as well as review and submit PRs on their [Github page](https://github.com/rust-embedded).
+#### Foundation Grant Recipient: 2022
+
+I received $3000 of Grant Funding for The Neotron Project, which paid for the production of 25 Neotron Pico PCBs, which I gave away free-of-charge to developers interested in Embedded Rust.
 
 ### St Ives Town Council
 
@@ -228,30 +283,6 @@ The Cambridge and District Classic Car Club was founded in 1995 and is a multi-m
 
 #### IT Officer: 2002/2003
 
-## Open Source Developer
-
-Outside of work (and occassionally in work), I have developed the following open-source projects:
-
-* The Monotron - a single-board computer based around the Texas Instruments Tiva-C Launchpad, written in Rust
-* The Neotron Project - a family of single-board computers with Arm processors that run the Neotron OS
-* neotron-loader - an ELF parser that doesn't require the ELF data to already be in RAM
-* monotron-synth - a three-channel basic wavetable synthesiser, used on the Monotron
-* vga-framebuffer - a VGA-over-SPI rendering engine, used on the Monotron
-* beagleboard-x15 - a demo for the Beagleboard X15 which exchanges messages between Linux on the Cortex-A core, and a bare-metal Embedded Rust application on the embedded Cortex-M4 IPU
-* rp2040-hal - a HAL and set of Board Support Packages for the Raspberry Pi Pico and other RP2040 based boards
-* tm4c-hal - a HAL and set of Board Support Packages for the Texas Instruments Tiva-C Launchpad and other TM4C123/TM4C129 based boards
-* grease - a message-passing application framework for building layered protocol stacks in Rust
-* embedded-sdmmc - a SD/MMC block device driver and FAT16/FAT32 implementation written in Rust
-* multi-map - a two-key hashmap, written in Rust
-* pc-keyboard - a Scancode decoder for PC XT, AT and PS/2 keyboards, written in Rust
-* zube - an Open Source ASIC design for interfacing with Z80 CPU, developed as part of zero2asic and built on Google's MPW3 shuttle
-* illyria - a stop-and-wait ARQ using postcard + COBS as a serialisation mechanism, in Rust
-* pyvmlib - a Python library for interacting with VMware ESXi servers
-* tockloader-proto-rs - an implementation of the tockloader protocol, in Rust
-* rushtttp - an HTTP server written in Rust
-
-These works and more can be found at my [Github account](https://github.com/thejpster).
-
 ## **Education**
 
 ### University of Warwick
@@ -268,7 +299,7 @@ Listed in alphabetical order.
 
 ### ACCU
 
-* Bristol, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([accu.org]https://accu.org/conf-main/main/) ([youtube.com](https://www.youtube.com/watch?v=hD7ZMOYy0zI))
+* Bristol, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([accu.org](https://accu.org/conf-main/main/)) ([youtube.com](https://www.youtube.com/watch?v=hD7ZMOYy0zI))
 * Bristol, 2019, *Monotron - a 1980s style home computer written in Rust* ([accu.org](https://accu.org/conf-previous/2019/sessions/)) ([youtube.com](https://www.youtube.com/watch?v=BmjqAhRtvHI))
 * Bristol, 2018, *Grease: A Message-Passing Approach to Protocol Stacks in Rust* ([accu.org](https://accu.org/conf-previous/2018/sessions/))
 
@@ -278,6 +309,7 @@ Listed in alphabetical order.
 
 ### Cambridge Raspberry Jam
 
+* Cambridge, 2023, *Is a Pi Pico a computer?* ([youtube.com](https://www.youtube.com/watch?v=7Fa-69AhxPg))
 * Cambridge, 2017, *Computing with Physical Quantities* ([youtube.com](https://www.youtube.com/watch?v=JN40Sz8vtLA))
 * Cambridge, 2016, *Programming in Rust on the Pi* ([youtube.com](https://www.youtube.com/watch?v=6O4OCU45Djo))
 
@@ -289,8 +321,9 @@ Listed in alphabetical order.
 
 ### The Coriolis Effect Show, with Bil Herd and Ben Jordan
 
-* On-line, June 2022, <https://www.youtube.com/watch?v=Fgv_8H3h4Q8>
-* On-line, December 2022, <https://www.youtube.com/watch?v=X1-mt4mrZ9E>
+* On-line, November 2023 (link temporarily unavailable)
+* On-line, June 2022 (link temporarily unavailable)
+* On-line, December 2022 (link temporarily unavailable)
 
 ### Electronics Weekly
 
@@ -300,6 +333,12 @@ Listed in alphabetical order.
 ### Engineering Design Show
 
 * Coventry, 2016, *Using off-the-shelf boards in commercial products*
+
+### EuroRust
+
+* Vienna, 2024, *Writing an SD Card Driver in Rust* (scheduled for October)
+* Brussels, 2023, *Panel: Inside Rust* ([youtube.com](https://www.youtube.com/watch?v=pM_c4HNiEB0))
+* Brussels, 2023, *The Neotron Saga* ([youtube.com](https://www.youtube.com/watch?v=14El4Qy1BnM))
 
 ### High Integrity Software
 
@@ -325,7 +364,8 @@ Listed in alphabetical order.
 
 ### Oxidize
 
-* On-line, Oxidize 1K (2020), *How We Got QUIC Running on the nRF9160 Before Everyone Else* ([oxidizeconf.com](https://oxidizeconf.com/oxidize-1k/))
+* Berlin, 2024, *Workshop: Introduction to Rust for Safety Critical Systems* ([oxidizeconf.com](https://oxidizeconf.com/sessions/intro-safety-critical/))
+* On-line, Oxidize 1K (2020), *How We Got QUIC Running on the nRF9160 Before Everyone Else* ([youtube.com](https://www.youtube.com/watch?v=zPuELAzJyno))
 * Berlin, 2019, Event Host
 
 ### PiWars
@@ -346,6 +386,7 @@ Listed in alphabetical order.
 
 ### RustConf
 
+* Montreal, 2024, *Six Pixels Per Second* (scheduled for September)
 * Portland, 2019, *Monotron - Building a retro computer in Embedded Rust* ([2019.rustconf.com](https://2019.rustconf.com/schedule)) ([youtube.com](https://www.youtube.com/watch?v=PXaSUiGgyEw))
 
 ### RustFest
@@ -362,7 +403,7 @@ Listed in alphabetical order.
 
 ### University of Cambridge
 
-* Department of Computer Science, 2019, *Rust and the Monotron*
+* Department of Computer Science, 2019, *Rust and The Monotron*
 * Jesus College MCR, 2015, *Pi, Penguins, Rhinos and Space*
 * Department of Engineering, 2015, *My life as an Engineer*
 

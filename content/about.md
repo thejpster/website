@@ -14,7 +14,7 @@ I successfully stood for election to [St Ives Town Council](https://www.stivesto
 
 For my day job, I have spent over 15 years as an Embedded Systems Consultant for several Cambridge based product design consultancies. I am currently working at [Ferrous Systems](https://ferrous-systems.com) remotely from my home town of St Ives, providing consulting and training in Rust.
 
-In 2023 I joined the new Rust Leadership Council as the representative for the *Launching Pad* team.
+From 2023-2024, I spent a year on the new Rust Leadership Council as the representative for the *Launching Pad* team.
 
 ## Technical Skills
 
@@ -28,16 +28,10 @@ My collection currently includes:
   * JiffyDOS (for C128, C64 and 1571)
   * External Pi1541
   * CGA to SCART adaptor
-* Apple iMac G4 (white half-sphere or 'lampshade')
-  * 886 MHz G4
-  * Original 60GB hard drive, keyboard, mouse and speakers
-* Apple Powerbook G4 1GHz
-  * SD2IDE replacement drive
 * Amstrad PCW9512
   * 3" CF2DD Drive A:
   * Gotek Drive B:
   * Daisywheel Printer
-* Amstrad CPC464
 * Acorn RiscPC 600
   * 486 PC card
   * Twin-slice case
@@ -67,7 +61,7 @@ My day-to-day laptop is an Dell Inspiron 7400, running Windows 11. I've used a v
 
 I used to own a 1995 Jaguar Sovereign 3.2 LWB (long wheel-base), between 2011 and 2021.
 
-I owned an electric Nissan Leaf for three years, but currently just have the use of my wife's electric MG 5.
+I owned an electric Nissan Leaf for three years, and then an MG 5. Currently I just have the use of my wife's electric Citroen e-C4.
 
 ## Model Railways
 

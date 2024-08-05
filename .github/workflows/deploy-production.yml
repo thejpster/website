@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  zola-lftp:
+  zola-rsync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,9 +16,7 @@ jobs:
         with:
           tool: zola@0.19.1
       - run: zola build
-      - run: |
-          sudo apt-get -y update && sudo apt-get -y install lftp
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}
         run: |
-          lftp -c "set sftp:auto-confirm yes ; open --user thejpster --password ${SSH_PASS} sftp://yali.mythic-beasts.com ; set net:timeout 10 ; mirror -R -v -c -e ./public /home/thejpster/www/www.thejpster.org.uk ; bye"
+          /usr/bin/rsync -ratlzv --rsh="/usr/bin/sshpass -p ${SSH_PASS} ssh -o StrictHostKeyChecking=no" ./public/  thejpster@yali.mythic-beasts.com:/home/thejpster/www/www.thejpster.org.uk/

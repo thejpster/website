@@ -28,9 +28,7 @@ jobs:
           AuthUserFile /home/thejpster/www/preview.thejpster.org.uk/.htpasswd
           Require valid-user
           EOF
-      - run: |
-          sudo apt-get -y update && sudo apt-get -y install lftp
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}
         run: |
-          lftp -c "set sftp:auto-confirm yes ; open --user thejpster --password ${SSH_PASS} sftp://yali.mythic-beasts.com ; set net:timeout 10 ; mirror -R -v -c -e ./public /home/thejpster/www/preview.thejpster.org.uk ; bye"
+          /usr/bin/rsync -ratlz --rsh="/usr/bin/sshpass -p ${SSH_PASS} ssh -o StrictHostKeyChecking=no" ./public/  thejpster@yali.mythic-beasts.com:~/www/www.thejpster.org.uk/

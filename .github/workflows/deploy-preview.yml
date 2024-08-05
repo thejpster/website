@@ -31,4 +31,4 @@ jobs:
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}
         run: |
-          /usr/bin/rsync -ratlz --rsh="/usr/bin/sshpass -p ${SSH_PASS} ssh -o StrictHostKeyChecking=no" ./public/  thejpster@yali.mythic-beasts.com:~/www/www.thejpster.org.uk/
+          /usr/bin/rsync -ratlzv --rsh="/usr/bin/sshpass -p ${SSH_PASS} ssh -o StrictHostKeyChecking=no" ./public/  thejpster@yali.mythic-beasts.com:/home/thejpster/www/preview.thejpster.org.uk/

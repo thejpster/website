@@ -73,13 +73,14 @@ I have ported the <https://github.com/rp-rs> HAL to RP235x, along with a few of 
 
 ```bash=
 rustup target add thumbv8m.main-none-eabihf
+rustup target add riscv32imac-unknown-none-elf
 git clone https://github.com/thejpster/rp-hal-rp2350-public
 cd rp-hal-rp2350-public
 # It builds for Arm
-cargo build --example pwm_blinky --target thumbv8m.main-none-eabihf
+cargo build --example pwm_blinky --target thumbv8m.main-none-eabihf --all-features
 picotool load -t elf ./target/thumbv8m.main-none-eabihf/debug/pwm_blinky
 # Some examples (the ones without interrupts) also build for RISC-V!
-cargo build --example pwm_blinky --target rv32imac-unknown-none-elf
+cargo build --example pwm_blinky --target rv32imac-unknown-none-elf --all-features
 picotool load -t elf ./target/rv32imac-unknown-none-elf/debug/pwm_blinky
 ```
 

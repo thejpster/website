@@ -80,7 +80,7 @@ cd rp-hal-rp2350-public
 cargo build --example pwm_blink --target thumbv8m.main-none-eabihf --all-features
 picotool load -t elf ./target/thumbv8m.main-none-eabihf/debug/pwm_blinky
 # Some examples (the ones without interrupts) also build for RISC-V!
-cargo build --example pwm_blink —-target rv32imac-unknown-none-elf --all-features
+cargo build --example pwm_blink --target rv32imac-unknown-none-elf --all-features
 picotool load -t elf ./target/rv32imac-unknown-none-elf/debug/pwm_blinky
 ```
 

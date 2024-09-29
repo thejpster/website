@@ -314,6 +314,8 @@ The `i8_i16_add` didn't change - it was basically one instruction already.
 
 ## Cortex-M33
 
+The [Arm Cortex-M33](https://developer.arm.com/Processors/Cortex-M33) is a [is similar to the Cortex-M4](https://en.wikipedia.org/wiki/ARM_Cortex-M#Cortex-M33) but supporting Armv8-M with Mainline Extensions. It has a 3-stage pipeline and is *single-issue* (that is, it is not *superscalar*).
+
 ### Plain build
 
 The Cortex-M33 can have either no FPU, or a single-precision FPU (for processing `f32` values). It can also optionally have DSP extensions, or not. We use the `thumbv8m.main-none-eabi` target for this CPU. Let's build our sample:
@@ -478,7 +480,11 @@ Our `i8_i16_add` is back to using the `sxtab` instruction because LLVM assumed t
 
 ## Cortex-M55
 
-The Cortex-M55 is interesting because it optionally has M-Profile Vector Extensions (MVE), also known as Helium. Our target is still `thumbv8m.main-none-eabi` so that won't have changed from the Cortex-M33 plain build, so let's go right to tell LLVM we have a Cortex-M55. Note that using `-C opt-level=3` is important here, as that enables the auto-vectorisation optimisation.
+The [Arm Cortex-M55](https://developer.arm.com/Processors/Cortex-M55) has a 4-stage pipeline and supports supporting Armv8.1-M with Mainline Extensions. According [to this white-paper](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/introduction-to-arm-cortex-m55-processor.pdf), it only has limited dual-issue support and thus doesn't count as a *superscalar* processor.
+
+The Cortex-M55 is interesting because it optionally has M-Profile Vector Extensions (MVE), with the specific implementation known as *Helium*. These are *single-instruction-multiple-data* (SIMD) instructions, similar to *Neon* on the larger Application-profile Arm cores, or SSE on an Intel CPU. Yes, Helium is a lighter version of Neon. The Brits do love a good pun (and this is coming from the company that decided the smaller version of an Arm instruction was a Thumb instruction...)
+
+Our target is still `thumbv8m.main-none-eabi` so that won't have changed from the Cortex-M33 plain build, so let's go right to tell LLVM we have a Cortex-M55. LLVM assumes we have both integer and floating-point MVE support, and the DSP extension. Note that using `-C opt-level=3` is important here, as that enables the auto-vectorisation optimisation.
 
 ```bash
 rustc sample.rs --emit asm --target=thumbv8m.main-none-eabi --edition 2021 --crate-type=rlib -C opt-level=3 -C target-cpu=cortex-m55
@@ -511,7 +517,7 @@ i32_add4:
 
 It can do integers too, so again, just five instructions to double four values and then perform four additions.
 
-If you want MVE without specifying that you have the Cortex-M55 (or Cortex-M85), it's the `+mve` flag for both kinds of MVE, or `+mve.fp` for just floating-point MVE.
+If you want MVE without specifying that you have the Cortex-M55 (or Cortex-M85), it's the `+mve` flag for integer MVE, and `+mve.fp` for floating-point MVE.
 
 Again, we have DSP enabled by default so it has the `sxtab` version of `i8_i16_add`.
 

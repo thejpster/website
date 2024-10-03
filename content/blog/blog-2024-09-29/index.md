@@ -526,3 +526,5 @@ Again, we have DSP enabled by default so it has the `sxtab` version of `i8_i16_a
 We've seen that changing the `target-cpu` can not only change the order of the instructions emitted, but also enable additional CPU features (that we may or may not actually have on our CPU). These can drastically reduce the size of our code and increase the performance - especially when using the M-Profile Vector Extensions.
 
 Why not try coming up with some algorithms in Rust and seeing what affect the different Arm architectures have and what the different `target-cpu` options will do. It's all listed in the [Rust Platform Docs].
+
+( :bulb: **Edit:** I have more to say on this topic [in my next blog](@/blog/blog-2024-10-03/index.md) :bulb: )

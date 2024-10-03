@@ -67,7 +67,7 @@ If we compile for `opt-level=3`, we get a lot of loop unrolling but no new instr
 
 Let's now tell LLVM we have a Cortex-M55, and we want to do `opt-level=2`.
 
-```bash,linenos
+```bash
 rustc sample.rs --emit asm --target=thumbv8m.main-none-eabi --edition 2021 --crate-type=rlib -C opt-level=2 -C target-cpu=cortex-m55
 cat sample.s | grep -v -e "\s\.[a-z]" -e "^\."
 ```

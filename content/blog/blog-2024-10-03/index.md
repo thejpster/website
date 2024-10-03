@@ -99,7 +99,7 @@ It didn't do any loop-unrolling! But what *did* it do?
 * Line 9: Vector load N bytes from the pointer in r0 to the 128-bit register `q0`
   * N will either be 16, or `lr`, whichever is smaller
 * Line 10: Vector shift left each of the N bytes in `q0`
-* Line 11: Vector store N bytes from `q0` to the pointer in `r0`
+* Line 11: Vector store N bytes from `q0` to the pointer in `r0` and increment `r0`
 * Line 12: Decrement `lr` and if it is not zero, return to the label on Line 8
 
 As I understand it, the `letp` instruction isn't even really an instruction that needs to be executed. The loop state is held within the processor outside of the normal registers, and resetting PC back to the loop start and doing the loop decrement effectively takes zero cycles. This loop will take 

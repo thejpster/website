@@ -102,7 +102,7 @@ It didn't do any loop-unrolling! But what *did* it do?
 * Line 11: Vector store N bytes from `q0` to the pointer in `r0` and increment `r0`
 * Line 12: Decrement `lr` and if it is not zero, return to the label on Line 8
 
-As I understand it, the `letp` instruction isn't even really an instruction that needs to be executed. The loop state is held within the processor outside of the normal registers, and resetting PC back to the loop start and doing the loop decrement effectively takes zero cycles. This loop will take 
+As I understand it, the `letp` instruction isn't even really an instruction that needs to be executed. The loop state is held within the processor outside of the normal registers, and resetting PC back to the loop start and doing the loop decrement effectively takes zero cycles.
 
 The impressive thing here is that we didn't have to have any instructions for "handle this in units of 16 bytes, and once that's done, deal with whatever remainder is left over one byte at a time". It's all done in hardware - during a 'do loop', the vector instructions process either 16 bytes, or the number of bytes remaining if you're at the end of the slice. If we want to process 46 bytes, this loop repeats only 3 times - with bytes `0..=15`, `16..=31` and then the remaining `32..=45`. By my calculations ([and looking at this PDF](https://documentation-service.arm.com/static/654414b13f12c06bc0f7d000?token=)) this will take around 25 clocks cycles. Yet it's no bigger, in terms of code space, than the old non-MVE `opt-level=s` loop, which took around 370 clock cycles. I'll take ~15x performance, thank you very much!
 

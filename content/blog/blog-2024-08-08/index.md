@@ -56,7 +56,7 @@ I was given access to various early revisions of the RP2350A, fitted to a pre-pr
 
 ## But does it run Rust?
 
-Of course you can compile Rust code for it. For the Arm [Cortex-M33] cores, use `thumbv8m.main-none-eabihf`. For the [Hazard3] RV32IMAC cores use `rv32imac-unknown-none-elf`. I've tried both and had no issues from a compiler point of view.
+Of course you can compile Rust code for it. For the Arm [Cortex-M33] cores, use `thumbv8m.main-none-eabihf`. For the [Hazard3] RV32IMAC cores use `riscv32imac-unknown-none-elf`. I've tried both and had no issues from a compiler point of view.
 
 My experimental HAL is at <https://github.com/thejpster/rp-hal-rp2350-public>. As of today, that repo is public, but archived. I hope the changes will be taken upstream at <https://github.com/rp-rs>, but I'm about to go on vacation, so I won't be sending the PR. Plus there are some outstanding questions that I want the community to weigh in on:
 
@@ -67,6 +67,8 @@ My experimental HAL is at <https://github.com/thejpster/rp-hal-rp2350-public>. A
 * How do you write a RISC-V interrupt handler, to provide RISC-V RP2350 code with the same `#[interrupt]` macro that Arm RP2350 code gets to enjoy?
 * Who's going to be first to blow the SECURE_MODE OTP bit and see if we can boot signed Rust firmware on this thing?
 
+**Edit:** OK so a few months later I've come back here to a) fix some typos in the examples, and b) let you know that RP2350 HAL support is now available at <https://github.com/rp-rs/rp-hal> so you should go and use that version instead. Not much has changed, but there are probably some useful bug fixes.
+
 ## Never mind the details, show me the demo
 
 I have ported the <https://github.com/rp-rs> HAL to RP235x, along with a few of the examples:
@@ -75,13 +77,13 @@ I have ported the <https://github.com/rp-rs> HAL to RP235x, along with a few of 
 rustup target add thumbv8m.main-none-eabihf
 rustup target add riscv32imac-unknown-none-elf
 git clone https://github.com/thejpster/rp-hal-rp2350-public
-cd rp-hal-rp2350-public
+cd rp-hal-rp2350-public/rp235x-hal
 # It builds for Arm
 cargo build --example pwm_blink --target thumbv8m.main-none-eabihf --all-features
-picotool load -t elf ./target/thumbv8m.main-none-eabihf/debug/pwm_blinky
+picotool load -t elf ./target/thumbv8m.main-none-eabihf/debug/pwm_blink
 # Some examples (the ones without interrupts) also build for RISC-V!
-cargo build --example pwm_blink --target rv32imac-unknown-none-elf --all-features
-picotool load -t elf ./target/rv32imac-unknown-none-elf/debug/pwm_blinky
+cargo build --example pwm_blink --target riscv32imac-unknown-none-elf --all-features
+picotool load -t elf ./target/riscv32imac-unknown-none-elf/debug/pwm_blink
 ```
 
 You will need to follow Raspberry Pi's instructions on how to compile `picotool` using their Pico SDK. Unfortunately, the standard Rust tools like `probe-rs` won't work with the RP2350 until someone adds Arm Debug Interface v6 support, which is highly non-trivial (and well beyond my skills).
@@ -99,7 +101,7 @@ The `rp2040-hal` is the one I have worked on, but I hear good things about `emba
 
 ## What works today in Rust
 
-The RP235x has two Arm Cortex-M33 CPUs, and so the appropriate Rust target for Arm mode is `thumbv8m.main-none-eabihf`. The appropriate target for RISC-V mode is `rv32imac-unknown-none-elf`.
+The RP235x has two Arm Cortex-M33 CPUs, and so the appropriate Rust target for Arm mode is `thumbv8m.main-none-eabihf`. The appropriate target for RISC-V mode is `riscv32imac-unknown-none-elf`.
 
 So far I have:
 

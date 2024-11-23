@@ -63,15 +63,14 @@ Just to confuse things, there were actually two graphics cards [from SGI called 
 
 The GR5 board, with its four Geometry Engines, is underneath. They are connected with a large (and dusty) inter-board connector. They connect to the expansion board riser using SGI's proprietary GIO64 bus, the connectors for which sit in parallel with EISA bus slots for slower cards.
 
+This is the back of the GR5 board.
+
+{{ image(img="blog/blog-2024-11-22/IMG_0151.jpg") }}
+
 Some better shots of the expansion riser.
 
 {{ image(img="blog/blog-2024-11-22/IMG_0152.jpg") }}
 {{ image(img="blog/blog-2024-11-22/IMG_0153.jpg") }}
-
-This is the back of the GR5 board (the bottom half of the XZ graphics card). I had taken it out to clean the connector, hoping it would resolve the black screen issue. But that turned out to be the OSSC playing up.
-
-{{ image(img="blog/blog-2024-11-22/IMG_0151.jpg") }}
-
 
 The inside of a drive bay has this weird almost-but-not-quite SCA connector. It carries 10 MB/sec Fast SCSI-2, which was cooking for 1993 when this chassis was first introduced. You need a 'sled' go in here, which holds a standard 50-pin Fast SCSI drive and adapts the drives connectors to something that fits here. 
 

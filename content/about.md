@@ -104,6 +104,7 @@ You can contact me via:
 * Github - [@thejpster](https://github.com/thejpster), or [@jonathanpallant](https://github.com/jonathanpallant) if I'm at work
 * E-mail - website [&#65;T] thejpster.org.uk
 * Mastodon - [@thejpster@hachyderm.io](https://hachyderm.io/@thejpster)
+* BlueSky - [@thejpster.org.uk](https://bsky.app/profile/thejpster.org.uk)
 * Twitter - [@therealjpster](https://twitter.com/therealjpster) (Defunct)
 * Facebook - [@jonathan.pallant](https://facebook.com/jonathan.pallant) (Defunct)
 * Keybase - [@thejpster](https://keybase.io/thejpster) (Defunct)

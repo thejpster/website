@@ -71,7 +71,7 @@ My N-Gauge model railway was dismantled in 2018 owing to a lack of space. I stil
 
 ### Rust
 
-I have been a huge fan of the Rust programming language since the 1.0 days. As part of this, I produced some [workshop material](https://github.com/thejpster/pi-workshop-rs) for the Raspberry Pi Party 2017. I've also delivered several Embedded Rust training workshops, and it's been a key theme of my projects over the last seven years. In 2021 I was lucky enough to join Ferrous Systems, where I write and teach Rust full-time. In 2023 I was also invited to join the Rust Leadership Council as the representative for the *Launching Pad* team.
+I have been a huge fan of the Rust programming language since the 1.0 days. As part of this, I produced some [workshop material](https://github.com/thejpster/pi-workshop-rs) for the Raspberry Pi Party 2017. I've also delivered several Embedded Rust training workshops, and it's been a key theme of my projects over the last seven years. In 2021 I was lucky enough to join Ferrous Systems, where I write and teach Rust full-time. In 2023/2024 I was also invited to join the Rust Leadership Council where I spent a year as the representative for the *Launching Pad* team.
 
 ### Monotron
 
@@ -81,7 +81,7 @@ You can see more on my [Github](https://github.com/thejpster/monotron).
 
 ### Neotron
 
-Monotron has been followed by Neotron - a family of Arm Cortex-M powered systems which share an OS, through the use of a custom BIOS acting as a hardware abstraction layer. The lead system is powered by a Raspberry Pi Pico microcontroller board and has VGA output, PS/2 keyboard and 16-bit stereo audio.
+Monotron has been followed by [Neotron](https://github.com/neotron-compute) - a family of Arm Cortex-M powered systems which share an OS, through the use of a custom BIOS acting as a hardware abstraction layer. The lead system - the Neotron Pico - is powered by a Raspberry Pi Pico microcontroller board and has VGA output, SD Card slot, PS/2 keyboard and 16-bit stereo audio. Side-quests include microcontroller-friendly ('`no_std`') crates for [decoding IBM PS/2 keyboard data](https://crates.io/crates/pc-keyboard), [reading FAT16 and FAT16 volumes from an SD Card over SPI](https://crates.io/crates/embedded-sdmmc), [parsing ELF files](https://crates.io/crates/neotron-loader) and [playing Amiga ProTracker files](https://github.com/thejpster/neotracker).
 
 You can see more at <https://github.com/neotron-compute>.
 
@@ -89,13 +89,13 @@ You can see more at <https://github.com/neotron-compute>.
 
 With a background in Telecoms firmware which use a strict layered message-passing approach to stack implementation, I wrote a proof-of-concept message-passing framework in Rust, called Grease (because it makes rusty threads work more easily).
 
-The source code is [on Github](https://github.com/thejpster/grease) 
+The source code is [on Github](https://github.com/thejpster/grease).
 
 ### Beagleboard X15
 
 I wrote a pure-Rust firmware for the Cortex-M4 sub-system in the Texas Instruments AM5874 SoC found on the Beagleboard X15. This implemented VirtIO vrings and could exchange messages with a C or Rust user-space application on the Linux/Cortex-A side via a socket.
 
-The source code is [on Github](https://github.com/thejpster/rust-beagleboardx15-demo) 
+The source code is [on Github](https://github.com/thejpster/rust-beagleboardx15-demo).
 
 ## Contact
 

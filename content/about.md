@@ -32,30 +32,60 @@ My collection currently includes:
   * 3" CF2DD Drive A:
   * Gotek Drive B:
   * Daisywheel Printer
-* Acorn RiscPC 600
+* Acorn RiscPC 700
   * 486 PC card
   * Twin-slice case
+  * Maxtor 1GB IDE HDD
+  * Acorn AKA31 SCSI Card
 * BBC Master
   * 3.5" floppy drive
-  * Panasonic Centronics dot-matrix printer
+  * Pi-Tube Direct
+* Commodore Amiga 500
+  * 512KB RAM Expansion
+  * Kickstart Multi-ROM
+* Atari 1040STFM
+* Atari 520ST 'Tower Power'
+  * Housed in a tower case, with custom wiring harness
+  * Three floppy drives (1x 5.25", 2x 3.5")
+  * RAM upgrade to 4MB
+  * ACSI to SCSI adapter
+  * 500MB SCSI HDD
+* Sun Ultra 80
+  * Quad UltraSPARC-II (one CPU is faulty)
+  * 3GB RAM
+  * 18GB SCSI HDD
+  * PGX32 Framebuffer
+* [Silicon Graphics POWER Indigo 2](@/blog/blog-2024-11-22/index.md)
+  * MIPS R8000
+  * 64MB RAM
+  * 4GB SCSI HDD
+  * XZ Graphics
 * Dell Precision T3400 Workstation
   * Core 2 Duo
+  * 1GB RAM
   * Windows XP
   * nVidia Quadro 600
-* Pentium III @ 450 MHz
+* [Pentium III @ 450 MHz](@/blog/blog-2024-06-29/index.md)
   * Windows 98 / MS-DOS 6.22 dual-boot
+  * 128 MB RAM
   * Diamond Viper V770 Ultra
   * SoundBlaster AWE64
+  * PicoGUS
   * Adaptec AHA-2940UW SCSI card
+  * MT32-Pi
+* Sega Master System II
 * Sega MegaDrive
+* Nintendo SuperNES
 * Microsoft Xbox
 * Nintendo Wii
   * With Gamecube memory module and controllers
+* Sony Playstation
 * Sony Playstation 2
 * Sony Playstation 3
 * Sony Playstation 4
+* Various Raspberry Pis
 
-My day-to-day laptop is an Dell Inspiron 7400, running Windows 11. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003, but these days I need to share the laptop with my family.
+My day-to-day machines are a Dell Inspiron 7400 laptop and an HP Z1 G5 desktop, both running Windows 11. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003, but these days I need to share the computers with my family.
 
 ## Cars
 
@@ -71,7 +101,7 @@ My N-Gauge model railway was dismantled in 2018 owing to a lack of space. I stil
 
 ### Rust
 
-I have been a huge fan of the Rust programming language since the 1.0 days. As part of this, I produced some [workshop material](https://github.com/thejpster/pi-workshop-rs) for the Raspberry Pi Party 2017. I've also delivered several Embedded Rust training workshops, and it's been a key theme of my projects over the last seven years. In 2021 I was lucky enough to join Ferrous Systems, where I write and teach Rust full-time. In 2023 I was also invited to join the Rust Leadership Council as the representative for the *Launching Pad* team.
+I have been a huge fan of the Rust programming language since the 1.0 days. As part of this, I produced some [workshop material](https://github.com/thejpster/pi-workshop-rs) for the Raspberry Pi Party 2017. I've also delivered several Embedded Rust training workshops, and it's been a key theme of my projects over the last seven years. In 2021 I was lucky enough to join Ferrous Systems, where I write and teach Rust full-time. In 2023/2024 I was also invited to join the Rust Leadership Council where I spent a year as the representative for the *Launching Pad* team.
 
 ### Monotron
 
@@ -81,7 +111,7 @@ You can see more on my [Github](https://github.com/thejpster/monotron).
 
 ### Neotron
 
-Monotron has been followed by Neotron - a family of Arm Cortex-M powered systems which share an OS, through the use of a custom BIOS acting as a hardware abstraction layer. The lead system is powered by a Raspberry Pi Pico microcontroller board and has VGA output, PS/2 keyboard and 16-bit stereo audio.
+Monotron has been followed by [Neotron](https://github.com/neotron-compute) - a family of Arm Cortex-M powered systems which share an OS, through the use of a custom BIOS acting as a hardware abstraction layer. The lead system - the Neotron Pico - is powered by a Raspberry Pi Pico microcontroller board and has VGA output, SD Card slot, PS/2 keyboard and 16-bit stereo audio. Side-quests include microcontroller-friendly ('`no_std`') crates for [decoding IBM PS/2 keyboard data](https://crates.io/crates/pc-keyboard), [reading FAT16 and FAT16 volumes from an SD Card over SPI](https://crates.io/crates/embedded-sdmmc), [parsing ELF files](https://crates.io/crates/neotron-loader) and [playing Amiga ProTracker files](https://github.com/thejpster/neotracker).
 
 You can see more at <https://github.com/neotron-compute>.
 
@@ -89,13 +119,13 @@ You can see more at <https://github.com/neotron-compute>.
 
 With a background in Telecoms firmware which use a strict layered message-passing approach to stack implementation, I wrote a proof-of-concept message-passing framework in Rust, called Grease (because it makes rusty threads work more easily).
 
-The source code is [on Github](https://github.com/thejpster/grease) 
+The source code is [on Github](https://github.com/thejpster/grease).
 
 ### Beagleboard X15
 
 I wrote a pure-Rust firmware for the Cortex-M4 sub-system in the Texas Instruments AM5874 SoC found on the Beagleboard X15. This implemented VirtIO vrings and could exchange messages with a C or Rust user-space application on the Linux/Cortex-A side via a socket.
 
-The source code is [on Github](https://github.com/thejpster/rust-beagleboardx15-demo) 
+The source code is [on Github](https://github.com/thejpster/rust-beagleboardx15-demo).
 
 ## Contact
 
@@ -104,6 +134,7 @@ You can contact me via:
 * Github - [@thejpster](https://github.com/thejpster), or [@jonathanpallant](https://github.com/jonathanpallant) if I'm at work
 * E-mail - website [&#65;T] thejpster.org.uk
 * Mastodon - [@thejpster@hachyderm.io](https://hachyderm.io/@thejpster)
+* BlueSky - [@thejpster.org.uk](https://bsky.app/profile/thejpster.org.uk)
 * Twitter - [@therealjpster](https://twitter.com/therealjpster) (Defunct)
 * Facebook - [@jonathan.pallant](https://facebook.com/jonathan.pallant) (Defunct)
 * Keybase - [@thejpster](https://keybase.io/thejpster) (Defunct)

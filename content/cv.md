@@ -14,7 +14,7 @@ In the course of my career I have worked with a huge variety of embedded systems
 
 * **Processor Families**
   * Arm Cortex-M
-    * Raspberry Pi RP2040
+    * Raspberry Pi RP2040, RP2350
     * Nordic Semiconductor nRF52, nRF91
     * ST Micro STM32
     * Texas Instruments Tiva-C, CC1310
@@ -29,6 +29,7 @@ In the course of my career I have worked with a huge variety of embedded systems
   * Cambridge Consultants XAP2
     * CSR BlueCore 5
   * RISC-V
+    * Raspberry Pi RP2350
     * Espressif ESP32-C3
     * StarFive JH7100
   * DSP
@@ -53,8 +54,8 @@ In the course of my career I have worked with a huge variety of embedded systems
   * Linux (Build-root/Debian/Ubuntu/CentOS/Arch)
   * U-Boot
   * Mentor Graphics Nucleus
-  * ThreadX
-  * FreeRTOS
+  * Eclipse ThreadX
+  * Amazon FreeRTOS
   * Zephyr
   * mynewt
   * Bluestack
@@ -194,6 +195,7 @@ Outside of work (and occasionally in work), I have developed the following open-
 [nau88c22]: https://github.com/thejpster/nau88c22
 [cmsim]: https://github.com/thejpster/cmsim
 [neotron-loader]: https://github.com/neotron-compute/neotron-loader
+[neotracker]: https://github.com/thejpster/neotracker
 [monotron-synth]: https://github.com/thejpster/monotron-synth
 [vga-framebuffer]: https://github.com/thejpster/vga-framebuffer-rs
 [tm4c-hal]: https://github.com/rust-embedded-community/tm4c-hal
@@ -303,18 +305,21 @@ Listed in alphabetical order.
 * Bristol, 2019, *Monotron - a 1980s style home computer written in Rust* ([accu.org](https://accu.org/conf-previous/2019/sessions/)) ([youtube.com](https://www.youtube.com/watch?v=BmjqAhRtvHI))
 * Bristol, 2018, *Grease: A Message-Passing Approach to Protocol Stacks in Rust* ([accu.org](https://accu.org/conf-previous/2018/sessions/))
 
+### Arm
+
+* On-line, 2024, *Building Safe and Secure Software with Rust on Arm*, ([community.arm.com](https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/rust-on-arm-building-safe-secure-software))
+
 ### BBC News
 
 * On-line, 2013, *Raspberry Pi aids cyber 'safety net' for African rhino* ([bbc.co.uk](https://www.bbc.co.uk/news/technology-24014926))
 
-### Cambridge Raspberry Jam
-
-* Cambridge, 2023, *Is a Pi Pico a computer?* ([youtube.com](https://www.youtube.com/watch?v=7Fa-69AhxPg))
-* Cambridge, 2017, *Computing with Physical Quantities* ([youtube.com](https://www.youtube.com/watch?v=JN40Sz8vtLA))
-* Cambridge, 2016, *Programming in Rust on the Pi* ([youtube.com](https://www.youtube.com/watch?v=6O4OCU45Djo))
-
 ### Centre for Computing History
 
+* Cambridge, 2024, *Retro Computer Festival - Backwards Compatibility*
+* Cambridge, 2024, *Synthesised - The History of PC Sound*
+* Cambridge, 2023, *Retro Computer Festival - The History of Arm*
+* Cambridge, 2023, *Synthesised - The History of PC Sound*
+* Cambridge, 2022, *Retro Computer Festival - Computers Doing the Wrong Thing*
 * Cambridge, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([computinghistory.co.uk](http://www.computinghistory.org.uk/det/67361/TechTalk-Jonathan-Pallant-Neotron-writing-a-single-tasking-DOS-for-Arm-microcontrollers-in-Rust-Thursday-12th-May-2022/))
 * Cambridge, 2019, *Rust Tutorial with Jonathan Pallant* ([computinghistory.org.uk](https://www.computinghistory.org.uk/det/51020/Rust-Tutorial-with-Jonathan-Pallant/))
 * Cambridge, 2017, *Coding as an Art Form* ([youtube.com](https://youtu.be/oL60-8GPgpg))
@@ -336,7 +341,7 @@ Listed in alphabetical order.
 
 ### EuroRust
 
-* Vienna, 2024, *Writing an SD Card Driver in Rust* (scheduled for October)
+* Vienna, 2024, *Writing an SD Card Driver in Rust* ([youtube.com](https://www.youtube.com/watch?v=-ewuFNKIAVI))
 * Brussels, 2023, *Panel: Inside Rust* ([youtube.com](https://www.youtube.com/watch?v=pM_c4HNiEB0))
 * Brussels, 2023, *The Neotron Saga* ([youtube.com](https://www.youtube.com/watch?v=14El4Qy1BnM))
 
@@ -365,7 +370,7 @@ Listed in alphabetical order.
 ### Oxidize
 
 * Berlin, 2024, *Workshop: Introduction to Rust for Safety Critical Systems* ([oxidizeconf.com](https://oxidizeconf.com/sessions/intro-safety-critical/))
-* On-line, Oxidize 1K (2020), *How We Got QUIC Running on the nRF9160 Before Everyone Else* ([youtube.com](https://www.youtube.com/watch?v=zPuELAzJyno))
+* On-line, 2020, *How We Got QUIC Running on the nRF9160 Before Everyone Else* ([youtube.com](https://www.youtube.com/watch?v=zPuELAzJyno))
 * Berlin, 2019, Event Host
 
 ### PiWars
@@ -373,11 +378,15 @@ Listed in alphabetical order.
 * Cambridge, 2017, Intermediate Category - First Place, ([piwars.org](https://piwars.org/2017-competition/aftermath/))
 * Cambridge, 2016, Runner Up
 
-### Raspberry Pi 'Big Birthday Weekend' / 'Big Pi Party'
+### Raspberry Pi / Cambridge Raspberry Jam
 
+* On-line, 2024, *Rust on RP2350*, ([raspberrypi.com](https://www.raspberrypi.com/news/rust-on-rp2350/))
+* Cambridge, 2024, *Is a Pi Pico a computer?* ([youtube.com](https://www.youtube.com/watch?v=7Fa-69AhxPg))
 * Cambridge, 2017, *Rust as an alternative to Python* ([raspberrypi.org](https://www.raspberrypi.org/app/uploads/2017/02/Birthday-Schedule-Saturday-_-Sunday.pdf))
 * Cambridge, 2017, *Workshop: Introduction to Rust on the Raspberry Pi*
+* Cambridge, 2017, *Computing with Physical Quantities* ([youtube.com](https://www.youtube.com/watch?v=JN40Sz8vtLA))
 * Cambridge, 2016, *Driving Neopixels from Python*
+* Cambridge, 2016, *Programming in Rust on the Pi* ([youtube.com](https://www.youtube.com/watch?v=6O4OCU45Djo))
 * Cambridge, 2015, *Pi, Penguins, Rhinos and Space* ([raspberrypi.org](https://www.raspberrypi.org/blog/birthday-weekend-happenings/))
 
 ### Rust Belt Rust
@@ -386,7 +395,7 @@ Listed in alphabetical order.
 
 ### RustConf
 
-* Montreal, 2024, *Six Pixels Per Second* (scheduled for September)
+* Montreal, 2024, *Six Pixels Per Second* ([youtube.com](https://www.youtube.com/watch?v=W45_KnLZ804))
 * Portland, 2019, *Monotron - Building a retro computer in Embedded Rust* ([2019.rustconf.com](https://2019.rustconf.com/schedule)) ([youtube.com](https://www.youtube.com/watch?v=PXaSUiGgyEw))
 
 ### RustFest

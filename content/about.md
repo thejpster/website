@@ -32,30 +32,60 @@ My collection currently includes:
   * 3" CF2DD Drive A:
   * Gotek Drive B:
   * Daisywheel Printer
-* Acorn RiscPC 600
+* Acorn RiscPC 700
   * 486 PC card
   * Twin-slice case
+  * Maxtor 1GB IDE HDD
+  * Acorn AKA31 SCSI Card
 * BBC Master
   * 3.5" floppy drive
-  * Panasonic Centronics dot-matrix printer
+  * Pi-Tube Direct
+* Commodore Amiga 500
+  * 512KB RAM Expansion
+  * Kickstart Multi-ROM
+* Atari 1040STFM
+* Atari 520ST 'Tower Power'
+  * Housed in a tower case, with custom wiring harness
+  * Three floppy drives (1x 5.25", 2x 3.5")
+  * RAM upgrade to 4MB
+  * ACSI to SCSI adapter
+  * 500MB SCSI HDD
+* Sun Ultra 80
+  * Quad UltraSPARC-II (one CPU is faulty)
+  * 3GB RAM
+  * 18GB SCSI HDD
+  * PGX32 Framebuffer
+* [Silicon Graphics POWER Indigo 2](@/blog/blog-2024-11-22/index.md)
+  * MIPS R8000
+  * 64MB RAM
+  * 4GB SCSI HDD
+  * XZ Graphics
 * Dell Precision T3400 Workstation
   * Core 2 Duo
+  * 1GB RAM
   * Windows XP
   * nVidia Quadro 600
-* Pentium III @ 450 MHz
+* [Pentium III @ 450 MHz](@/blog/blog-2024-06-29/index.md)
   * Windows 98 / MS-DOS 6.22 dual-boot
+  * 128 MB RAM
   * Diamond Viper V770 Ultra
   * SoundBlaster AWE64
+  * PicoGUS
   * Adaptec AHA-2940UW SCSI card
+  * MT32-Pi
+* Sega Master System II
 * Sega MegaDrive
+* Nintendo SuperNES
 * Microsoft Xbox
 * Nintendo Wii
   * With Gamecube memory module and controllers
+* Sony Playstation
 * Sony Playstation 2
 * Sony Playstation 3
 * Sony Playstation 4
+* Various Raspberry Pis
 
-My day-to-day laptop is an Dell Inspiron 7400, running Windows 11. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003, but these days I need to share the laptop with my family.
+My day-to-day machines are a Dell Inspiron 7400 laptop and an HP Z1 G5 desktop, both running Windows 11. I've used a variety of Linux distributions as my desktop OS pretty much exclusively since 2003, but these days I need to share the computers with my family.
 
 ## Cars
 

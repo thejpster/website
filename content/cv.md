@@ -316,9 +316,9 @@ Listed in alphabetical order.
 ### Centre for Computing History
 
 * Cambridge, 2024, *Retro Computer Festival - Backwards Compatibility*
-* Cambridge, 2024, *Sythesised - The History of PC Sound*
+* Cambridge, 2024, *Synthesised - The History of PC Sound*
 * Cambridge, 2023, *Retro Computer Festival - The History of Arm*
-* Cambridge, 2023, *Sythesised - The History of PC Sound*
+* Cambridge, 2023, *Synthesised - The History of PC Sound*
 * Cambridge, 2022, *Retro Computer Festival - Computers Doing the Wrong Thing*
 * Cambridge, 2022, *Neotron – writing a single-tasking ‘DOS’ for Arm microcontrollers, in Rust* ([computinghistory.co.uk](http://www.computinghistory.org.uk/det/67361/TechTalk-Jonathan-Pallant-Neotron-writing-a-single-tasking-DOS-for-Arm-microcontrollers-in-Rust-Thursday-12th-May-2022/))
 * Cambridge, 2019, *Rust Tutorial with Jonathan Pallant* ([computinghistory.org.uk](https://www.computinghistory.org.uk/det/51020/Rust-Tutorial-with-Jonathan-Pallant/))

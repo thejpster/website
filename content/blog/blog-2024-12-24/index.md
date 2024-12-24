@@ -3,8 +3,6 @@ title = "An Amstrad Christmas"
 date = "2024-12-24"
 +++
 
-## Intro
-
 Amstrad always wanted to have a 'killer product' out for Christmas. Before home computers it might have been a CB Radio, or something like that, but between 1984 and 1995, their big Christmas product was usually some kind of home computer. These were normally announced in July-September, in time to ramp up sales for the Christmas rush.
 
 I couldn't find a list anywhere, so here's a list. It's probably wrong - feel free to send me corrections, with references.

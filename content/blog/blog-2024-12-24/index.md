@@ -9,7 +9,7 @@ I couldn't find a list anywhere, so here's a list. It's probably wrong - feel fr
 
 * 1984 - [CPC464]
 * 1985 - [CPC6128], [PCW8256/PCW8512]
-* 1986 - [PC1512]
+* 1986 - [PC1512], [Sinclair Spectrum +2][Plus2]
 * 1987 - [PC1640] and [PCW9512]
 * 1988 - The [Amstrad PC20 / Sinclair PC200][PC200].
   * (The larger Amstrad [PC2000] series wasn't out until February 1989)
@@ -25,6 +25,7 @@ I couldn't find a list anywhere, so here's a list. It's probably wrong - feel fr
 [CPC6128]: https://nosher.net/archives/computers/your_computer_1985-09_007
 [PCW8256/PCW8512]: https://en.wikipedia.org/wiki/Amstrad_PCW
 [PC1512]: https://archive.org/details/practical-computing/PracticalComputing-1986-11/page/58/mode/2up
+[Plus2]: http://k1.spdns.de/Vintage/Sinclair/86/ZX%20Spectrum%2B2/ZX%20Spectrum%2B2%20Review.html
 [PC1640]: https://www.i-programmer.info/history/machines/1364-alan-sugar-and-the-fall-of-amstrad.html?start=2
 [PCW9512]: https://www.techmonitor.ai/technology/amstrad_launches_up_market_word_processor_in_us_first
 [PC200]: https://archive.org/details/Your_Sinclair_035/page/n25/mode/2up?view=theater

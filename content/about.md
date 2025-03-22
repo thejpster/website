@@ -65,6 +65,7 @@ My collection currently includes:
   * 1GB RAM
   * Windows XP
   * nVidia Quadro 600
+  * 120GB SATA HDD
 * [Pentium III @ 450 MHz](@/blog/blog-2024-06-29/index.md)
   * Windows 98 / MS-DOS 6.22 dual-boot
   * 128 MB RAM
@@ -73,6 +74,13 @@ My collection currently includes:
   * PicoGUS
   * Adaptec AHA-2940UW SCSI card
   * MT32-Pi
+  * 18GB SCSI HDD
+* HP Z1 Workstation
+  * Intel Core i9-9900 @ 3.1 GHz
+  * 32 GB RAM
+  * 500 GB NVME SSD
+  * Windows 11
+  * SATA BD-ROM / DVD+RW drive
 * Sega Master System II
 * Sega MegaDrive
 * Nintendo SuperNES

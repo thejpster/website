@@ -15,6 +15,8 @@ theme = "lightspeed"
 
 title = "JP's Website"
 
+author = "Jonathan 'theJPster' Pallant"
+
 taxonomies = [
     # You can enable/disable RSS
     {name = "categories", rss = true},

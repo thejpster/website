@@ -60,6 +60,21 @@ My collection currently includes:
   * 64MB RAM
   * 4GB SCSI HDD
   * XZ Graphics
+* [HP 9000 Visualize B132L+ PA-RISC Workstation](@/blog/blog-2025-03-22/index.md)
+  * PA-RISC PA-7300LC @ 132 MHz
+  * 128 MiB ECC RAM
+  * Visualize-EG Graphics
+  * No hard drive or CD-ROM drive, currently
+* [HP 9000 Visualize C3000 PA-RISC Workstation](@/blog/blog-2025-03-22/index.md)
+  * PA-RISC PA-8500 @ 132 MHz
+  * 2.5 GiB ECC RAM
+  * Visualize FX5Pro Graphics
+  * 9 GiB SCSI HDD
+  * IDE CD-ROM drive
+* Digital AlphaStation 500
+  * Alpha 21164A
+  * Unknown RAM
+  * Currently dead
 * Dell Precision T3400 Workstation
   * Core 2 Duo
   * 1GB RAM

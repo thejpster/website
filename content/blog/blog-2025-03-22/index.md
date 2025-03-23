@@ -163,6 +163,7 @@ Note that if you find *HP-UX 11i* or *HP-UX 11i v1* that's HP's renaming of HP-U
 The versions of HP-UX I am interested in came on multiple CD-ROMs, and HP appeared to produce a new set of CD-ROMs every three months. The discs were:
 
 * The Core OS - you can boot from this, and install the basic OS with CDE desktop
+* Additional Core Enhancements (or ACE) - this is a revised Core OS install disk with extra patches included
 * Applications (usually four or five CDs) - extra things you can install, like Java, or the HP ANSI C compiler. Annoyingly many of the applications cost extra and so are shipped encrypted.
 * Support Plus - a series of patches to update the Applications and the Core OS
 * LaserROM - HP-UX documentation on CD
@@ -171,24 +172,53 @@ Sometimes the new set would just have the same Core OS disk as the previous set,
 
 There are guides to installing HP-UX available as PDF from HP that you can easily find online, but here are some important notes.
 
-1. There is no nsswitch.conf file by default - without it, it falls back to some defaults.
-2. The defaults cause it to check hostnames against DNS first and if it fails to resolve, if gives up without looking at /etc/hosts.
-3. If your hostname doesn't resolve, you can't get into the CDE desktop.
-4. You can either `cp /etc/nsswitch.hp_defaults /etc/nsswitch.conf` and edit it to put `files` before `dns`, or fix your DNS so it knows your machine's hostname.
-5. You'll have to use `vi` to edit the file. Sorry.
-6. You'll need to mount the CD-ROM manually, with something like `mount /dev/dsk/c2t0d0 /cdrom`.
-7. You'll need to `mkdir /cdrom` first, of course.
-8. HP-UX only includes `sh`, so there's no up-arrow to re-visit previous commands, and no tab-completion. You'll just have to type your shell commands accurately.
-9. You can install software from the Application CD-ROMs running `swinstall` as root and selecting the path of the mounted CD-ROM (e.g. `/cdrom`)
-10. Unless it's the Support Plus disk, in which case you need to point it to one of the patch folders, like `/cdrom/QPK1100`.
-11. The Support disk has three kinds of patches on it.
-12. There's a C compiler installed by default, but it only supports K&R C and not ANSI C, so it's useless.
-13. The HP ANSI C compiler is a paid-add on, shipped as an encrypted application.
-14. If you want to install the encrypted applications, you'll need the codeword, and good luck finding one.
-15. <https://mirrors.develooper.com/hpux/downloads.html> has GCC for HP-UX and other useful packages you can download.
-16. If you have a Software Depo tarball (`.sd`), you can run `swinstall` as root, and point it at the tarball (`/tmp/my_package.sd`) and it will install it.
-17. The HP-UX desktop (CDE) seems to come with basically no applications - just a file browser, a text editor and a terminal. Silicon Graphics' Magic Desktop it ain't.
-18. You can find applications like Netscape Communicator for HP-UX at <https://fsck.technology/software/HP/HP-UX%20Appplications/>, but I found Netscape a bit crashy.
+### Installing
+
+* You can boot from the Core OS disk, or the Core OS with Additional Enhancements disk (also known as the Additional Core Enhancements disk, or ACE)
+* Interrupt the boot process, run `SEA` to search for devices, and then something like `boot scsi.1.0.0` (or whatever appears in your search results).
+* Archive.org have some lovely colour scans of original HP-UX CD-ROMs, if you want to see what a real disk looked like.
+* HP-UX 11.00 sets up Logical Volume Manager, but the volumes are quite small, so you'll want to make `/var` and `/opt` and `/home` bigger by doing an 'Advanced' installation.
+* If you use a later *Additional Core Enhancements* (ACE) HP-UX 11.00 install disk, when it asks you what kind of install you want you can select "Technical Computing Operating Environment" and it will (apparently) install the *Graphics and Technical Computing Software* bundle automatically and give you OpenGL support out of the box.
+* If you have a Visualize FX5Pro, like me, you'll need to install a Hardware Enablement (HWE) update otherwise the X11 desktop gets big borders warning you you're on a fallback video driver with bad performance. Maybe there's an ACE version that has that already on it.
+
+### Straight After Installation
+
+* X11 won't start if you don't have a mouse plugged in.
+* There is no nsswitch.conf file by default - without it, it falls back to some defaults.
+* The defaults cause it to check hostnames against DNS first and if it fails to resolve, if gives up without looking at /etc/hosts.
+* If your hostname doesn't resolve, you can't get into the CDE desktop.
+* You can either `cp /etc/nsswitch.hp_defaults /etc/nsswitch.conf` and edit it to put `files` before `dns`, or fix your DNS so it knows your machine's hostname.
+* You'll have to use `vi` to edit the file. Sorry.
+* There is only a `root` user. Make yourself a regular user by running the System Admin tool (`sam`).
+* The `root` user home directory is `/`, which I don't like. I guess you could try and switch that to `/root` by modifying the account in `sam`.
+
+### Using HP-UX
+
+* You'll need to mount the CD-ROM manually, with something like `mount /dev/dsk/c2t0d0 /cdrom`.
+* You'll need to `mkdir /cdrom` first, of course.
+* HP-UX only includes `sh`, so there's no up-arrow to re-visit previous commands, and no tab-completion. You'll just have to type your shell commands accurately.
+* The HP-UX desktop (CDE) seems to come with basically no applications - just a file browser, a text editor, a terminal and a calculator. Silicon Graphics' Magic Desktop it ain't.
+
+### Patches and Updates and Applications
+
+* You can install software from the HP-UX CD-ROMs by running `swinstall` as root and selecting the path of the mounted CD-ROM (e.g. `/cdrom`).
+* You'll want to log in to the desktop as root so you can use the GUI version of `swinstall`. Running it from a terminal where you used `su` will only give you the text-mode version.
+* Unless it's the Support Plus disk, in which case you need to point it to one of the patch folders, like `/cdrom/QPK1100`.
+* If you have a Software Depo file (`.sd` or `.depot`), you can run `swinstall` as root, and point it at the file (`/tmp/my_package.sd`) instead of the CD-ROM mount and it will install from it.
+* The Support disk has three kinds of patches on it:
+  * Quality Pack (`QPK1100`)
+  * Hardware Enablement and Critical Bundle (`XSWHWCR1100`)
+  * General Release (`XWSGR1100`)
+* Patches all have names like `PHSS_17535`
+* When a patch is installed the files it replaces are kept in `/var/adm/sw/save`. This folder can become very large. I guess the idea is you can try a patch and if it causes you issues you can drop it again, but if you commit to a patch, the save data is removed and you can no longer roll it back.
+* You can run `cleanup -c 1` as root, which means "commit patches which have been superceded". 
+* There's a C compiler (`cc`) installed by default, but it only supports K&R C and not ANSI C, so it's mostly useless for anything except kernel rebuilds (which some of the patches trigger automatically).
+* The HP ANSI C compiler is a paid-add on, shipped as an encrypted application.
+* If you want to install the encrypted applications, you'll need the codeword, and good luck finding one. The codeword is based on your Customer ID, and the specific ID of the CD you are installing from. So if you have a codeword for *HP-UX 11.00 2000-03 Applications 1 B3782-10464* but have the media for *HP-UX 11.00 2000-09 Applications 1 5011-7864*, you're out of luck. Back in the day you could call HP and they'll give you a new codeword. Assuming you have your original invoice.
+* <https://mirrors.develooper.com/hpux/downloads.html> has GCC for HP-UX and other useful packages you can download.
+* You can find applications like Netscape Communicator for HP-UX at <https://fsck.technology/software/HP/HP-UX%20Appplications/>.
+* If you can only find MDF/MDS files online, these are raw CD-ROM images created with the program Alcohol120%. You can use that program to burn the images back to a CD-R, or you can use [Crystal AnyToISO](https://crystalidea.com/anytoiso) to convert them to ISO images that you can host on a BlueSCSI.
+* If you want OpenGL support, and you didn't pick the right kind of install, you need a file called `B6268AA_B.11.11.20.12_HP-UX_B.11.11_32_64.depot`, which contains the *Graphics and Technical Computing Software* bundle.
 
 If you have any ideas for interesting things I can do with a 1999 UNIX workstation, let me know! So far I've tried [my mandelbrot benchmark](https://github.com/thejpster/mandelbrot) and it did surprisingly well.
 

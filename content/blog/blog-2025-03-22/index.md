@@ -75,7 +75,7 @@ The tech specs are:
 
 The L+ in the model name is important as it indicates that it has low-voltage differential (LVD) SCSI, whilst the B132L has high-voltage differential SCSI. You almost certainly don't want the latter - it will damage the much more common single-ended and LVD SCSI drives you find on eBay if you connect them up.
 
-My particular machine dates from about 1997 and is from Vodafone where it had been a DNS and licence server in production for around 25 years - it was retired only recently. It came with a SCSI DDS2 tape drive, but no hard disk. I have tested the machine with a disk from another machine, but I'm currently looking for a 64-pin Ultra-Wide SCSI to permanently fit to it.
+My particular machine dates from about 1997 and is from Vodafone where it had been a DNS and licence server in production for around 25 years - it was retired only recently. It came with a SCSI DDS2 tape drive, but no hard disk. I have tested the machine with a disk from another machine, but I'm currently looking for a 68-pin Ultra-Wide SCSI to permanently fit to it.
 
 To open the machine, place it on its front, remove four thumb-screws, and lift by the handle.
 

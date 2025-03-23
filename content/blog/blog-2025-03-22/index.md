@@ -17,11 +17,11 @@ I guess you could add Acorn ARM running RISC iX or Linux to that list - there wa
 
 Shortly after acquiring the Indigo 2, I managed to obtain a Sun Ultra 80, with three (yes, the fourth is broken) UltraSPARC-II CPUs running at 450 MHz. I've been having a good time installing Solaris 7 and trying out a few things. Maybe more on that another day.
 
-Then, the other day, I was at the Raspberry Jam in Cambridge, and I somehow ended up coming up with a Digital AlphaStation 500. Unfortunately, it's quite dead. Maybe more on that another day too - debugging the SROM and the initial boot-up process has been quite interesting.
+Then, the other day, I was at the Raspberry Jam in Cambridge, and I somehow ended up coming home with a Digital AlphaStation 500. Unfortunately, it's very dead. Maybe more on that another day too - debugging the SROM and the initial boot-up process has been quite interesting.
 
 I've wanted an IBM RS/6000 for ages, but they go for a lot of money on eBay. Well out of my price range.
 
-And that leaves PA-RISC. An odd-ball that I knew nothing about. Well, I saw a machine and it was reasonably priced, and the vendor was lovely. In fact, I ended up with two machines being hand-delivered to my house by the vendor, and I didn't have to part with much money. Well, I suppose these things are relative, and given I don't actually have a use for two PA-RISC machines, perhaps positively outlandish. But here we all.
+And that leaves PA-RISC. An odd-ball that I knew nothing about. Well, I saw a machine and it was reasonably priced, and the vendor was lovely. In fact, I ended up with two machines being hand-delivered to my house by the vendor, and I didn't have to part with much money. Well, I suppose these things are relative, and given I don't actually have a use for two PA-RISC machines, perhaps positively outlandish. But here we are.
 
 ## The HP 9000 Series
 
@@ -35,11 +35,11 @@ In the mid 1980's, and continuing on through to the early 2010's, HP used proces
 
 The first versions of the PA-RISC architecture (PA-RISC 1.x) were 32-bit, with processors implementating this architecture ranging from TS-1 of 1986 and finishing with the PA-7300LC of 1996. The [TS-1 processor](https://www.openpa.net/pa-risc_processor_pa-early.html) came on [six 8.4" x 11.3" boards](https://computermuseum.informatik.uni-stuttgart.de/dev_en/hp9000_840/hp9000_840.html) covered in TTL logic chips. The [PA-7300LC](https://en.wikipedia.org/wiki/PA-7100LC) was a silicon die with 9.2 million transistors in a 464-pin ceramic PGA package.
 
-PA-RISC didn't stop there though. PA-RISC 2.0 came out in 1996, expanding the architecture to have 64-bit addressing and 64-bit registers. Processors implementing this architecture include the PA-8000 and PA-8500.
+PA-RISC 2.0 came out in 1996, expanding the architecture to have 64-bit addressing and 64-bit registers. Processors implementing this architecture include the PA-8000 and PA-8500. PA-RISC 2.0 processors seem to run 32-bit PA-RISC 1.x code just fine, as you'd hope (yes, I'm slagging off Itanium here).
 
-Not all PA-RISC machines came from HP. There was a industry group to promote PA-RISC which included HP alongside companies like Mitsubish and NEC. Had Commodore not gone bankrupt, we might even have had [a PA-RISC based Amiga](https://en.wikipedia.org/wiki/Amiga_Hombre_chipset).
+Not all PA-RISC machines came from HP. There was a industry group to promote PA-RISC which included HP alongside companies like Mitsubish and NEC. There were [some PA-RISC laptops](https://www.openpa.net/systems/rdi_precisionbook.html). Had Commodore not gone bankrupt, we might even have had [a PA-RISC based Amiga](https://en.wikipedia.org/wiki/Amiga_Hombre_chipset).
 
-The naming of the HP 9000 series machines, as you might expect for product-line spanning 30 years, is somewhat all over the place. But looking at just the PA-RISC machines, you can boil it down to:
+The naming of the HP 9000 series machines is, as you might expect for product-line spanning 30 years, somewhat all over the place. But looking at just the PA-RISC machines, you can boil it down to:
 
 * Early stuff - including the HP 9000 800-series minicomputers
 * HP 9000 700-series workstations
@@ -51,6 +51,10 @@ I have two HP 9000 Visualize workstations - a B-Class and a C-class.
 ## My HP Visualize B132L+ Workstation
 
 This is my [HP 9000 Visualize B-Class workstation](https://www.openpa.net/systems/hp-visualize_b132l_b160l_b180l.html) from around 1996. It's a mid-range desktop workstation with 2D graphics.
+
+{{ image(img="blog/blog-2025-03-22/b132l+ outside.jpg") }}
+
+I've edited out the stickers in the picture, and I'm in two minds as to whether to keep the on the machine to reflect its history, or if I should remove them and clean the machine up to its 'factory' appearance.
 
 The tech specs are:
 
@@ -73,10 +77,6 @@ The L+ in the model name is important as it indicates that it has low-voltage di
 
 My particular machine dates from is ex-Vodafone and had been a DNS and licence server in production for around 25 years. It was retired only recently. It came a SCSI DDS2 tape drive, but no hard disk. I have tested the machine with a disk from another machine, but I'm currently looking for a 64-pin Ultra-Wide SCSI to permanently fit to it.
 
-Here's the front of the machine. I've edited out the stickers in the pictures, and I'm in two minds as to whether to keep the on the machine to reflect its history, or if I should remove them and clean the machine up to its 'factory' appearance.
-
-{{ image(img="blog/blog-2025-03-22/b132l+ outside.jpg") }}
-
 To open the machine, place it on its front, remove four thumb-screws, and lift by the handle.
 
 {{ image(img="blog/blog-2025-03-22/b132l+ lift.jpg") }}
@@ -91,9 +91,13 @@ Here are the two expansion slots which, like the Silicon Graphics Indigo 2, have
 
 ## My HP Visualize C3000 Workstation
 
-This is my [HP 9000 Visualize C-Class workstation](https://www.openpa.net/systems/hp-visualize_b1000_c3000_c3600.html) from around 1999. It's a high-end desktop workstation with 3D graphics. If you read [osnews.com](https://www.osnews.com), it's pretty much the model before the end-of-the-line Visualize C8000 [Thom intends to try and actually use for a week](https://www.osnews.com/story/141394/t2-linux-takes-weird-architectures-seriously-including-my-beloved-pa-risc/).
+This is my [HP 9000 Visualize C-Class workstation](https://www.openpa.net/systems/hp-visualize_b1000_c3000_c3600.html) from around 1999. It is now one of my all-time favourite case designs - with the logo, and the splash of colour, and the 2-line LCD that tells you how it's getting on booting up. Fabulous.
 
-I wasn't meaning to buy two PA-RISC machines, but the vendor made me an offer I couldn't refuse - and I mean, just look at it. It nails the turn-of-the-millenium 'high end workstation' vibe.
+{{ image(img="blog/blog-2025-03-22/c3000 front.jpg") }}
+
+It's a high-end desktop workstation with 3D graphics. If you read [osnews.com](https://www.osnews.com), it's pretty much the model before the end-of-the-line Visualize C8000 [Thom intends to try and actually use for a week](https://www.osnews.com/story/141394/t2-linux-takes-weird-architectures-seriously-including-my-beloved-pa-risc/).
+
+I wasn't meaning to buy two PA-RISC machines, but the vendor made me an offer I couldn't refuse - and I mean, just look at it. It nails the turn-of-the-millenium 'high end workstation' vibe. This machine was apparently running a server for Virgin Media up until very recently.
 
 The tech specs are:
 
@@ -111,11 +115,8 @@ The tech specs are:
 * Visualize FXPro5 3D graphics card
   * Runs at 1280x1024 at 75 Hz
   * Thanksfully has regular DVI and VGA outputs
+  * The machine didn't have graphics during its production life - the vendor added it for me
 * USB ports for keyboard and mouse
-
-Here's the front of the machine. One of my all-time favourite case designs - with the logo, and the splash of colour, and the 2-line LCD that tells you how it's getting on booting up. Fabulous.
-
-{{ image(img="blog/blog-2025-03-22/c3000 front.jpg") }}
 
 If you pop the cover off, you can see the drive sleds for two 80-pin SCA hard drives.
 
@@ -201,6 +202,10 @@ If you have any ideas for interesting things I can do with a 1999 UNIX workstati
 
 **A.** If you have the space, you should get a Visualize C3000-series because they're 64-bit and the case is snazzy. If you have more space, you could also get a J-series, which have two CPUs and are twice as wide.
 
+**Q.** Where can I get an EVC to VGA adapter?
+
+**A.** I don't know - I looked online but there aren't many. I suggest you make sure that if you do get an EVC connector on your machine, you ask the vendor to include an EVC to VGA dongle.
+
 **Q.** Are you OK?
 
-**A.** Well I'm broke. But I do own two PA-RISC workstations though.
+**A.** Well I'm broke. But I do own two working PA-RISC workstations though.

@@ -60,11 +60,27 @@ My collection currently includes:
   * 64MB RAM
   * 4GB SCSI HDD
   * XZ Graphics
+* [HP 9000 Visualize B132L+ PA-RISC Workstation](@/blog/blog-2025-03-22/index.md)
+  * PA-RISC PA-7300LC @ 132 MHz
+  * 128 MiB ECC RAM
+  * Visualize-EG Graphics
+  * No hard drive or CD-ROM drive, currently
+* [HP 9000 Visualize C3000 PA-RISC Workstation](@/blog/blog-2025-03-22/index.md)
+  * PA-RISC PA-8500 @ 132 MHz
+  * 2.5 GiB ECC RAM
+  * Visualize FX5Pro Graphics
+  * 9 GiB SCSI HDD
+  * IDE CD-ROM drive
+* Digital AlphaStation 500
+  * Alpha 21164A
+  * Unknown RAM
+  * Currently dead
 * Dell Precision T3400 Workstation
   * Core 2 Duo
   * 1GB RAM
   * Windows XP
   * nVidia Quadro 600
+  * 120GB SATA HDD
 * [Pentium III @ 450 MHz](@/blog/blog-2024-06-29/index.md)
   * Windows 98 / MS-DOS 6.22 dual-boot
   * 128 MB RAM
@@ -73,6 +89,13 @@ My collection currently includes:
   * PicoGUS
   * Adaptec AHA-2940UW SCSI card
   * MT32-Pi
+  * 18GB SCSI HDD
+* HP Z1 Workstation
+  * Intel Core i9-9900 @ 3.1 GHz
+  * 32 GB RAM
+  * 500 GB NVME SSD
+  * Windows 11
+  * SATA BD-ROM / DVD+RW drive
 * Sega Master System II
 * Sega MegaDrive
 * Nintendo SuperNES

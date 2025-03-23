@@ -189,8 +189,8 @@ There are guides to installing HP-UX available as PDF from HP that you can easil
 * If your hostname doesn't resolve, you can't get into the CDE desktop.
 * You can either `cp /etc/nsswitch.hp_defaults /etc/nsswitch.conf` and edit it to put `files` before `dns`, or fix your DNS so it knows your machine's hostname.
 * You'll have to use `vi` to edit the file. Sorry.
-* There is only a `root` user. Make yourself a regular user.
-* The `root` user home directory is `/`. I guess you could try and clean that up.
+* There is only a `root` user. Make yourself a regular user by running the System Admin tool (`sam`).
+* The `root` user home directory is `/`, which I don't like. I guess you could try and switch that to `/root` by modifying the account in `sam`.
 
 ### Using HP-UX
 

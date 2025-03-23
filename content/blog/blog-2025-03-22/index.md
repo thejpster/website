@@ -81,11 +81,11 @@ To open the machine, place it on its front, remove four thumb-screws, and lift b
 
 {{ image(img="blog/blog-2025-03-22/b132l+ lift.jpg") }}
 
-Here's the inside, having removed the drive-bay cover (by pressing two latches and lifting it away). We can see the hard drive bay (I was given the drive sled, it's not pictured) and the CD-ROM bay (I was also given the drive rails, not pictured). In the middle, the six 72-pin SIMM slots are under the SCSI cable and the black plastic clip that ensures the SIMMs don't fall out. I belive the two memory sticks near the CPU heatsink are the L2 cache.
+Here's the inside, having removed the drive-bay cover (by pressing two latches and lifting it away). We can see the hard drive bay (I was given the drive sled, it's not pictured) and the CD-ROM bay (I was also given the drive rails, not pictured). In the middle, the six 72-pin SIMM slots are under the SCSI cable and the black plastic clip that ensures the SIMMs don't fall out. I believe the two memory sticks near the CPU heatsink are the L2 cache.
 
 {{ image(img="blog/blog-2025-03-22/b132l+ inside.jpg") }}
 
-Here are the two expansion slots which, like the Silicon Graphics Indigo 2, have two kinds of connectors for each card. You can see the pads for an EISA connector for the second slot, but its not fitted on this example.
+Here are the two expansion slots which, like the Silicon Graphics Indigo 2, have two kinds of connectors for each card. You can see the pads for an EISA connector for the second slot, but it's not fitted on this example.
 
 {{ image(img="blog/blog-2025-03-22/b132l+ slots.jpg") }}
 
@@ -97,7 +97,7 @@ This is my [HP 9000 Visualize C-Class workstation](https://www.openpa.net/system
 
 It's a high-end desktop workstation with 3D graphics. If you read [osnews.com](https://www.osnews.com), it's pretty much the model before the end-of-the-line Visualize C8000 [Thom intends to try and actually use for a week](https://www.osnews.com/story/141394/t2-linux-takes-weird-architectures-seriously-including-my-beloved-pa-risc/).
 
-I wasn't meaning to buy two PA-RISC machines, but the vendor made me an offer I couldn't refuse - and I mean, just look at it. It nails the turn-of-the-millenium 'high end workstation' vibe. This machine was apparently running a server for Virgin Media up until very recently.
+I wasn't meaning to buy two PA-RISC machines, but the vendor made me an offer I couldn't refuse - and I mean, just look at it. It nails the turn-of-the-millenium 'high end workstation' vibe. This machine was apparently running as a server for Virgin Media up until very recently. I hear that Transport for London also has a lot of PA-RISC gear.
 
 The tech specs are:
 

@@ -102,7 +102,7 @@ So I just have to find which of the 16 bytes in every block of 25 bytes is the v
 
 No.
 
-The cache line is *complicated* and it turns out the incoming 32-bit words are not stored sequentially. In fact, all the *even* bits go to one place and all the *odd* bits to somewhere else. The `srom.c` tool has this handy table:
+The cache line is *complicated* and it turns out the incoming 32-bit words are not stored sequentially. In fact, the *bits* don't even up next to each other - two words get bit-wise interleaved, for some reason. The `srom.c` tool has this handy table:
 
 ```c
 int dfillmap [128] = {                  /* data 0:127 -- fillmap[0:127]*/

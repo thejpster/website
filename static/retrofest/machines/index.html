@@ -11,38 +11,107 @@
     and fragile and I fear some might not survive the weekend.
 </p>
 
-<h2 id="indigo2">Silicon Graphics Power Indigo 2</h2>
+<h2 id="indigo2">Silicon Graphics POWER Indigo 2</h2>
 
 <p>
-    The Silicon Graphics Indigo 2 replaced the earlier Indigo desktop and
-    Silicon Graphic's mid-range single-processor workstation. It launched with
-    the <a href="../architectures/index.html#mips">MIPS</a> R4000 in 1992 in a
-    distinctive teal coloured case, later upgraded to the MIPS R4400.
+    This Silicon Graphics POWER Indigo 2 is a high-end 64-bit single-processor
+    UNIX workstation from 1994.
 </p>
 <p>
-    MIPS realised that the R4400 was getting beaten by its competition,
-    especially at floating point, and so they produced the 64-bit MIPS R8000.
-    This monster of a processor cost $2,5000 at launch in June 1994 (never mind
-    the rest of the computer) and shipped as a PCB covered in many large (and
-    hot) ICs. It worked though, and by only November 1994, 50 of the world's Top
-    500 fastest computers used the R8000 processor. Despite clocking at only 75
-    MHz, its architecture allowed it to perform up to 300 million instructions
-    per second.
+    <img src="indigo2.gif" alt="Our POWER Indigo 2">
 </p>
 <p>
-    An Indigo 2 equipped with a 75 MHz MIPS R8000 is known as a "Power Indigo 2"
-    and they were only sold for about 18 months before being replaced by the
-    MIPS R10K based Indigo 2 (which have purple cases). Prices are hard to find,
-    but I believe the Power Indigo 2 cost around $85,000 when new, making them
-    exceptionally rare. Enjoy using this one then (and let's hope it lasts the
-    weekend...)
+    The Indigo 2 (or Indigo<sup>2</sup>), launched in 1992, was the replacement
+    for the 1991's Indigo and was Silicon Graphic's mid-range single-processor
+    desktop workstation. It launched with the first mainstream 64-bit processor
+    - the <a href="../architectures/index.html#mips">MIPS</a>
+    R4000 - in the distinctive teal coloured case you see here. Later models
+    could be ordered with a MIPS R4400 processor, which had larger caches and
+    higher clockspeeds. These early models came with a choice of three graphics
+    cards:
+</p>
+<p>
+    <img src="indigo2_graphics.gif" alt="2-board XZ Graphics">
+</p>
+<ul>
+    <li><b>XL Graphics</b> - 1280x1024 at 76 Hz in 24-bit colour. Mostly a 2D card -
+    any 3D calculations would be handled by your CPU.</li>
+    <li><b>XZ Graphics</b> - the one I have. Comes on two full-length PCBs and includes
+    two (later four) Geometry Engines that each give 32 MFLOPs and 250,000
+    triangles per second. They are joined by a Raster Engine processor and a
+    Command Engine processor but, notably, there is no hardware Texture Mapping.
+    Will it play GLQuake? No. Well, maybe, but all the walls would be flat
+    colours. It's designed to do CAD.</li>
+    <li><b>Extreme Graphics</b> - the top-of-the-line option, coming on three
+    PCBs. You get eight Geometry Engines giving you 256 MFLOPs. Still no
+    hardware texture-mapping though.</li>
+</ul>
+<p>
+    Video output on all three options is using a 13W3 connector, and so to use a
+    VGA monitor you require an adapter.
+</p>
+<p>
+    The R4400 was OK, but MIPS (which was bought out by Silicon Graphics in
+    1992) was worried that it was getting beaten by its competition (Alpha,
+    PA-RISC, HyperSPARC, etc), especially in floating point calculations. Their
+    answer to this was the <b>MIPS R8000</b>, launched in June 1994. Despite
+    clocking at only 75 MHz, its wide architecture allowed it to perform up to
+    300 million floating-point instructions per second (MFLOPS). This CPU was so
+    powerful, SGI claimed that, with the same processor count, an R8000 machine
+    had the same performance as a Cray Y-MP supercomputer from 1988. The price
+    for this performance was steep, although was perhaps very reasonable
+    compared to the price of a Cray. The CPU alone cost $2,5000, never mind the
+    rest of the computer. This is (at least partly) because instead of being a
+    single ceramic package, the CPU is in fact an A5-sized PCB covered in many
+    large (and hot) ICs. It worked though, and by November 1994 (less than six
+    months after launch), 50 of the world's Top 500 fastest computers were SGI
+    POWER Challenge or SGI POWER Onyx servers using the R8000 processor. Looking
+    at the list, the lowest placed POWER Challenge was in position 439 and was a
+    six-processor machine owned by Volvo. As it happened, SGI ended up buying
+    Cray in 1996.
+</p>
+<p>
+    The Indigo 2 was, for a short time and at an extraordinary price tag,
+    available with a single instance of this the super-computer grade CPU. An
+    R8000-equipped Indigo 2 is known in the marketing material as a "POWER
+    Indigo 2", and that is what we have here. The short life-span of the POWER
+    Indigo 2 was because the MIPS R10K arrived in January 1996, compensating for
+    its lowly two-instructions-per-clock cycle FPU performance by having more
+    than twice the clock speed of the R8000, and at a much lower price point. At
+    about the same time as the R10K came out, the graphics sub-system in the
+    Indigo 2 was upgraded from EXTREME Graphics to IMPACT Graphics, and the case
+    colour was changed from teal to purple to mark this upgrade.
+</p>
+<p>
+    <img src="indigo2_cpu.gif" alt="An R8000 CPU">
+</p>
+<p>
+    The Centre for Computing History has many things in its archive, but it does
+    not (last I checked) have a POWER Indigo 2. SGI Depot is perhaps the primary
+    on-line resource for SGI spare parts and complete machines, and Ian there
+    tells me he doesn't have a POWER Indigo 2 either. If he did have one to sell
+    you, his price list says it'd cost you &pound;1400. That's a lot, but it's
+    also still a steep discount on the original list price of $75,000.
+</p>
+<p>
+    Naturally, computers have moved on somewhat in the last ~30 years, and the
+    R8000 is out-classed by the ARM11 CPU you get on a $10 Raspberry Pi Zero.
+</p>
+<p>
+    This POWER Indigo 2 is running IRIX 6.2 from 1996, which is a little bit
+    later than our machine (which would have shipped with IRIX 6.0), but a
+    reasonable in-period upgrade.
 </p>
 <dl>
     <dt>Processor</dt>
     <dd><a href="../architectures/index.html#mips">MIPS</a> R8000 at 75 MHz</dd>
     <dt>Memory</dt>
-    <dd>64 MB</dd>
-    <dt>Hard Drive</dt>
+    <dd>64 MB (640 MB max)</dd>
+    <dt>Chipset</dt>
+    <dd>IP26</dd>
+    <dt>Expansion</dt>
+    <dd>2x 64-bit GIO64; 3x EISA</dd>
+    <dt>Hard Drive Fitted</dt>
     <dd>4 GB SCSI-2</dd>
     <dt>Graphics</dt>
     <dd>Silicon Graphics XZ</dd>
@@ -59,16 +128,45 @@
 <h2 id="b132l">Hewlett Packard Visualize B132L+</h2>
 
 <p>
-    Hewlett Packard Visualize B132L+ (from the 'B-series' family) was a
-    mid-range 32-bit UNIX workstation, from 1996.
+    This Hewlett Packard Visualize B132L+ (from the 'B-series' family) is a
+    mid-range single-processor 32-bit UNIX workstation, from 1996.
 </p>
-
+<p>
+    <img src="b132l_outside.gif" alt="Our HP Visualize B132L+">
+</p>
+<p>
+    HP launched the HP 9000 series in 1984, and initially used a range of
+    processor architectures, before settling on HP's own <a
+    href="../architectures/index.html#parisc">PA-RISC architecture</a>. The
+    array of machines in the line-up is dizzying, but broadly there were servers
+    and there were workstations. The HP 9000 Series 700 workstations are perhaps
+    the best known, partly because they also had a port of NeXTSTEP OS. HP gave
+    up on numbers in 1995, and replaced the 700-series workstations with the
+    Visualize B-series, C-series and J-series workstations. B-Series that we
+    have was available at 132 MHz (our example), 160 MHz (the B160L) and 180 MHz
+    (the B180L) variants, with a choice of standard SCSI or high-voltage
+    differential SCSI (you don't want that one). It has integrated 2D graphics,
+    and so it a middling UNIX workstation, rather than a fire-breathing graphics
+    powerhouse. It has six 72-pin SIMM slots and takes ECC RAM.
+</p>
+<p>
+    This machine is running HP-UX 10.20 from 1996, which is probably what our
+    machine should have shipped with. HP-UX 10.20 came with both <a
+    href="../desktops/index.html#vue">VUE</a> and its replacement <a
+    href="../desktops/index.html#cde">CDE</a>. I've elected to install the
+    former, because we've already got a few CDE machines and well, I mean just
+    look at those strakes on the launcher panel!
+</p>
 <dl>
     <dt>Processor</dt>
     <dd><a href="../architectures/index.html#parisc">PA-RISC</a> 7300LC at 132 MHz</dd>
     <dt>Memory</dt>
-    <dd>128 MB</dd>
-    <dt>Hard Drive</dt>
+    <dd>128 MB (1.5 GB max)</dd>
+    <dt>Chipset</dt>
+    <dd>LASI</dd>
+    <dt>Expansion</dt>
+    <dd>32-bit PCI; EISA</dd>
+    <dt>Hard Drive Fitted</dt>
     <dd>18 GB Ultra Wide SCSI</dd>
     <dt>Graphics</dt>
     <dd>Integrated</dd>
@@ -77,7 +175,8 @@
     <dt>OS</dt>
     <dd><a href="../operating-systems/index.html#hpux10">HP-UX 10.20</a></dd>  
     <dt>Desktop Environment</dt>
-    <dd><a href="../desktops/index.html#vue">HP VUE</a></dd>
+    <dd><a href="../desktops/index.html#vue">HP VUE</a> or <a
+    href="../desktops/index.html#cde">CDE</a></dd>
     <dt>Exhibitor</dt>
     <dd><a href="../exhibitors/index.html#jp">JP</a></dd>
 </dl>
@@ -85,16 +184,38 @@
 <h2 id="c3000">HP 9000 Visualize C3000</h2>
 
 <p>
-    This HP 9000 Visualize C3000 (from the 'C-series' family) is from 1999 and
-    is a high-end 64-bit UNIX workstation.
+    This HP 9000 Visualize C3000 (from the 'C-series' family) is a high-end
+    single-processor 64-bit UNIX workstation from 1999.
 </p>
-
+<p>
+    <img src="c3000_front.gif" alt="Our HP Visualize C3000">
+</p>
+<p>
+    Our C3000 is a later model than the <a href="#b132l">B132L+</a>, sporting a
+    64-bit PA-8500 processor, a couple of 64-bit/66 MHz PCI slots, and eight
+    non-standard 278-pin DIMM slots that take 120 MHz ECC SDRAM modules. It
+    would have been a direct competitor for our <a href="#ultra80">Sun Ultra
+    80</a>.
+</p>
+<p>
+    <img src="c3000_inside.gif" alt="The CPU and RAM in this C3000">
+</p>
+<p>
+    This machine is running HP-UX 11.00 from 1996, which is probably what our
+    machine should have shipped with and is the first 64-bit version of HP-UX.
+    HP-UX 11.00 came with only the <a href="../desktops/index.html#cde">Common
+    Desktop Environment (CDE)</a>.
+</p>
 <dl>
     <dt>Processor</dt>
     <dd><a href="../architectures/index.html#parisc">PA-RISC</a> 8500 at 400 MHz</dd>
     <dt>Memory</dt>
-    <dd>1 GB</dd>
-    <dt>Hard Drive</dt>
+    <dd>2 GB (8 GB max)</dd>
+    <dt>Chipset</dt>
+    <dd>Astro</dd>
+    <dt>Expansion</dt>
+    <dd>1x 64-bit/66 MHz PCI; 2x 64-bit/33 MHz PCI; 2x 32-bit/33 MHz PCI</dd>
+    <dt>Hard Drive Fitted</dt>
     <dd>9 GB Ultra Wide SCSI</dd>
     <dt>Graphics</dt>
     <dd>HP Visualize FX5Pro</dd>
@@ -111,16 +232,47 @@
 <h2 id="ultra80">Sun Ultra 80</h2>
 
 <p>
-    This Sun Ultra 80 is from 1999 and is a high-end 64-bit multi-processor UNIX
-    workstation.
+    This Sun Ultra 80 is a high-end 64-bit multi-processor UNIX workstation
+    from 1999.
 </p>
-
+<p>
+    <img src="ultra80.gif" alt="Our Sun Ultra 80">
+</p>
+<p>
+    This is the top of Sun's workstation line-up from the late 1990's, and can
+    take up to four UltraSPARC-II CPU modules. In this machine, we have three
+    (the fourth is not working and has been removed). This model was replaced by
+    the Ultra 45 in 2006 (which was the last SPARC workstation Sun ever made).
+ </p>
+ <p>
+    Inside, there are 16x 144-pin DIMM slots which take ECC SDRAM. The maximum
+    capacity is 4GB. Unfortunately, half the DIMM slots are on a riser board
+    which is supported on a plastic frame (as are the CPUs) and this plastic is
+    now incredibly prone to cracking. I really hope it surives the journey as
+    that plastic is carrying quite a lot of weight. I much prefer the interior
+    design of the <a href="#c3000">HP Visualize C3000</a> (which would have been
+    a direct competitor), as that has all-metal construction.
+</p>
+<p>
+    <img src="ultra80_inside.gif" alt="The insides of an Ultra 80">
+</p>
+<p>
+    This machine would have shipped with Sun Solaris 7, which was the first
+    64-bit version of Solaris and is what I have installed. Solaris 7 came with
+    either <a href="../desktops/index.html#openwindows">OpenWindows</a> or the
+    <a href="../desktops/index.html#cde">Common Desktop Environment (CDE)</a>.
+    It is also supported by Solaris 8, 9 and 10.
+</p>
 <dl>
     <dt>Processor</dt>
     <dd>3x Sun UltraSPARC-II at 450 MHz</dd>
     <dt>Memory</dt>
-    <dd>3 GB</dd>
-    <dt>Hard Drive</dt>
+    <dd>3 GB (4 GB max)</dd>
+    <dt>Chipset</dt>
+    <dd>Sun Ultra80</dd>
+    <dt>Expansion</dt>
+    <dd>2x UPA; 1x 64-bit/66 MHz PCI; 2x 64-bit/33 MHz PCI; 1x 32-bit/33 MHz PCI</dd>
+    <dt>Hard Drive Fitted</dt>
     <dd>9 GB Ultra Wide SCSI</dd>
     <dt>Graphics</dt>
     <dd>Sun PGX32 (2D only)</dd>
@@ -129,7 +281,7 @@
     <dt>OS</dt>
     <dd><a href="../operating-systems/index.html#solaris">Solaris 7</a></dd>  
     <dt>Desktop Environment</dt>
-    <dd><a href="../desktops/index.html#openwindows">Sun OpenWindows</a></dd>
+    <dd><a href="../desktops/index.html#openwindows">Sun OpenWindows</a> or <a href="../desktops/index.html#cde">Common Desktop Environment (CDE)</a></dd>
     <dt>Exhibitor</dt>
     <dd><a href="../exhibitors/index.html#jp">JP</a></dd>
 </dl>

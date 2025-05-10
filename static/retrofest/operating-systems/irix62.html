@@ -1,0 +1,1383 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html version="2.0">
+<head>
+<meta http-equiv="Expires" content="Mon May 29 00:00:00 PDT 1996">
+<meta http-equiv="Keywords" content="Irix6.2,technical report,"> 
+<meta http-equiv="Owner" content="jcoombs"> 
+<link rev="made" href="mailto:webmaster@www.sgi.com">
+<title>IRIX 6.2 64-Bit Architecture and Standards</title>
+</head>
+<body alink="#00a000" vlink="#9a6524" link="#004060" bgcolor="#ffffff" text="#000000">
+
+<img src="./irix62/CorpID.gif" alt="SGI Logo" align="TOP"><br><p>
+<h1>IRIX 6.2 Technical Report</h1>
+<p>
+<hr>
+<h3>
+<p><b><a href="irix62.html#REF30750">64-bit IRIX</b><tt><font size="3"></a>TM</font></tt><b><a href="irix62.html#REF30750"> Architecture and Standards</b></a> </p> 
+Table of Contents </h3>
+<h3><a href="irix62.html#HDR0">1.1 Standards</a> </h3>
+<p>
+<a href="irix62.html#HDR1">1.1.1 X/Open</a> <br>
+ <a href="irix62.html#HDR2">1.1.2 SVID</a> <br>
+ <a href="irix62.html#HDR3">1.1.3 MIPS ABI</a> <br>
+ <a href="irix62.html#HDR4">1.1.4 POSIX</a> <br>
+ <a href="irix62.html#HDR5">1.1.5 Single UNIX<tt><font size="3"></a>&#174;</font></tt><a href="irix62.html#HDR5"> Specification (SPEC 1170)</a> </p>
+<h3><a href="irix62.html#HDR6">1.2 User Interface and Graphics </a></h3>
+<p>
+<a href="irix62.html#HDR7">1.2.1 X11 and Motif<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR7"> </a><br>
+ <a href="irix62.html#HDR8">1.2.2 Indigo Magic<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR8"> User Environment</a> <br>
+ <a href="irix62.html#HDR9">1.2.3 Bundled Multimedia Products</a> <br>
+ <a href="irix62.html#HDR10">1.2.4 OpenGL&#174; </a><br>
+ <a href="irix62.html#HDR11">1.2.5 Open Inventor<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR11"> </a><br>
+ <a href="irix62.html#HDR12">1.2.6 ImageVision Library&#174; </a><br>
+ <a href="irix62.html#HDR121">1.2.7 IRIS Performer<tt><font size="3"></a>TM</font></tt></a> <br>
+ <a href="irix62.html#HDR13">1.2.8 Shells</a> </p>
+<h3><a href="irix62.html#HDR14">1.3 Filesystems</a> </h3>
+<a href="irix62.html#HDR15">1.3.1 File Services</a> <br>
+ <a href="irix62.html#HDR16">1.3.2 EFS</a> <br>
+ <a href="irix62.html#HDR17">1.3.3 XFS<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR17"> </a><br>
+ <a href="irix62.html#HDR18">1.3.4 NFS<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR18"> </a><br>
+ <a href="irix62.html#HDR19">1.3.5 ISO 9660</a> <br>
+ <a href="irix62.html#HDR20">1.3.6 DOS and Macintosh Floppies</a> <br>
+ <a href="irix62.html#HDR21">1.3.7 swap</a> <br>
+ <a href="irix62.html#HDR22">1.3.8 /proc</a> </p>
+<h3><a href="irix62.html#HDR23">1.4 Volume Management</a> </h3>
+<h3><a href="irix62.html#HDR24">1.5 Networking Standards</a> </h3>
+<h3> <a href="irix62.html#HDR25">1.6 Memory Management</a> </h3>
+<h3> <a href="irix62.html#HDR26">1.7 Scheduling</a> </h3>
+<p><a href="irix62.html#HDR27">1.7.1 Gang Scheduling</a> <br>
+ <a href="irix62.html#HDR28">1.7.2 Deadline Scheduling</a> <br>
+ <a href="irix62.html#HDR29">1.7.3 Processor Sets</a> <br>
+ <a href="irix62.html#HDR30">1.7.4 Processor Cache Affinity</a> </p>
+<h3><a href="irix62.html#HDR31">1.8 Symmetric Multiprocessing and Multitasking</a> </h3>
+<p><a href="irix62.html#HDR32">1.8.1 Synchronization Primitives</a> <br>
+ <a href="irix62.html#HDR33">1.8.2 Lightweight Processes</a> </p>
+<h3><a href="irix62.html#HDR34">1.9 Enhancements to Support 64-bit Computing</a> </h3>
+<br><a href="irix62.html#HDR35">1.9.1 Kernel Structures</a> </br>
+ <a href="irix62.html#HDR36">1.9.2 Include Structures</a> <br>
+ <a href="irix62.html#HDR37">1.9.3 Extended Linking Format</a> <br>
+ <a href="irix62.html#HDR38">1.9.4 Dynamic Shared Objects</a> </p>
+<h3><a href="irix62.html#HDR39">1.10 IRIX 6.2 Application Binary Options</a> </h3>
+<p><a href="irix62.html#HDR40">1.10.1 O32 for 32-bit Applications</a> <br>
+ <a href="irix62.html#HDR41">1.10.2 64: Full Addressability and MIPS 4 Performance </a><br>
+ <a href="irix62.html#HDR42">1.10.3 n32: Speed without Porting</a> </p>
+<h3><a href="irix62.html#HDR43">1.11 Development Environment</a> </h3>
+<h3> <a href="irix62.html#HDR44">1.12 Performance Services</a> </h3>
+<p><a href="irix62.html#HDR45">1.12.1 Asynchronous I/O </a><br>
+ <a href="irix62.html#HDR46">1.12.2 Memory-Mapped I/O</a> <br>
+ <a href="irix62.html#HDR47">1.12.3 Direct I/O</a> </p>
+<h3><a href="irix62.html#HDR48">1.13 Real Time</a> </h3>
+<h3> <a href="irix62.html#HDR49">1.14 Supercomputing Features</a> </h3>
+<p>
+<a href="irix62.html#HDR50">1.14.1 Fair Share Scheduler</a> <br>
+ <a href="irix62.html#HDR51">1.14.2 Checkpoint--Restart</a> <br>
+ <a href="irix62.html#HDR52">1.14.3 Extended Accounting</a> <br>
+ <a href="irix62.html#HDR53">1.14.4 Other Batch Scheduling Options</a> </p>
+<h3><a href="irix62.html#HDR54">1.15 Security</a> </h3>
+<h3> <a href="irix62.html#HDR55">1.16 Internationalization (I18n) and Localization (L10n)</a> </h3>
+<h3> <a href="irix62.html#HDR56">1.17 System Management</a> </h3>
+<p>
+<a href="irix62.html#HDR57">1.17.1 Cadmin</a> <br>
+ <a href="irix62.html#HDR58">1.17.2 IRIXpro<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR58"> </a><br>
+ <a href="irix62.html#HDR59">1.17.3 Performance Co-Pilot<tt><font size="3"></a>TM</font></tt><a href="irix62.html#HDR59"> </a></p>
+<h3><a href="irix62.html#HDR60">1.18 Backup </a></h3>
+<h3> <a href="irix62.html#HDR61">1.19 Data Migration</a> </h3>
+<h3> <a href="irix62.html#HDR62">1.20 Compatibility</a> </h3>
+<p>
+<a href="irix62.html#HDR63">1.20.1 COFF Obsoleted</a> <br>
+ <a href="irix62.html#HDR64">1.20.2 Binary Compatibility between IRIX 5.3 and IRIX 6.2 </a><br>
+ <a href="irix62.html#HDR65">1.20.3 Object Compatibility between IRIX 6.1 and IRIX 6.2 </a></p>
+<hr>
+<h1><br>
+ <a name="REF30750">64-bit IRIX<tt><font size="3"></a>TM</font></tt><a name="REF30750"> Architecture and Standards</a></h1>
+<p>
+IRIX 6.2 is the first desktop-to-datacenter, all-platform 64-bit IRIX release.
+Based on UNIX System V Release 4.1 and conforming fully to major industry
+standards, IRIX 6.2 includes multiprocessing scalability, network performance,
+and valuable desktop and filesystem features not available in competitive
+UNIX offerings. IRIX 6.2 leads the industry in XPG4 Base 95 Profile Branding. </p>
+<p>64-bit IRIX preserves customers' software investments with binary compatibility
+for 32- or 64-bit applications developed on IRIX 5 or IRIX 6. In addition,
+developers can recompile 32-bit applications to take full advantage of all
+the most recent MIPS processors. </p>
+<p>IRIX 6.2 is supported on Silicon Graphics' Crimson<a href="irix62.html#FN1">(1)</a>, Indy, Indigo R4000, Indigo2, POWER Indigo2, Onyx, POWER Onyx, Challenge,
+and POWER CHALLENGE systems.</p>
+<p>Highlights of the IRIX 6.2 release include:</p>
+<ul>
+<li>Advanced 3D Internet/multimedia user and developer desktop environment<br>
+ 
+<li>1 TB virtual memory addressing, 9 TB files, and 18 TB filesystems on 64-bit
+platforms<br>
+ 
+<li>32-bit ABI compatibility with IRIX 5 releases (applications can be recompiled
+for full R4x00/R5000/R8000/R10000 performance)<br>
+ 
+<li>Complete software environment for industry-leading graphics workstations
+and high-performance supercomputer, database, and network servers<br>
+ 
+</ul>
+<h3><a name="HDR0">1.1 Standards</a></h3>
+<p>IRIX 6.2 conforms to the following industry standards:</p>
+<h4><a name="HDR1">1.1.1 X/Open</a></h4>
+<p>IRIX 6.2 is among the first operating systems from a major systems vendor
+to receive the X/Open Base 95 Profile branding from the X/Open Company Ltd.
+All vendors who claim to support the evolution of UNIX to a single, common
+specification must achieve this milestone. </p>
+<h4><a name="HDR2">1.1.2 SVID</a></h4>
+<p>IRIX 6.2 provides a substantial subset of the API described in the System
+V Interface Definition, Issue 3 (SVID3), the defining document for System
+V Release 4 (SVR4). Compliance with the SVR4 API is tested using a variety
+of commercial and public domain test packages. One of the most comprehensive
+of these is the Generic ABI Test Suite (gABI) developed by UNISOFT. The
+gABI is a comprehensive test of the compliance of the system consisting
+of more than 7,800 tests.</p>
+<h4><a name="HDR3">1.1.3 MIPS ABI</a></h4>
+<p>IRIX 6.2 will be the reference platform for the MIPS ABI 1.2.1 and compliant
+with the MIPS ABI 1.1. IRIX 5.3 remains the reference platform for the MIPS
+ABI 1.1. The MIPS ABI is defined in the Black Book (MIPS ABI Conformance
+Guide), and is determined by the member companies.</p>
+<p>Previous releases of IRIX have been selected as the reference platform by
+the MIPS ABI group. The member companies---all the vendors that offer SVR4
+on MIPS processors---agreed that a suitably compiled binary from IRIX would
+operate correctly on their platforms.</p>
+<h4><a name="HDR4">1.1.4 POSIX</a></h4>
+<p>IRIX 6.2 meets the standards established by the POSIX 1003.1 Specification.
+IRIX has been certified as complying with the FIPS 151-1 interpretation
+of P1003.1 since IRIX 4.0.5, and as complying with the 1990 version, corresponding
+to FIPS 151-2, since IRIX 5.2.</p>
+<p>
+IRIX 6.2 incorporates SVR4 commands and utilities that are fully compliant
+with the POSIX 1003.2 Specifications. Compliance was certified by the X/Open
+Base 95 Profile branding.</p>
+<p>
+IRIX 6.2 provides many of the interfaces specified by the IEEE POSIX 1003.1b-1993
+(formerly 1003.4 Draft 14) standard for real time.</p>
+<p>
+IRIX 6.2 contains kernel enhancements for the support of real-time programming
+and guaranteed interrupt latencies. POSIX 1003.1c threads (pthreads) the
+industry standard for multithreaded programming, are supported as part of
+the REACT/pro<tt><font size="3">TM</font></tt> product for IRIX 6.2. 
+
+<h4><a name="HDR5">1.1.5 Single UNIX&#174; Specification (SPEC 1170)</a></h4>
+<p>
+Silicon Graphics provides most of the Application Programming Interfaces
+(APIs) defined in the X/Open &quot;Single UNIX Specification&quot; UNIX 95 (formerly
+SPEC 1170). Silicon Graphics is committed to complying fully with this X/Open
+standard, which will enable software developers to produce products portable
+to any version of the UNIX operating system that supports the specification.</p>
+<h3><a name="HDR6">1.2 User Interface and Graphics </a></h3>
+<p>
+Silicon Graphics provides a single, advanced user interface across its product
+line, plus a broad range of standard and optional graphics and visualization
+development tools.</p>
+<h4><a name="HDR7">1.2.1 X11 and Motif<tt><font size="3"></a>TM</font></tt><a name="HDR7"> </a></h4>
+<p>
+Leading-edge technology continues to be the focus for the developer user
+interface libraries for IRIX 6.2. IRIX 6.2 supports Release 6 of the X11
+Window System for both client and server and IRIX IM, Silicon Graphics'
+enhanced version of OSF Motif 1.2.4. The X11R6 libraries and IRIX IM libraries
+have been updated to support 32-bit and 64-bit addressing. In addition,
+there is support for CID keyed fonts and the X double buffering extension,
+and features for font installation and management have been added.</p>
+<h4><a name="HDR8">1.2.2 Indigo Magic<tt><font size="3"></a>TM</font></tt><a name="HDR8"> User Environment</a></h4>
+<p>
+From desktop utilities to digital media applications and collaborative tools,
+Indigo Magic provides everything necessary for both the novice and the experienced
+user to take advantage of the power of visual computing. </p>
+<p>
+Indigo Magic offers far more benefits than generic common desktops. Compared
+to CDE, Indigo Magic offers major value in the areas of system administration,
+network awareness, and multimedia support. Implemented using the visually-enhanced
+SGI version of the Motif<tt><font size="3">TM</font></tt> toolkit rendered using the X Window System<tt><font size="3">TM</font></tt> , this tightly-integrated environment includes:</p>
+<ul>
+<li>Icon catalogs for easy access to software tools<br>
+ 
+<li>Window overview for reducing screen clutter<br>
+ 
+<li>Multiple desks for switching between tasks<br>
+ 
+<li>IRIS Insight for online help and documentation<br>
+ 
+<li>Graphical system administration tools<br>
+ 
+<li>Network searching for printers, peripherals, systems, and users<br>
+ 
+<li>Proactive system monitoring tools<br>
+ 
+<li>Bundled multimedia, collaborative, and Web-based tools<br>
+ 
+<li>PC compatibility<br>
+ 
+</ul>
+<h4><a name="HDR9">1.2.3 Bundled Multimedia Products</a></h4>
+<p>A broad spectrum of especially useful multimedia products are bundled with
+each system. They are listed on the next page:</p>
+<ul>
+<li>Digital Media Tools<br>
+ <br>
+ A suite of tools that allow you to enrich your communications with all
+forms of digital media. Tools such as MovieMaker, SoundEditor, and ImageWorks
+make manipulating movies, audio, and images as natural as working with text.
+This complete package of capture, edit, playback, and translation capabilities
+supports a broad range of formats, including:<br>
+ <br>
+ - QuickTime<tt>TM</tt> for movies<br>
+ - AIFF for audio<br>
+ - GIF, TIFF, and JPEG for images<br>
+ 
+<p>
+MediaMail<br>
+ <br>
+ A comprehensive SMTP/MIME-compliant electronic mail package that helps
+you send and receive multimedia messages and manage your mail efficiently.<br>
+ </p>
+<li>IRIS Showcase<tt><font size="3">TM</font></tt> <br>
+ <br>
+ Create digital media-rich, highly interactive presentations using audio,
+video, 3D models, and more. Showcase can also export PostScript<tt><font size="3">TM</font></tt> , EPS, and Inventor and VRML 3D models.<br>
+ 
+<li>InPerson<tt><font size="3">TM</font></tt> <br>
+ <br>
+ Real-time multiway conferencing from your desktop with interactive video,
+audio, 3D models, images, text, and more.<br>
+ 
+<li>Mindshare<tt><font size="3">TM</font></tt> OutBox<br>
+ <br>
+ The first drag-and-drop Web publishing tool that enables every desktop
+to become a Web-based collaboration system in a heterogeneous environment.
+Simply drag and drop files to share them with any PC, Macintosh, Sun, or
+other platform that supports Web browsing.<br>
+ 
+<li>WebMagic<tt><font size="3">TM</font></tt> <br>
+ <br>
+ A powerful WYSIWYG authoring tool for creating multi-datatype World Wide
+Web pages that eliminates the need to learn HTML.<br>
+ 
+<li>Netscape Navigator<tt><font size="3">TM</font></tt> <br>
+ <br>
+ The Web's leading browser for global information retrieval.<br>
+ 
+<li>WebSpace<tt><font size="3">TM</font></tt> Navigator<br>
+ <br>
+ Browse 3D environments on the Web with the industry's first commercially
+available VRML browser.<br>
+ 
+<li>Adobe Acrobat<tt><font size="3">TM</font></tt> Reader Version 2.1<br>
+ <br>
+ View information in Adobe's Portable Document Format (PDF), and emerging
+industry standard for electronic exchange of documents.<br>
+ 
+<li>Insignia SoftWindows<tt><font size="3">TM</font></tt> <br>
+ <br>
+ Run &quot;off the shelf&quot; DOS and Windows PC software. SoftWindow is an X Windows
+application for UNIX that emulates an Intel personal computer in software.
+SoftWindows includes Microsoft DOS 6.21 and Microsoft Windows<tt><font size="3">TM</font></tt> 3.1. SoftWindows is standard on some platforms. <br>
+ 
+</ul>
+<h4><a name="HDR10">1.2.4 OpenGL&#174; </a></h4>
+<p>OpenGL is an industry-standard graphics development environment embraced
+by more than 30 companies, including the major leaders in the PC and workstations
+industries. OpenGL is a cross-platform, portable API that enables 2D, 3D,
+and imaging applications to be developed once for deployment to a variety
+of hardware platforms with different operating systems and windowing environments.
+All OpenGL platforms conform to the OpenGL standard, insuring application
+portability across heterogeneous platforms.</p>
+<p>OpenGL includes operations for:</p>
+<ul>
+<li>Geometric and raster primitives<br>
+ 
+<li>Viewing and modeling transformations<br>
+ 
+<li>Lighting<br>
+ 
+<li>Shading<br>
+ 
+<li>Blending<br>
+ 
+<li>Fog<br>
+ 
+<li>Hidden surface removal<br>
+ 
+<li>Texture mapping<br>
+ 
+</ul>
+<p>
+OpenGL provides application developers a consistent graphical interface
+tuned for each deployed hardware platform.</p>
+<p>
+For Silicon Graphics workstations, OpenGL is bundled with IRIX 6.2. Other
+OpenGL licensees include:</p>
+<ul>
+<li>3Dlabs<br>
+ 
+<li>AccelGraphcs<br>
+ 
+<li>Cray Research<br>
+ 
+<li>Digital Equipment Corporation<br>
+ 
+<li>Evans &amp; Sutherland<br>
+ 
+<li>Harris Computer<br>
+ 
+<li>Hitachi<br>
+ 
+<li>IBM<br>
+ 
+<li>Intel<br>
+ 
+<li>Intergraph<br>
+ 
+<li>Microsoft<br>
+ 
+<li>NCD<br>
+ 
+<li>NEC<br>
+ 
+<li>Portable Graphics<br>
+ 
+<li>Samsung<br>
+ 
+<li>Sony<br>
+ 
+<li>SunSoft<br>
+ 
+<li>Template Graphics<br>
+ 
+</ul>
+<h4><a name="HDR11">1.2.5 Open Inventor<tt><font size="3"></a>TM</font></tt><a name="HDR11"> </a></h4>
+<p>
+Open Inventor is an object-oriented 3D graphics toolkit offering a comprehensive
+solution to interactive graphics programming problems. It presents a programming
+model based on a 3D scene database that dramatically simplifies graphics
+programming. Open Inventor offers a rich set of objects that speed up your
+programming time and extend your 3D programming capabilities beyond OpenGL,
+X11, and Motif. The objects include:
+<li>Cubes<br>
+ 
+<li>Polygons<br>
+ 
+<li>Text<br>
+ 
+<li>Material<br>
+ 
+<li>Camera<br>
+ 
+<li>Lights<br>
+ 
+<li>Track balls<br>
+ 
+<li>Handle boxes<br>
+ 
+<li>3D viewers and editors<br>
+ 
+</ul>
+<p>
+Open Inventor follows in the footsteps of OpenGL and is on its way to becoming
+a industry-standard 3D graphics toolkit. Like OpenGL, Open Inventor is a
+cross-platform, portable API that has been ported to all major PC and workstation
+platforms. While the Open Inventor developer environment is not bundled
+with IRIX 6.2, the end-user environment for Open Inventor is being distributed
+today with IRIX 6.2.</p>
+<h4><a name="HDR12">1.2.6 ImageVision Library&#174; </a></h4>
+<p>
+The ImageVision Library (IL) is an extensible, layered, object-oriented
+toolkit for creating, processing, displaying, and managing images on all
+Silicon Graphics workstations. The core set of robust image processing functions
+includes:</p>
+<ul>
+<li>Color conversion<br>
+ 
+<li>Arithmetic functions<br>
+ 
+<li>Radiometric and geometric transforms<br>
+ 
+<li>Edge, line, and spot detection<br>
+ 
+</ul>
+<p>
+The ImageVision Library was designed to reduce complexity for development
+of image processing applications. It provides a consistent interface regardless
+of changes or new releases of hardware or foundation software. The ImageVision
+Library end-user environment is bundled with IRIX 6.2</p>
+<h4><a name="HDR121">1.2.7 IRIS Performer</a></h4>
+<p>
+ The IRIS Performer(tm) toolkit gives developers the means to achieve a fast
+consistent frame rate for applications in the areas of visual simulation,
+interactive entertainment, and simulation-based design. The IRIS Performer
+libraries are highly tuned for Indigo2 IMPACT and build on the foundation
+of OpenGL and IRIX 6.2. IRIS Performer has the intelligence to evaluate
+underlying hardware and optimize for best performance. The key developer
+benefits include simplified management of the visual database and maximum
+performance for scene rendering on all Silicon Graphics workstations.
+IRIS Performer provides an extensible basis for creating real-time 3D graphics
+applications in the following fields:
+<ul>
+<li>Visual simulation
+<li>Entertainment
+<li>Virtual reality
+<li>Broadcast video
+<li>Computer aided design
+</ul>
+<p>
+<h4><a name="HDR13">1.2.8 Shells</a></h4>
+<p>IRIX 6.2 provides the following shells:</p>
+<ul>
+<li>C Shell (csh: /bin/csh /usr/bin/csh /sbin/csh)<br>
+ 
+<li>Bourne Shell (sh: /bin/sh /usr/bin/sh /sbin/sh)<br>
+ 
+<li>Korn Shell (ksh: /bin/ksh /usr/bin/ksh /sbin/ksh)<br>
+ 
+</ul>
+<p>All shells are programmable and allow for a tailorable-character user environment.</p>
+<h3><a name="HDR14">1.3 Filesystems</a></h3>
+<p>
+IRIX 6.2 provides an advanced filesystem with leading-edge features. It
+also supports a range of alternate filesystems for distributed and standards-based
+data access.</p>
+<h4><a name="HDR15">1.3.1 File Services</a></h4>
+<p>
+The IRIX file subsystem supports multiple physical disks and gives them
+the appearance of a single, logical filesystem with a hierarchical arrangement.
+Additionally, XFS filesystems may include plexed and non-plexed components.</p>
+<p>
+IRIX 6.2 uses the Virtual Filesystem interface facilitates the inclusion
+of several filesystem types into IRIX 6.2, including: </p>
+<ul>
+<li>EFS<br>
+ 
+<li>XFS<br>
+ 
+<li>Network Filesystem (NFS)<br>
+ 
+<li>ISO 9660 (CDFS)<br>
+ 
+<li>DOS (floppy only)<br>
+ 
+<li>swap<br>
+ 
+<li>/proc Filesystem<br>
+ 
+</ul>
+<h4><a name="HDR16">1.3.2 EFS</a></h4>
+<p>
+Ten years ago, SGI replaced the standard UNIX filesystem with EFS, a higher-performance
+and higher-capacity filesystem needed by SGI's most demanding customers.
+EFS increases throughput by supporting 64 KB extents instead of the 8KB
+or smaller blocks in some UNIX implementations. EFS also implements 8 GB
+filesystems in 2GB filesystems found on traditional UNIX systems. </p>
+<p>
+IRIX 6.2 still supports EFS for compatibility, but SGI recommends rapid
+conversion to XFS, one of the most advanced filesystems available from any
+vendor, and now a standard part of IRIX.</p>
+<h4><a name="HDR17">1.3.3 XFS<tt><font size="3"></a>TM</font></tt><a name="HDR17"> </a></h4>
+<p>
+Designed from the ground up, XFS is an advanced 64-bit journaled filesystem
+with integrated volume management and guaranteed rate I/O. XFS supports
+files as large as 9 million TB (2<em>63-1</em>). With systems that have a 32-bit address space, the filesystem limit is
+one TB on files and filesystems. Filesystems can grow to 18 TB or one TB
+with a 32-bit kernel, and individual directories have successfully held
+67 million files in internal testing. Aggregate read/write performance exceeds
+500 MB per second; single-descriptor performance is over 400 MB per second. </p>
+<p>
+The XFS filesystem has a full range of graphical system administration tools
+to create, delete, mount, export, and modify filesystems.</p>
+<p>
+XFS uses database journaling technology to provide very fast recovery. No
+filesystem checking utility is needed---the system quickly references a
+small log of recently updated filesystem transactions after a system crash.
+Logging filesystems scale as disks and CPUs are added; traditional UNIX
+filesystem checking utilities do not.</p>
+<p>
+The XFS filesystem supports logical block sizes ranging from 512 bytes to
+1 GB. Filesystem extents, which provide contiguous data within a file, are
+configurable at file creation time and are multiples of the filesystem block
+size. The contiguous data control features of XFS greatly increase I/O throughput
+because there is no delay due to disk seeks or rotational latency in accessing
+data stored on disk. </p>
+<p>
+Guaranteed rate I/O makes XFS the only filesystem available that allows
+applications to reserve specific bandwidth to or from the filesystem.</p>
+<h4><a name="HDR18">1.3.4 NFS<tt><font size="3"></a>TM</font></tt><a name="HDR18"> </a></h4>
+<p>Distributed filesystems simplify the way data is accessed by making remote
+files appear local. NFS, with an installed base of more than 3 million seats,
+is the de facto UNIX standard for distributed filesystems. </p>
+<p>
+Until recently, virtually all NFS implementations used the NFS Version 2
+protocol (NFSv2). NFSv2 was not designed with today's high-performance networks
+or large file sizes in mind. </p>
+<p>
+Silicon Graphics implemented NFS Version 3 (NFSv3) for the first time in
+IRIX 5.3. The Version 3 protocol also allows 64-bit file addressing, which
+makes it possible to use NFS to transfer files larger than 2 GB over the
+network for the first time. Since V2 compatibility is preserved in ONC+
+(in a more efficient implementation) customers get the best of both worlds:
+the performance of NFSv3 with the backward-compatibility of NFSv2.</p>
+<p>
+To enhance file sharing performance and reduce network load, NFS clients
+can use the Cache Filesystem (CFS) function, retaining a copy of frequently
+accessed remote files locally and updating the cached copy only when the
+original has been changed. </p>
+<p>
+The Network Information System (NIS) is provided for centralized filesystem
+management. The automounter service automatically mounts and unmounts NFS
+filesystems. The NFS locking service, lockd, allows locks to be used with
+remotely mounted files. </p>
+<h4><a name="HDR19">1.3.5 ISO 9660</a></h4>
+<p>
+ISO 9660 is a filesystem type used to mount CD-ROM discs in the High Sierra
+or ISO 9660 formats (with or without the Rock Ridge extensions) formats. </p>
+<h4><a name="HDR20">1.3.6 DOS and Macintosh Floppies</a></h4>
+<p>
+The DOS filesystem driver supports 5.25-inch floppy drives in three standard
+formats when used with the freestanding SCSI floppy drive. The standard
+single- and double-density, dual-sided 3.5-inch drive and the 3.5-inch 20.1MB
+floptical drive are also supported, as are HFS/MAC formats.</p>
+<h4><a name="HDR21">1.3.7 swap</a></h4>
+<p>
+swap allows either a file or block device to be used as a swap resource.</p>
+<h4><a name="HDR22">1.3.8 /proc</a></h4>
+<p>
+The /proc filesystem allows running processes to be accessed and manipulated
+as files by ordinary system calls, such as open, close, read, write, seek,
+and ioctl.</p>
+<h3><a name="HDR23">1.4 Volume Management</a></h3>
+<p>
+The XFS volume manager xlv is a superset of the lv volume manager. It supports
+striping, concatenation, and, optionally, disk mirroring. The system administrator
+can make online dynamic changes to volumes, including extending the size
+of a mounted filesystem, with a full set of graphical system administration
+tools.</p>
+<h3><a name="HDR24">1.5 Networking Standards</a></h3>
+<p>
+IRIX 6.2 implements the following Internet RFC (Request for Comment) and
+non-RFC standards, among others: </p>
+<pre>
+Table 1-1 RFC Standards 
+----------------------------------------------------------------------
+<b>RFC</b>    <b>Protocol</b>   <b>Name</b>                                                
+----------------------------------------------------------------------
+678               Standard File Format                                
+768    UDP        User Datagram Protocol                              
+791    IP         Internet Protocol                                   
+792    ICMP       Internet Control Message Protocol                   
+793    TCP        Transmission Control Protocol                       
+821    SMTP       Simple Mail Transfer Protocol                       
+822    MAIL       Format of Electronic Mail Messages                  
+826    ARP        Address Resolution Protocol                         
+854    TELNET     Telnet Protocol                                     
+959    FTP        File Transfer Protocol                              
+1014   XDR        External Data Representation                        
+1042   IP-IEEE    Internet Protocol for IEEE 802                      
+1055   SLIP       Serial Line Internet Protocol                       
+1057              Portmapper                                          
+1058   RIP        Routing Information Protocol                        
+1084   BOOTP      BOOTP Protocol                                      
+1094   Sun-NFS    Network Filesystem Protocol                        
+1119   NTP        Network Time Protocol                               
+l122   TCP/IP     Internet Hosts Communication Layers                 
+1123   TCP/IP     Internet Hosts Communications Layers                
+1156   MIB        Management Information Base                         
+1157   SNMP       SNMP                                                
+1213   MIB-II     Management Information Base II                      
+1247   OSPF       Routing protocol (not supported)                    
+1323   TCP-HIPER  Transmission Control Protocol: Large windows, etc.  
+1532   DHCP       Dynamic Host Configuration Protocol                 
+1533   DHCP       Dynamic Host Configuration Protocol                 
+1534   DHCP       Dynamic Host Configuration Protocol                 
+1541   DHCP       Dynamic Host Configuration Protocol                 
+                                                                      
+----------------------------------------------------------------------
+Table 1-2 Non-RFC Standards 
+------------------------------------------------------------------------------------
+<b>Non-RFC</b>   <b>Protocol</b>         <b>Name</b>                                                     
+------------------------------------------------------------------------------------
+r-commands                4.3 &quot;r-commands&quot; (rsh, rlogin, rcp, rexec                 
+ONC/ONC+                   Sun ONC+ 1.2 and Sun ONC 4.2 but not NIS+                
+NFS V3                     NFS V3 Protocol Specification dated 2/16/94              
+HiPPI                      HiPPI-PH (X3.183-1991)                                   
+HiPPI     HiPPI            -SC (X3.222-1983)                                        
+HiPPI     HiPPI            FP (X3.210-1992)                                         
+HiPPI     HiPPI             -LE (X3.218-1993)                                       
+ATM       UNI 3.0 and 3.1  ATM                                                      
+DCE                        OSF/DCE 1.1 Core Services (DCE 1.1 with DFS in 1H 1996)  
+AFS                        AFS 3.4 via Transarc Corporation (Q1 1996)               
+                                                                                    
+------------------------------------------------------------------------------------
+</pre>
+<h3><a name="HDR25">1.6 Memory Management</a></h3>
+<p>
+The IRIX virtual memory subsystem is based on SVR4 and supports mmap() and
+mprotect(). The region structure has its roots in SVR3 with major modifications
+to support MP cache flushing and TLB management. Virtual memory is managed
+with a classic demand-paged model. </p>
+<p>
+IRIX supports low-cost forks, also known as Copy On Write (COW) or lazy
+replication. Unique pages are created only when the child process writes
+to a particular page. </p>
+<p>
+The size of swap partitions can be reduced or augmented on a running system.
+Applications can swap to NFS partitions, to mirrored partitions, and to
+regular files. Memory management policies and performance can be tuned using
+variables documented on the systune man page.</p>
+<p>
+On IRIX 6.2 physical memory can be up to 16 GB, allowing more tasks and/or
+larger tasks to be in memory simultaneously. A 64-bit user process can grow
+to a virtual address space of 2<em>40</em> bytes (1 TB) if the physical system has sufficient memory and swap space.</p>
+<h3><a name="HDR26">1.7 Scheduling</a></h3>
+<p>
+An IRIX process is a collection of resources and a thread of execution within
+an SGI computer system. The virtual address space of a process, the contents
+of its user structure and proc table entry, and the values contained in
+machine registers when the process is running constitute the context of
+the process.</p>
+<p>
+To support multiple processes, IRIX implements a process-scheduling algorithm
+that assures a fairly equitable division of processor time among all processes.
+This algorithm is non-preemptive, that is, the running process cannot be
+preempted by another process (but can be preempted by the kernel).</p>
+<p>
+The running process can yield to another process &quot;voluntarily,&quot; by making
+a system call (such as an I/O request) that causes it to sleep, in which
+case another process is selected to run. The running process can also be
+preempted by the kernel to handle an exception, in which case the process
+is rescheduled to resume immediately after the exception handler is finished.</p>
+<p>
+The kernel also enforces limits on the amount of time a process can monopolize
+the processor (time slicing).</p>
+<p>
+While the process management model discussed represents an apparently equitable
+resource sharing model, multiple CPUs make the task more challenging. Further
+complexities are added when the scheduler must handle batch and real-time
+queues in addition to timesharing users.</p>
+<p>
+The scheduler in IRIX 6.2 is designed to handle all these difficult hardware
+and application environments individually and in combination (recognizing
+that the goals of timesharing, batch, and real-time are often contradictory).</p>
+<p>
+There are four major classes of priorities in IRIX 6.2. Two of these priority
+types have multiple subclasses:</p>
+<pre>
+Table 1-3 Scheduling Priorities       
+--------------------------------------
+<b>Class</b>                <b>Subclasses</b>       
+--------------------------------------
+Kernel                                
+User-mode Real-time  Frame Scheduler  
+Timesharing          Gang, General    
+Background           Gang, General    
+                                      
+--------------------------------------
+</pre>
+<p>Kernel tasks have the highest priority, background processes the lowest.
+Subclasses within a type can have any priority within the range assigned
+to that type.</p>
+<p>Scheduling options include:</p>
+<ul>
+<li>Gang Scheduling<br>
+ 
+<li>Deadline Scheduling<br>
+ 
+<li>Processor Sets<br>
+ 
+<li>Processor Cache Affinity<br>
+ 
+</ul>
+<h4><a name="HDR27">1.7.1 Gang Scheduling</a></h4>
+<p>
+The user can schedule related processes or threads to run as a group. Threads
+that communicate with each other using locks or semaphores will be assured
+of running in parallel, avoiding waiting while the receiving or sending
+process is swapped in and then associated performance penalty. </p>
+<h4><a name="HDR28">1.7.2 Deadline Scheduling</a></h4>
+<p>
+The system administrator can specify that a particular process will receive
+a specified allocation of CPU time in any recurring period. The primary
+beneficiaries are applications where constant delivery of a video or audio
+stream or constant acquisition of real-time data must be assured. The process
+can block waiting for its time allocation or yield the processor if the
+required work is completed before its allocation has been used. This implementation
+is more efficient and easier to use than the real-time timers and signals
+used in other UNIX implementations.</p>
+<h4><a name="HDR29">1.7.3 Processor Sets</a></h4>
+<p>
+The administrator can reserve sets of processors to run specific tasks,
+partitioning the system into groups of CPUs that run batch jobs, real time,
+and general timesharing separately. This forces certain classes of users
+to run applications on a particular set of processors, and can provide assurance
+to, say, batch users that the optimal number of processors they need to
+run a parallel batch task will be available when needed.</p>
+<h4><a name="HDR30">1.7.4 Processor Cache Affinity</a></h4>
+<p>
+The scheduler can be instructed to consider the likelihood that data which
+a process may have fetched into local cache the last time it was running
+may still be in cache on that processor. Waiting a few microseconds to again
+run on the original CPU may improve overall throughput by avoiding the penalty
+of reloading a new cache.</p>
+<p>
+For more information on these schedule models and options, see the Silicon
+Graphics white papers, Processor Segmentation: A Resource Management Facility
+for Shared Memory Multiprocessors and Parallel Throughput Performance of
+IRIX 5.x.</p>
+<h3><a name="HDR31">1.8 Symmetric Multiprocessing and Multitasking</a></h3>
+<p>
+IRIX 6.2 currently supports up to 36 RISC processors on CHALLENGE systems
+and 18 on POWER CHALLENGE systems, providing unparalleled performance on
+compute-intensive programs. Silicon Graphics pioneered multiprocessor RISC
+systems running UNIX. MP versions of IRIX have been available since 1988,
+so IRIX 6.2 MP support is based on significantly more mature MP technology
+than is available from other RISC system vendors. The features of Silicon
+Graphics' multiprocessors allow demonstrable parallel speedups on many technical
+and commercial applications, further differentiating IRIX. </p>
+<p>
+IRIX employs sophisticated synchronization techniques that allow multiple
+CPUs to execute in the kernel simultaneously, resulting in a multithreaded
+kernel. Within the IRIX kernel are more than 5,000 distinct MP-safe entry
+points. This allows very fine-grained locking; access to an individual data
+structure is synchronized rather than access to an entire subsystem, reducing
+the likelihood that Processor B must wait for Processor A to release a locked
+resource. As a result, IRIX offers exceptional scalability and performance
+as processors are added.</p>
+<p>
+
+
+<img src="./irix62/irix6.2TR.figure.id.12.gif" width="488" height="454" alt="chart">
+<p>
+Figure 1-1 IRIX 6 Kernel Architecture<br>
+ </p>
+<h4><a name="HDR32">1.8.1 Synchronization Primitives</a></h4>
+<p>
+Silicon Graphics process synchronization primitives, such as spin locks,
+barriers, and semaphores, are allocated from a shared memory &quot;arena.&quot; These
+are memory-mapped between processes and can permit pointers to be shared.
+Synchronization primitives are implemented with the MIPS instructions themselves,
+allowing for much faster synchronization than in traditional System V mechanisms. </p>
+<h4><a name="HDR33">1.8.2 Lightweight Processes</a></h4>
+<p>
+sproc is an interface that permits users to create lightweight processes
+that share the virtual address space (and potentially other attributes)
+of the parent process. The parent and child both have their own program
+counter value and stack pointer, but all the text and data space is visible
+to both processes. This scheme provides one of the basic mechanisms upon
+which parallel programs can be built. </p>
+<h3><a name="HDR34">1.9 Enhancements to Support 64-bit Computing</a></h3>
+<p>
+The IRIS Development Option (IDO) for IRIX 6.2 includes MIPSpro<tt><font size="3">TM</font></tt> compilers technology to generate either:</p>
+<ul>
+<li>32-bit code for MIPS 2, MIPS 3 or MIPS 4. <br>
+ 
+<li>64-bit code for MIPS 3 or MIPS 4 <br>
+ 
+</ul>
+<p>
+Over the last several releases, key components of the operating system have
+been progressively enhanced to support 64-bit binaries as well as existing
+32-bit binaries. These include (but are not limited to):</p>
+<ul>
+<li>Kernel structures<br>
+ 
+<li>Include structures<br>
+ 
+<li>Extended linking format<br>
+ 
+<li>Dynamic shared objects<br>
+ 
+</ul>
+<h4><a name="HDR35">1.9.1 Kernel Structures</a></h4>
+<p>
+The header files listed in <a href="irix62.html#REF86546">Table 4-1</a> contain structure definitions that have been extended to support 64 bits: </p>
+<pre>
+<a name="REF86546">Table 1-4 IRIX System Structures Extended to Support 64 Bits</a> 
+-------------------------------------------------------------
+direct.h        fcntl.h      ftw.h           grp/h           
+locale.h        math.h       netconfig.h     netdir.h        
+nl_types.h      poll.h       pwd.h           rpc.h           
+search.h        setjmp.h     sigaction.h     signal.h        
+stddef.h        stdio.h      stdib.h         stropts.h       
+sys/ipc.h       sys/msg.h    sys/procset.h   sys/resource.h  
+sys/sem.h       sys/shm.h    sys/siginfo.h   sys/stat.h      
+sys/statvfs.h   sys/time.h   sys/times.h     sys/tiuser.h    
+termios.h       ucontext.h   sys/uio.h       sys.utime.h     
+sys.utsname.h                                                
+                                                             
+-------------------------------------------------------------
+</pre>
+<h4><a name="HDR36">1.9.2 Include Structures</a></h4>
+<p>
+Include structures have been modified to provide the correct 32- or 64-bit
+sizes. Since both 32- and 64-bit environments are supported under IRIX 6.2,
+multiple sets of libraries reside in different directories. 32-bit compilations,
+targeted at the R4x00 and MIPS 2 ISA, are the default. The library path
+must be changed for other targets.</p>
+<p>
+Each header file under /usr/include will support both 32-bit and 64-bit
+compilation. The following directory structure is used for IRIX 6.2 libraries:</p>
+<pre>
+Table 1-5 IRIX 6.2 Library Directory Structure<a href="irix62.html#FN16a">(a)</a> 
+-----------------------------------------------------------------------------------
+<b>Directories</b>                     <b>Contents</b>                                           
+-----------------------------------------------------------------------------------
+ /usr/lib/*.so                  32-bit DSOs                                        
+ /usr/lib/*.a                   32-bit static libraries                            
+ /usr/lib/mips2/*.so            32-bit MIPS 2 DSOs                                 
+ /usr/lib/mips2/*.a             32-bit MIPS 2 static libraries                     
+ /usr/lib/mips2/nonshared/*.a   32-bit MIPS 2 non-shared libraries                 
+ /usr/lib32                     32-bit MIPS 3 and 4 libraries                      
+ /usr/lib64                     64-bit libraries and tools                         
+ /usr/lib64/*.so                64-bit DSOs (also mip3 and mips4 subdirectories))  
+                                                                                   
+-----------------------------------------------------------------------------------
+</pre>
+<dl>
+<dt><a name="FN16a">(a)</a> 
+<dd>Any of these directories may have nonshared sublibraries. 
+</dl>
+<h4><a name="HDR37">1.9.3 Extended Linking Format</a></h4>
+<p>
+The IRIX 5.x/SVR4 standard Extended Linking Format (ELF) for object modules
+has also been extended to 64-bits. ELF-64 is supported in all the tools
+which work with object modules.</p>
+<h4><a name="HDR38">1.9.4 Dynamic Shared Objects</a></h4>
+<p>
+The Dynamic Shared Object (DSO) architecture has been extended to support
+64-bit addressing. DSO technology is used to provide upward compatibility
+between IRIX 5 and IRIX 6, and by dynamically binding applications to the
+appropriate shared libraries at execution time enables a single &quot;shrink-wrapped&quot;
+version that can operate without change on a wide variety of MIPS hardware
+platforms. </p>
+<p>
+Figure 1-2 summarizes changes for 64-bit and the resulting benefit---both
+32-bit and 64-bit kernels can dynamically link 32-bit or 64-bit applications
+as needed. </p>
+<dd><table border="2" cellpadding="3" cellspacing="2">
+<tr><td></td><td></td><th colspan="2">Development Environment 
+<center><dd align="CENTER">32 or 64 bit*</th></tr>
+<tr><td></td><td></td><th colspan="2">Network File Service 
+</center><center><dd align="CENTER">32 or 64 bit**</th></tr>
+<tr><td></td><td></td><th colspan="2">Local File Service 
+</center><center><dd align="CENTER">32 or 64 bit***</th></tr>
+<tr><td></td><td></td><th colspan="2">Libraries and DSO 
+</center><center><dd align="CENTER">32 bit and 64 bit****</th><tr><th></th><th></th><th>32 bit virual Addressing</th><th>64 bit virual Addressing</th><th align="LEFT" colspan="2"><tr></table>
+</center><p><dd>* Develop 64 bit applications anywhere 
+<dd>** Use &gt;2GB NFSV3 files anywhere 
+<dd>*** Use large local files to at least 1TB 
+<dd>**** 32 bit IRIX 5 and 64 bit IRIX 6 applications run on the same system 
+<p>
+<p>
+<b>Figure 1-2 IRIX 6.2 64-bit Enhancements</b> <br>
+ </p>
+<p>
+<h3><a name="HDR39">1.10 IRIX 6.2 Application Binary Options</a></h3>
+<p>
+Developers can target one of three ABIs, depending on their compatibility
+and performance goals.</p>
+<h4><a name="HDR40">1.10.1 O32 for 32-bit Applications</a></h4>
+<p>
+32-bit applications from IRIX 5 generally &quot;just run&quot; on IRIX 6.2.</p>
+<h4><a name="HDR41">1.10.2 64: Full Addressability and MIPS 4 Performance </a></h4>
+<p>
+Applications should be ported to 64-bits if they can benefit from such 64-bit
+features as:</p>
+<ul>
+<li>Faster logical/arithmetic operations<br>
+ 
+<li>Larger virtual address space<br>
+ 
+<li>Very large file sizes<br>
+ 
+</ul>
+<p>
+64-bit logical/arithmetic operations can increase performance on inner loops
+by a factor of two. Large models used in applications such as computational
+fluid dynamics or finite element analysis frequently require greater than
+2 GB virtual address spaces. Similarly, seismic and reservoir simulation
+applications in geophysics commonly use data files far larger than 2 GB.</p>
+<h4><a name="HDR42">1.10.3 n32: Speed without Porting</a></h4>
+<p>
+Applications that already exist were often written with one or more target
+platforms in mind, and that target was often a 32-bit system. As a result,
+the developer may have consciously or unconsciously &quot;wired in&quot; 32-bit data
+structures, pointer lengths, or byte alignments in ways that make a port
+to 64- bits difficult. ISVs and others may also want to keep memory images
+small (for example) to run on as wide a size range of platforms as possible.</p>
+<p>
+The n32 Software Developers Kit brings two major benefits:</p>
+<ul>
+<li>Existing 32-bit applications can take full advantage of the performance
+features of the MIPS 4 ISA without a 64-bit port.<br>
+ 
+<li>Developers can compile one binary (-n32 -mips3), which runs on all currently
+shipping SGI platforms.<br>
+ 
+</ul>
+<p>
+Developers who simply recompile on IRIX 6.2 with the -n32 -mips4 flags set
+will generate binaries that use all 32 floating-point registers, eight argument
+registers, and the MADD instruction of the MIPS 4 ISA. With -n32, fundamental
+data types do not change: all addressing is 32-bit. Please note, however,
+that R4x00 systems do not support MIPS 4 ISA.</p>
+<p>
+Developers who compile on IRIX 6.2 with the -n32 -mips3 flags set will have
+binaries that run faster across the entire current SGI product line.</p>
+<p>
+Execution and compilation options for IRIX 6.2 and the platforms they run
+on are shown in Table 1-6. 
+
+
+
+
+<center><h2 align="CENTER">Table 1-6 IRIX 6.2 Execution/Compilation Table</h2>
+</center>
+<p><table border="2" cellpadding="3" cellspacing="2">
+<tr><td></td><td></td><th colspan="2">o32</th><th colspan="2">n32</th><th colspan="2">-64</th></tr>
+<tr><th></th><th></th><th>MIPS I</th><th>MIPS II</th><th>MIPS III</th><th>MIPS
+IV</th><th>MIPS III</th><th>MIPS IV</th></tr>
+<tr><th align="LEFT" colspan="2">Flags</th><th></th><th>-32</th><th>-n32
+-mips3</th><th>-n32 -mips4</th><th>-64 -mips3</th><th>-64 -mips4</th></tr>
+<tr><td colspan="8">Indigo, Indigo2, Indy, Crimson</td></tr>
+<tr><td></td><td>Execution</td><td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td></td> <td></td> <td></td> <td></td> </tr>
+ <tr> <td></td> <td>Development</td> <td></td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+</tr>
+ <tr><td colspan="8">Indy 5000</td></tr>
+<tr><td></td><td>Execution</td><td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td><td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td></td> <td></td> </tr>
+ <tr> <td></td> <td>Development</td> <td></td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+</tr>
+<tr> <td colspan="8">Challenge, Onyx, Onyx Infinite Reality (R4400)</td> </tr>
+ <tr> <td></td> <td>Execution</td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td></td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td></td> <td></td> </tr>
+ <tr> <td></td> <td>Development</td> <td></td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+</tr>
+ <tr> <td colspan="8">POWER Indigo2/POWER Challenge/POWER Onyx R8K and all
+R10K-based systems</td> </tr>
+ <tr> <td></td> <td>Execution</td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+</tr>
+ <tr> <td></td> <td>Development</td> <td></td> <td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25">  </td>
+<td align="middle"><img src="./irix62/circlegreen5.gif" alt="green dot gif" align="MIDDLE" width="25" height="25"></td>
+</tr>
+ </table> </p>
+<h3><a name="HDR43">1.11 Development Environment</a></h3>
+<p>
+IRIX 6.2 provides components to help developing applications to run in a
+Silicon Graphics environment. With all necessary execution-only environments
+needed to run applications on an IRIX 6.2 system, the development products
+and development libraries are available as layered components.</p>
+<p>
+The base product offering, IRIS Development Option, (IDO), provides the
+basic tools and libraries needed for developing IRIX applications. These
+include: </p>
+<ul>
+<li>C compiler that supports both 32-bit and 64-bit development<br>
+ 
+<li>Pertinent code generator<br>
+ 
+<li>OpenGL<br>
+ 
+<li>X11, Motif, and Digital Media libraries<br>
+ 
+<li>Development tools such as dbx, pixie, and prof<br>
+ 
+<li>Online reference manuals<br>
+ 
+</ul>
+<p>
+For high-performance computational applications, IRIX delivers the highly-optimized
+CHALLENGEcomplib for access from either Fortran or C. IRIX 6.2 provides
+the additional capability of Power Fortran and Power C compiler preprocessors
+for automatic parallelization of applications for execution on multiprocessor
+systems.
+<p>
+Additional compiler options are available, including Fortran 77, Fortran
+90, and C++, capable of producing 32-or 64-bit code. IRIX 6.2 provides 32-bit
+support for Pascal, Ada83, and Ada95, as well as providing support to the
+additional high functionality libraries, such as Open Inventor, Performer,
+ImageVision, and ViewKit.
+<p>
+IRIX 6.2 also provides access to the ProDev application tools. ProDev WorkShop,
+an awarding winning X1- based visual development environment, offers unmatched
+debugging and performance tuning capabilities, including visual debug tools,
+graphical visualization of structures and arrays, source code analysis and
+browsing, test coverage, debugging of parallel and single stream codes,
+performance analysis, memory leak detection, and build analysis. Tightly
+integrated into a cohesive development environment, ProDev WorkShop provides
+support for C, C++, Fortran, and Ada95.
+<p>
+RapidApp is a rapid application development tool for creation of media-rich,
+visual applications for C++. Providing a drag-and-drop mechanism for building
+applications with objects, RapidApp offers access to X11, Motif, and ViewKit
+visual components as well as providing access to Open Inventor, and ImageVision
+Library.</p>
+<p>
+ProDev/Ada provides the most complete development environment for developing
+Ada95 applications, including extending ProDev WorkShop to understand task
+based-parallel applications. It provides a validated Ada95 compiler and
+Ada95 bindings to all SGI libraries.</p>
+<h3><a name="HDR44">1.12 Performance Services</a></h3>
+<p>
+IRIX 6.2 includes interfaces that can be used in systems demanding the maximum
+possible I/O performance. These features require source changes, but when
+used appropriately, the performance gains can be dramatic. These I/O-enhancing
+features are:</p>
+<ul>
+<li>Asynchronous I/O<br>
+ 
+<li>Memory-mapped I/O<br>
+ 
+<li>Direct I/O<br>
+ 
+</ul>
+<h4><a name="HDR45">1.12.1 Asynchronous I/O </a></h4>
+<p>
+Traditionally, UNIX systems have allowed a given process to have only one
+I/O operation in progress at a time. This situation forced applications
+such as database servers that required several concurrent I/O operations
+to adopt complex, multiprocess architectures. IRIX 6.2 includes support
+for multiple concurrent I/O operations within a single process. The interfaces
+comply with the POSIX 1003.1b1993 specification, allowing a user to queue
+read(2) and write(2) requests to a device, and receive an optional queued
+signal when the request completes. A process can simultaneously queue a
+number of requests without having to wait for any of them to complete. Since
+the interface is standards-compliant, applications using it are portable.</p>
+<h4><a name="HDR46">1.12.2 Memory-Mapped I/O</a></h4>
+<p>
+IRIX 6.2 supports the SVR4 interfaces for memory-mapped I/O. Using these
+interfaces, disk files are visible in the address space of the program,
+and can be accessed without explicit I/O operations. The kernel can then
+bring in pages as it would for an executable, using the demand paging features
+of the virtual memory subsystem.</p>
+<h4><a name="HDR47">1.12.3 Direct I/O</a></h4>
+<p>Direct I/O enables direct transfers between disk and the user address space.
+It bypasses the kernel buffer cache by using DMA to transfer data directly
+between the disks and the user address space. Memory-mapped files, by contrast,
+make the data in the kernel buffer cache directly accessible from the user
+address space.</p>
+<p>
+Direct I/O requires substantially fewer changes to an existing application
+than memory-mapped I/O. Using both direct and asynchronous I/O, the program
+can have complete control of its own I/O operations, yielding performance
+close to that of raw disk, while retaining the benefits of the filesystem.
+The interfaces for direct I/O were defined by Silicon Graphics.</p>
+<h3><a name="HDR48">1.13 Real Time</a></h3>
+<p>
+IRIX 6.2 includes extensive real-time facilities and interfaces, collectively
+referred to as REACT<tt><font size="3">TM</font></tt> . These allow the configuration of systems that interact with external
+events in a fast, guaranteed, and deterministic manner. The key elements
+of support for real time in IRIX 6.2 include:</p>
+<ul>
+<li>Non-degrading (fixed priority) scheduling<br>
+ 
+<li>Asynchronous I/O (discussed earlier)<br>
+ 
+<li>Deadline scheduling (discussed earlier)<br>
+ 
+<li>Facilities for memory page locking, to insure that deterministic behavior
+is never disrupted by a page fault<br>
+ 
+<li>Bounded, guaranteed interrupt latency on a properly configured multiprocessor
+system <br>
+ 
+<li>Processor isolation designates one or more CPUs to handle all kernel overhead<br>
+ 
+<li>Processor restriction allows users to specify which processors run on which
+real-time CPUs and to exclude all others<br>
+ 
+<li>Guaranteed rate I/O from the XFS filesystem<br>
+ 
+<li>Queued signals delivered in priority order<br>
+ 
+<li>Real-time processors can be exempted from receiving system clock interrupts
+and running the IRIX round-robin schedule<br>
+ 
+<p>
+These facilities allow IRIX, with its rich feature set and comprehensive
+applications support, to be used in the most demanding real-time environments.
+For further information on real-time support in IRIX 6.2, refer to the REACT
+in IRIX 6.2 Technical Report.</p>
+</ul>
+<h3><a name="HDR49">1.14 Supercomputing Features</a></h3>
+<p>
+IRIX 6.2 offers features to support unbundled POWER CHALLENGEarray<tt><font size="3">TM</font></tt> functionality, including the Fair Share Scheduler<tt><font size="3">TM</font></tt> (based on SHARE II<tt><font size="3">TM</font></tt> ), kernel level check-point/restart (based on Hibernator II<tt><font size="3">TM</font></tt> ), and extended accounting, all available from Silicon Graphics. Additional
+solutions are available from third parties.</p>
+<h4><a name="HDR50">1.14.1 Fair Share Scheduler</a></h4>
+<p>
+The Fair Share scheduler allows system administrators to create a custom
+compute-resource allocation policy and apply it to an IRIX-based computing
+environment. Administrators can use Fair Share Scheduling to allocate CPU
+time, disk space, system memory, connect time, printer pages, and other
+resources to those users or departments who most need them.</p>
+<h4><a name="HDR51">1.14.2 Checkpoint--Restart</a></h4>
+<p>
+Hibernator II is a kernel-level job execution management tool. It allows
+system administrators to suspend jobs in mid-execution, restarting them
+later on the same system or a different machine of the same architecture.
+Checkpoint-- Restart allows processes to continue across an administrative
+shutdown or system crash, and can also be used to load balance applications
+across a number of SGI systems with compatible architectures (IP19 and IP21)
+and software environments. </p>
+<h4><a name="HDR52">1.14.3 Extended Accounting</a></h4>
+<p>
+IRIX accounting has traditionally been process-oriented. Once activated,
+information logged for each user login included programs run, CPU and wall
+clock time, and character and block I/O resources used. IRIX Extended Accounting
+adds to these capabilities via projects and array sessions. &quot;Projects&quot; allows
+users to bill multiple projects separately. &quot;Array sessions&quot; group processes
+together across the nodes of a PC array under a single identifier for unified
+accounting, job control, and more. Both forms of extended accounting also
+add monitoring of data commonly tracked in a supercomputing environment,
+such as swaps, bytes read/written, read/write requests, and time spent waiting
+on the run queue and for raw and block I/O.</p>
+<h4><a name="HDR53">1.14.4 Other Batch Scheduling Options</a></h4>
+<p>
+LSF is a load sharing and distributed batch computing product available
+on SGI platforms from Platform Computing Corporation in Toronto. It supports
+transparent, heterogeneous, remote execution and can interoperate with remote
+NQS systems. </p>
+<h3><a name="HDR54">1.15 Security</a></h3>
+<p>
+IRIX 6.2 incorporates technology originally developed for Trusted IRIX/B
+for identification, authentication, and auditing. Shadow password support
+places encrypted user passwords in a file that is inaccessible to non-privileged
+programs, thwarting brute force attacks on the password data base. Auditing
+logs security-relevant events, enabling analysis of attempts at unauthorized
+entry and changes made to system files and configurations. IRIX 6.2 also
+supports automatic password aging, password quality and reuse controls,
+and optional login restrictions.</p>
+<p>
+These features are designed to meet the U.S. Department of Defense &quot;Orange
+Book&quot; C2 level of trust. An optional Trusted IRIX/B 6.2 layered product
+is available for customers who need a C2 or B1 Level of Trust. Trusted IRIX/B
+assures a B1 level security environment while providing the features from
+IRIX 6.2 that are required for compatibility with the other Silicon Graphics
+products and third-party application software. Multiprocessing, graphics,
+real time, the X Window System and networking are all included. </p>
+<h3><a name="HDR55">1.16 Internationalization (I18n) and Localization (L10n)</a></h3>
+<p>
+The IRIX operating environment supports multibyte character sets and local
+conventions, and serves as the foundation for the WorldView (TM) family of native language
+support products. WorldView merges international character sets and local conventions into
+the Indigo Magic user environment on Silicon Graphics workstations. Users can tailor the desktop
+to reflect the language interface of their choice from a number of supported languages. Developers
+can design applications to support multiple localized versions.</p>
+<p>
+Silicon Graphics recognizes that it is essential to provide native language
+support for its international customers. Documents can be created, edited, and printed in the native
+language, and many of the user interfaces are localized as well. These include key user interface
+and system messages. Not only is text localized, but formatting of lists, text, and data--such
+as date, time, number, and currency--follow native conventions for each country.</p>
+<p>Silicon Graphics provides the following native language support products:</p>
+<dd>WorldView German
+<dd>WorldView French
+<dd>WorldView Japanese, for Japanese input via Romaji-kana and kana-kanji conversion
+<dd>WorldView Korean
+<dd>WorldView Chinese, for traditional and simplified Chinese forms
+<dd>WorldView Thai
+<p>
+<p>
+For all WorldView products, the Indigo Magic Desktop Interface, Showcase,
+and printing support are localized. MediaMial and IRIX system messages are localized specifically
+for German, French, Japanese, and Chinese.</p>
+<p>
+<p>
+In addition to the native language support, the IRIX 6.2 provides locale
+support. Different languages and different places have different standard ways of formatting such
+data as time, dates, and numerical amounts. A database containing such local data formats for
+a specific language and location is called a locale. A locale specifies both a language and a country.
+If an application program is written in a way that is independent of any locale - that is, if
+it is written to use any user-specified locale to provide input and output in the appropriate language
+and format - the program is said to be internationalized. If a database for a locale has been created
+to allow an internationalized program to use that locale, the program is said to be localized to
+that locale.</p>
+<p>
+The locale information for Japanese, Korean, Chinese, and Thai are included
+as part of the language specific WorldView products. </p>
+<p>
+SGI Locale support (IRIX 6.2)</p>
+<pre>
+Locale Name     Territory       Language
+cs_CS           Czech           Republic Czech
+da              Denmark         Danish
+de              Germany         German
+de_AT&#9;        Austria&#9;        German
+de_CH&#9;        Switzerland&#9;German
+el&#9;        Greece          Greek
+en&#9;        UK              English
+en_AU&#9;        Australia       English
+en_CA&#9;        Canada      &#9;English
+en_US          &#9;U.S.A.      &#9;English
+es&#9;        Spain&#9;        Spanish
+es_AR          &#9;Argentina&#9;Spanish
+es_MX&#9;        Mexico&#9;        Spanish
+fi&#9;        Finland      &#9;Finnish
+fr&#9;        France       &#9;French
+fr_BE&#9;        Belgium&#9;        French
+fr_CA&#9;        Canada&#9;        French
+fr_CH&#9;        Switzerland     French
+is&#9;        Iceland&#9;        Icelandic
+it             &#9;Italy&#9;        Italian
+it_CH          &#9;Switzerland  &#9;Italian
+ja_JP.EUC       Japan&#9;        Japanese
+ko_KR.EUC      &#9;Korea&#9;        Korean
+nl&#9;        Holland&#9;        Dutch
+nl_BE&#9;        Belgium&#9;        Dutch
+no&#9;        Norway&#9;        Norwegian
+pl&#9;        Poland&#9;        Polish
+pt&#9;        Portugal     &#9;Portuguese
+pt_BR          &#9;Brazil&#9;        Portuguese
+ru&#9;        Russia&#9;        Russian
+sk&#9;        Slovakia    &#9;Slovak
+sv&#9;        Sweden&#9;        Swedish
+tk&#9;        Turkey          Turkish
+th_TH          &#9;Thailand&#9;Thai
+zh_CN.ugn       PRC&#9;        Chinese (Simplified script)
+zh_TW.ucns     &#9;Taiwan&#9;        Chinese (Trad.script)
+</pre>
+<p>
+Note: There are are other cultural parameters in a locale, and that's what
+we mean by cultural support.Examples:</p>
+<dd>Currency: USA $123,200.45/France 123.200,45F/France -123,45/Canada (123,45$),etc. 
+<dd>Date: ddmmyy,mmddyy,yymmdd,ddmmyyy, etc.
+<dd>Time: 12h/24h
+<dd>ETC.
+<p>
+A new addition for IRIX 6.2 includes the iconv International Codeset Conversion
+library.
+<p>
+<h3><a name="HDR56">1.17 System Management</a></h3>
+<p>
+IRIX offers three different levels of administrative tools, aimed at users
+with various needs and professional experience. Cadmin is a set of simple
+visual tools for desktop users. IRIXpro is a suite of tools for system administrators.
+Performance CoPilot is a tool suite for monitoring local and remote network
+performance.</p>
+<p>
+Silicon Graphics also has developed swmgr, a graphical interface to inst
+and gendist, to ease software and patch installation, handle installation
+problems, and provide software version tracking. </p>
+<p>
+A variety of ISVs, including Tivoli, Bull, CosMos/Computer Associates, Legent,
+and Raxco, sell system and network management solutions for Silicon Graphics
+platforms.</p>
+<h4><a name="HDR57">1.17.1 Cadmin</a></h4>
+<p>
+Cadmin is a simple visual system administration tool for software, performance,
+volume, and filesystem management. Users can easily add machines, new users,
+and simple devices, monitor status, and perform other low-level, routine
+tasks.</p>
+<h4><a name="HDR58">1.17.2 IRIXpro<tt><font size="3"></a>TM</font></tt><a name="HDR58"> </a></h4>
+<p>
+IRIXpro is a suite of tools for the professional systems administrator in
+the technical computing market. IRIXpro provides two applications:</p>
+<ul>
+<li>Propel, rdist-based software and file distribution (integrated with swmgr)<br>
+ 
+<li>ProVision, a centralized SNMP-based system event monitoring tool<br>
+ 
+</ul>
+<h4><a name="HDR59">1.17.3 Performance Co-Pilot<tt><font size="3"></a>TM</font></tt><a name="HDR59"> </a></h4>
+<p>Performance Co-Pilot is a Silicon Graphics tool suite that delivers distributed,
+integrated performance monitoring and performance management across a range
+of network platforms, databases, and applications. The product is targeted
+at performance analysts, developers, and system administrators. Performance
+Co-Pilot is designed to deliver integrated solutions for Silicon Graphics
+systems. Optional agents include Oracle, Informix, and POWER CHALLENGEarray.</p>
+<h3><a name="HDR60">1.18 Backup </a></h3>
+<p>Users and Administrators have the option of using traditional tape archiving
+tools (cpio, tar, dump) or using the graphical backup and restore utility
+that come standard with our systems. We also offer the IRIX NetWorker product
+that is a full-featured data management tool for multi-system data backup
+and recovery. NetWorker allows for fully unattended backups with superior
+performance and scalability.</p>
+<h3><a name="HDR61">1.19 Data Migration</a></h3>
+<p>
+Data Management API (DMIG) allows implementation of hierarchical storage
+management software with no kernel modifications as well as high-performance
+dump programs without requiring &quot;raw&quot; access to the disk and knowledge of
+filesystem structures.</p>
+<h3><a name="HDR62">1.20 Compatibility</a></h3>
+<p>
+Every effort has been made to maintain or expand compatibility between IRIX
+versions.</p>
+<h4><a name="HDR63">1.20.1 COFF Obsoleted</a></h4>
+<p>
+IRIX 5 and IRIX 6 binaries are produced using the SRV4 Executable and Linking
+Format (ELF) which replaces the ECOFF object format in IRIX 4 and enables
+Dynamic Shared Objects. Development and execution of COFF (IRIX 4 and earlier)
+binaries is not supported on IRIX 6.2. A utility to find/identify COFF-dependent
+binaries is provided with the release and installed on the system. It may
+be executed before IRIX 6.2 is installed.</p>
+<h4><a name="HDR64">1.20.2 Binary Compatibility between IRIX 5.3 and IRIX 6.2 </a></h4>
+<p>
+Nearly all binaries built on IRIX 5 can be run under IRIX 6. It may be necessary
+to recode or recompile to take advantage of IRIX 6 enhancements. There may
+be rare cases---such as applications that examine internal operating system
+data structures---in which application code must be recompiled.</p>
+<h4><a name="HDR65">1.20.3 Object Compatibility between IRIX 6.1 and IRIX 6.2 </a></h4>
+<p>
+Except for n32 C++, user object code is compatible between IRIX 6.1 and
+IRIX 6.2; however, device drivers and any other applications that access
+the hardware directly must be recompiled. </p>
+<hr>
+<b>Footnotes</b>
+<dl>
+<dt><a name="FN1">(1)</a> 
+<dd>IRIX 6.2 does not support Crimson systems with GTX graphics. 
+</dl>
+<hr size="6">
+<a href="http://www.sgi.com/"><img src="./irix62/surf.gif" height="54" width="54" alt="surf icon"></a>                            
+ <br>
+<font size="-1">We welcome feedback and comments at
+<a href="http://www.sgi.com/cgi-bin/form_feedback/webmaster@www.sgi.com">webmaster@www.sgi.com</a>. </font>
+<p>
+<p><font size="-2"><a href="http://www.sgi.com/Misc/sgi_info.html">Copyright &#169; 1996 Silicon Graphics, Inc.</font></a> <font size="-3">All Rights Reserved.<a href="http://www.sgi.com/Misc/external.list.html">Trademark Information</font></a> </p>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 03:18:26 Jun 05, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:01:39 May 05, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.873
+  exclusion.robots: 0.046
+  exclusion.robots.policy: 0.03
+  esindex: 0.017
+  cdx.remote: 32.014
+  LoadShardBlock: 290.18 (3)
+  PetaboxLoader3.datanode: 131.651 (4)
+  PetaboxLoader3.resolve: 240.177 (2)
+  load_resource: 137.506
+-->

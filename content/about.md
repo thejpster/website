@@ -66,7 +66,7 @@ My collection currently includes:
   * Visualize-EG Graphics
   * No hard drive or CD-ROM drive, currently
 * [HP 9000 Visualize C3000 PA-RISC Workstation](@/blog/blog-2025-03-22/index.md)
-  * PA-RISC PA-8500 @ 132 MHz
+  * PA-RISC PA-8500 @ 400 MHz
   * 2.5 GiB ECC RAM
   * Visualize FX5Pro Graphics
   * 9 GiB SCSI HDD

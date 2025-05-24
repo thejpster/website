@@ -8,7 +8,7 @@ template = "static-page.html"
 
 I've done a couple of exhibitions with my old computers. Here's a list:
 
-* [UNIX @ RF (RetroFest 2025, Swindon)](/retrofest2025/)
+* [UNIX @ RF2025 (RetroFest 2025, Swindon)](/retrofest2025/)
 * [Backwards Compatible (Retro Computer Festival 2024, Cambridge)](@/blog/blog-2024-11-07/index.md)
 * [The History of PC Audio (Synthesised 2023 and 2024, Cambridge)](@/blog/blog-2024-06-29/index.md)
 

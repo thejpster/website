@@ -42,6 +42,14 @@
         <td>131</td>
     </tr>
     <tr>
+        <td>Intel Pentium II @ 450 MHz</td>
+        <td>1998</td>
+        <td>17.6</td>
+        <td>39.1</td>
+        <td>13.1</td>
+        <td>29.1</td>
+    </tr>
+    <tr>
         <td>UltraSPARC-II @ 450 MHz</td>
         <td>1997</td>
         <td>19.7</td>
@@ -66,6 +74,14 @@
         <td>54.3</td>
     </tr>
     <tr>
+        <td>Intel Pentium PRO @ 150 MHz</td>
+        <td>1996</td>
+        <td>6.08</td>
+        <td>40.5</td>
+        <td>5.42</td>
+        <td>36.1</td>
+    </tr>
+    <tr>
         <td>MIPS R8000 @ 75 MHz</td>
         <td>1994</td>
         <td>2.8</td>
@@ -73,7 +89,34 @@
         <td>8.9</td>
         <td>118</td>
     </tr>
+    <tr>
+        <td>Intel Pentium @ 100 MHz</td>
+        <td>1994</td>
+        <td>3.33</td>
+        <td>33.3</td>
+        <td>2.60</td>
+        <td>26.0</td>
+    </tr>
 </table>
+
+<p>Here's the SPECint and SPECfp numbers as a graph.</p>
+
+<p>
+<img src="specint95_noarm.gif">
+<img src="specfp95_noarm.gif">
+</p>
+
+<p>
+</p>
+
+<p>But just to show you how much things have changed, let's add estimates for the 2016 Arm Cortex-A72, as used in the Raspberry Pi 4 and Raspberry Pi 400 (which we are using as our UNIX server). Actual SPEC95 numbers are seemingly impossible to find for such a new CPU, but because SPEC2006 gives a 296 MHz UltraSPARC-II a score of 1.0, and we have the SPEC95 numbers for a 450 MHz UltraSPARC-II, we can sort of make a guess where the Cortex-A72 will end up.</p>
+
+<p>
+<img src="specint95.gif">
+<img src="specfp95.gif">
+</p>
+
+<p>Oh. It turns out can get a LOT of RISC UNIX (relatively speaking) for $35.</p>
 
 <hr>
 <p>This page is part of the UNIX network we set up at RetroFest 2025. You can read about:</p>

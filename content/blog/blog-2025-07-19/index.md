@@ -20,7 +20,7 @@ I have a bunch of 1990's RISC/UNIX workstations. I don't really know how it happ
 * HP 9000 Visualize B132L+
 * HP 9000 Visualize C3000
 * HP 9000 712 (running NeXTSTEP!)
-* Apple PowerMac 7200/90 (ok, Mac OS 7.2 Is Not UNIX, but I could install Linux or NetBSD if I wanted to)
+* Apple PowerMac 7200/90 (ok, Mac OS 7.6 Is Not UNIX, but I could install Linux or NetBSD if I wanted to)
 
 I also briefly had an [Alphastation 500](@/blog/blog-2025-03-30/index.md), but I failed to get it working so I passed it on to someone who knows much more about them than me.
 

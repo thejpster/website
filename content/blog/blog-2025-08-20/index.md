@@ -36,7 +36,7 @@ From newest to oldest we have:
 * 1x [Sun Fire V100](https://dogemicrosystems.ca/wiki/Sun_Fire_V100) rack-mount server
 * 1x [Sun Netra T1](https://dogemicrosystems.ca/wiki/Sun_Netra_T1_105) rack-mount server
 * 3x [Sun SPARCstation 20](https://en.wikipedia.org/wiki/SPARCstation_20) pizza-boxes
-* 1x [Sun SPARCstation 5](https://en.wikipedia.org/wiki/SPARCstation_5) pizza-box wearing a SPARCstation 20 lid - this was quite annoying to discover
+* 1x [Sun SPARCstation 5](https://en.wikipedia.org/wiki/SPARCstation_5) pizza-box wearing a SPARCstation 20 lid - this was quite the surprise
 * 1x [Sun SPARCstation 5](https://en.wikipedia.org/wiki/SPARCstation_5) pizza-box
 * 1x [Sun SPARCstation 10](https://en.wikipedia.org/wiki/SPARCstation_10) pizza-box
 * 2x [Sun SPARCstation 2](https://en.wikipedia.org/wiki/SPARCstation_2) pizza-boxes

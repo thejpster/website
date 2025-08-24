@@ -604,3 +604,4 @@ Excellent. That's enough for now.
 
 OK, I've got an SS10, two SS5s and three SS20s left to try - and the SS20s are missing CPU cards and RAM. Lets look at those next time.
 
+Edit: [The fun continues](@/blog/blog-2025-08-23/index.md)

@@ -160,24 +160,99 @@ No CPU, no RAM and no NVRAM. With the SM41 and some RAM fitted, it doesn't even 
 
 ## SPARCstation 20 - suisse130242
 
-No CPU and two 32MB sticks of RAM. With the SM41 fitted, it POSTS, but cannot see any SCSI devices - internal or external. This might be an issue with the unterminated cable that wasn't plugged into the BlueSCSI (see earlier) and I need to come back to it.
+Came with no CPU and two 32MB sticks of RAM. Has a Ross hyperSPARC ROM but I guess someone stole the valuable CPU.
 
-Whilst playing around with the NVRAM chip it ended up fitted backwards and got very hot - I suspect the NVRAM is very dead.
+Whilst playing around with the NVRAM chip it ended up fitted backwards and got very hot - that NVRAM is very dead.
+
+**Edit 2025-08-25:** I replaced the NVRAM with the one from the SS10. Now it has 32 MB of RAM and an SM61 processor module. POST is fine. Isn't sending terminator power (blown fuse?) but if I power the BlueSCSI it finds both SCSI devices and boots from BlueSCSI just fine.
 
 ## SPARCstation 20 - tiny
 
 Had no CPU, no RAM but a TurboGX graphics card.
 
-Now has a SCSI/Ethernet card, 160 MB of RAM fitted (I was testing all the RAM I had) and the SM41 processor.
+Now has 128 MB of RAM fitted and two SM41 processors.
 
 Incredibly the NVRAM still holds a charge, and I had to [hot-swap it](https://jmtd.net/hardware/sparcstation/) to remove the PROM password. I also had to set the on-board jumpers to enable RS-232 mode before I could see serial output - and one of the jumpers was actually missing.
 
 POSTs OK but I wasn't able to install Solaris because my BlueSCSI wasn't plugged in (see earlier), but I suspect it would work fine. The internal hard drive was detected (I gave it a ST32155WC). The case is falling to pieces though, so I probably need to move this mainboard into another case.
 
+**Edit 2025-08-25:** Yes, with the BlueSCSI *actually* plugged in, I was able to install Solaris 2.6. Initially I failed to get Solaris 2.6 installed when using both CPUs, so I installed the OS with just one. Afterwards, I added the other one back and it still seems happy. Dual 40 MHz superSPARC!
+
+Here's the config (with one CPU fitted):
+
+```text
+# prtconf
+System Configuration:  Sun Microsystems  sun4m
+Memory size: 160 Megabytes
+System Peripherals (Software Nodes):
+
+SUNW,SPARCstation-20
+    packages (driver not attached)
+        disk-label (driver not attached)
+        deblocker (driver not attached)
+        obp-tftp (driver not attached)
+    options, instance #0
+    aliases (driver not attached)
+    openprom (driver not attached)
+    iommu, instance #0
+        sbus, instance #0
+            espdma, instance #0
+                esp, instance #0
+                    sd (driver not attached)
+                    st (driver not attached)
+                    sd, instance #0 (driver not attached)
+                    sd, instance #1 (driver not attached)
+                    sd, instance #2 (driver not attached)
+                    sd, instance #3
+                    sd, instance #4 (driver not attached)
+                    sd, instance #5 (driver not attached)
+                    sd, instance #6
+            ledma, instance #0
+                le, instance #0
+            SUNW,bpp (driver not attached)
+            SUNW,DBRIe (driver not attached)
+    obio, instance #0
+        zs, instance #0
+        zs, instance #1
+        eeprom (driver not attached)
+        counter (driver not attached)
+        interrupt (driver not attached)
+        SUNW,fdtwo (driver not attached)
+        auxio (driver not attached)
+        power (driver not attached)
+    memory (driver not attached)
+    virtual-memory (driver not attached)
+    eccmemctl (driver not attached)
+    SUNW,sx (driver not attached)
+    TI,TMS390Z55 (driver not attached)
+    pseudo, instance #0
+```
+
 ## SPARCstation 5
 
-This one is still untested.
+**Edit 2025-08-25:** Was untested, has now been tested. And the lid has been fixed.
+
+It has no RAM so I stole the only 200 pin stick I have from the other SPARCstation 5. The NVRAM is dead, but it POSTS just fine and sees SCSI devices. It comes with an on-board microSPARC-II at 110 MHz, and had a Sun TurboGX graphics card which I removed. Solaris 2.6 installed without issue.
 
 ## SPARCstation 10
 
-I haven't dared power this one up because it is so dirty.
+I haven't dared power this one up because it is so dirty. I did take eight 16 MB DSIMMs out of it, and an SM41 CPU module. Sadly, however, the DSIMMS are 168 pin 80 ns units. This means they aren't fast enough for a SPARCstation 20, and the wrong size for a SPARCstation 5.
+
+## In Summary
+
+OK, that was a lot of machines. Where did we end up?
+
+* 1x [Sun Fire V100](https://dogemicrosystems.ca/wiki/Sun_Fire_V100) rack-mount server - works just fine
+* 1x [Sun Netra T1](https://dogemicrosystems.ca/wiki/Sun_Netra_T1_105) rack-mount server - works just fine
+* 3x [Sun SPARCstation 20](https://en.wikipedia.org/wiki/SPARCstation_20) pizza-boxes - one is dead, one works but has dead NVRAM and one works just fine, with working NVRAM!
+* 1x [Sun SPARCstation 5](https://en.wikipedia.org/wiki/SPARCstation_5) pizza-box wearing a SPARCstation 20 lid - this was quite the surprise - works but has dead NVRAM
+* 1x [Sun SPARCstation 5](https://en.wikipedia.org/wiki/SPARCstation_5) pizza-box - works but has no terminator power and dead NVRAM
+* 1x [Sun SPARCstation 10](https://en.wikipedia.org/wiki/SPARCstation_10) pizza-box - haven't tried it, because it's too dirty
+* 2x [Sun SPARCstation 2](https://en.wikipedia.org/wiki/SPARCstation_2) pizza-boxes - both work fine
+* 1x [Sun SPARCstation 1](https://en.wikipedia.org/wiki/SPARCstation_1) pizza-box - PSU dead (no 12V)
+
+I also got seven working hard drives and four dead ones, plus a bunch of SBus cards.
+
+Not a bad result for free (and a six hour drive to collect).
+
+The machines are mostly going to my friends over on the Short Circuit Discord, although I'm keeping an SS5 and an SS20 with two SM41 CPUs. At the time of writing the rack-mount units and one SS5 are as yet unclaimed though. 

@@ -141,7 +141,7 @@ OK, so now we need to:
 
 Let's take these in turn.
 
-## Representing a Stack
+### Representing a Stack
 
 On Arm, stacks are typically what is known as *Full Descending*. That is, the stack pointer points at the most recent item added to the stack (it points to a 'full' location), and when a new item is pushed onto the stack, the pointer moves downwards. You could also have a *Empty Descending* stack, or even an *Empty Ascending* stack, but C and Rust agree to use the Arm Embedded ABI, and that says that stacks are *Full Descending* (and you can imagine the mess if not all the code in the system agrees on this convention).
 
@@ -182,7 +182,7 @@ impl<const LEN: usize> Default for Stack<LEN> {
 
 So we have a `struct Stack` managing an `UnsafeCell` containing an array of bytes, and a method to get a pointer to the 'top' of the stack (which is just beyond the array). It's not perfect - there's nothing stopping someone using the same stack twice, but it'll work. And we do at least ensure the stack size of a multiple of 4, and that it starts on an address that is a multiple of 8 (the AAPCS specification says compilers can rely on this being true, and we have observed Rust code having undefined behaviour when this is not true).
 
-## Pushing onto a Stack
+### Pushing onto a Stack
 
 When we set up our tasks, we need to push some information into the stack for each task. We could do this by applying negative offsets to the stack pointer, but this seems error prone. So let's have a little helper that can push a value into the stack, and move the stack pointer downwards automatically.
 
@@ -209,7 +209,7 @@ impl StackPusher {
 
 Remember, some comments have been removed to save space - I'm not actually a monster who writes undocumented code.
 
-## Tasks
+### Tasks
 
 Now, we need something to represent our tasks:
 
@@ -259,7 +259,7 @@ impl Task {
 
 Later on we're going to be poking values into this struct using assembly language so it's important that the size of `struct Task` is a power of 2 (which means we can convert a task index into a byte offset by doing a left-shift, instead of having to do a multiply). So we have a compile-time assert to check our `Task::SIZE_BITS` value is correct. 
 
-## The Scheduler
+### The Scheduler
 
 Now, our scheduler. We're going to need to hold on to a static list of `Task` values. We don't want to own them, because then we'd need to be generic over the length of the list - having a reference to them is fine. We need to track which task ID we are currently running (if any), and which one we should switch to next. We should probably also keep track of time.
 
@@ -405,7 +405,7 @@ This function never returns - it will be the last thing that `fn main()` calls. 
 
 There's also a curious issue with `set_pendsv()`. Setting the bit doesn't *immediately* cause the `PendSV` handler to fire. Because Arm processors are *pipelined*, they are loading the *next* instruction whilst simultaneously *executing* the current instruction (and perhaps *retiring* the previous instruction). So there may be a delay of a clock cycle or two whilst the processor deals any instructions it started but has not finished, before it jumps to the `PendSV` handler. An *Instruction Synchronization Barrier* is what we want here, to block the CPU until the pipeline is empty, using the `isb()` function from the `cortex-m` crate.
 
-## Picking a new task
+### Picking a new task
 
 To pick new tasks to run, we need handle two cases:
 
@@ -453,7 +453,7 @@ impl Scheduler {
 
 I don't know that I've got those atomic orderings correct here. If [you're Mara](https://marabos.nl/atomics/), feel free to tell me I'm wrong and how to make it better!
 
-## Actually switching tasks
+### Actually switching tasks
 
 OK, enough already. We need to write the PendSV handler and the bad news is, we cannot do it in Rust. It needs to access system registers, and so we cannot let the compiler generate any code that might affect those registers (like, copy them to the Main Stack) before we've had a chance to read them. But at least we have [naked functions in Rust now](https://blog.rust-lang.org/2025/07/03/stabilizing-naked-functions/), so we don't have to resort to using Assembly files, or declaring our own function symbols using [`global_asm!](https://doc.rust-lang.org/beta/core/arch/macro.global_asm.html).
 
@@ -552,7 +552,7 @@ Getting this right was ... challenging - hence all the comments for my future se
 
 I do also have an updated version of this code which also handles lazy FPU stacking and extended frames, but that's a bit much for this post. Maybe next time.
 
-## Userspace API
+### Userspace API
 
 Our tasks are going to need to interact with our scheduler, so let's give them some simple functions to call:
 

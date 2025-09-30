@@ -72,7 +72,7 @@ But wait, what?
 
 ## But what is an RTOS?
 
-Any Operating System which provides Real-Time guarantees is an RTOS. Any by real-time guarantees, I mean you can assign a priority to each task, and have some measurable upper bound for how long an input to the system will take to be processed. Windows 11, for example, is not a real-time operating system, because when you press a key on the keyboard there is literally no way of predicting when the computer might respond to that key press. If the input was "pressing the brake pedal" and the output was "activating the vehicle's brake system", you can see how that might be an issue.
+Any Operating System which provides Real-Time guarantees is an RTOS. And by real-time guarantees, I mean you can assign a priority to each task, and have some measurable upper bound for how long an input to the system will take to be processed. Windows 11, for example, is not a real-time operating system, because when you press a key on the keyboard there is literally no way of predicting when the computer might respond to that key press. If the input was "pressing the brake pedal" and the output was "activating the vehicle's brake system", you can see how that might be an issue.
 
 Generally to do this, an RTOS will provide mechanisms for:
 
@@ -412,7 +412,7 @@ impl Scheduler {
 }
 ```
 
-This function never returns - it will be the last thing that `fn main()` calls. The `DEFAULT_CPSR` is `0x0100_0000` - the bit we have set is the 'Thumb' bit, which indicates the processor is executing the T32 ISA instead of the A32 ISA. As this is the only ISA supported in M-Profile Architectures, if we do not set this bit the processor will crash when we resume our first task. It took me a while to work that one out. Not also that the order we push the saved state into each stack is important - it must be the reverse of the order in the PendSV handler (first) and processor itself (second) takes them out.
+This function never returns - it will be the last thing that `fn main()` calls. The `DEFAULT_CPSR` is `0x0100_0000` - the bit we have set is the 'Thumb' bit, which indicates the processor is executing the T32 ISA instead of the A32 ISA. As this is the only ISA supported in M-Profile Architectures, if we do not set this bit the processor will crash when we resume our first task. It took me a while to work that one out. Note also that the order we push the saved state into each stack is important - it must be the reverse of the order in the PendSV handler (first) and processor itself (second) takes them out.
 
 There's also a curious issue with `set_pendsv()`. Setting the bit doesn't *immediately* cause the `PendSV` handler to fire. Because Arm processors are *pipelined*, they are loading the *next* instruction whilst simultaneously *executing* the current instruction (and perhaps *retiring* the previous instruction). So there may be a delay of a clock cycle or two whilst the processor deals any instructions it started but has not finished, before it jumps to the `PendSV` handler. An *Instruction Synchronization Barrier* is what we want here, to block the CPU until the pipeline is empty, using the `isb()` function from the `cortex-m` crate.
 

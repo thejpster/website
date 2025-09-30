@@ -11,7 +11,7 @@ When you are writing safety-critical software in C, you are usually using some k
 
 [Real-Time Operating System]: https://en.wikipedia.org/wiki/Real-time_operating_system
 
-## C-langage RTOSes
+## C-language RTOSes
 
 One option for people using an RTOS and wanting to switch to Rust, is to run Rust code on top of their an existing RTOS. A incomplete alphabetical list might include:
 
@@ -46,7 +46,7 @@ Because Rust can import and export C compatible functions, it's usually straight
 
 So this is a fine option, and one you should consider if you already have an RTOS you like.
 
-## Rust-langage RTOSes
+## Rust-language RTOSes
 
 Of course, there are now a bunch of RTOSes that don't just let you run Rust programs, but are themselves written in Rust.
 
@@ -58,7 +58,7 @@ Again, an incomplete, alphabetical list might include:
 * [RTIC]
 * [Tock OS]
 
-[Ariel OS]: github.com/ariel-os
+[Ariel OS]: https://github.com/ariel-os
 [embassy]: https://github.com/embassy-rs/
 [Hubris]: https://hubris.oxide.computer/
 [RTIC]: https://rtic.rs/2/
@@ -72,7 +72,7 @@ But wait, what?
 
 ## But what is an RTOS?
 
-Any Operating System whichi provides Real-Time guarantees is an RTOS. Any by real-time guarantees, I mean you can assign a priority to each task, and have some measurable upper bound for how long an input to the system will take to be processed. Windows 11, for example, is not a real-time operating system, because when you press a key on the keyboard there is literally no way of predicting when the computer might respond to that key press. If the input was "pressing the brake pedal" and the output was "activating the vehicle's brake system", you can see how that might be an issue.
+Any Operating System which provides Real-Time guarantees is an RTOS. Any by real-time guarantees, I mean you can assign a priority to each task, and have some measurable upper bound for how long an input to the system will take to be processed. Windows 11, for example, is not a real-time operating system, because when you press a key on the keyboard there is literally no way of predicting when the computer might respond to that key press. If the input was "pressing the brake pedal" and the output was "activating the vehicle's brake system", you can see how that might be an issue.
 
 Generally to do this, an RTOS will provide mechanisms for:
 
@@ -81,7 +81,12 @@ Generally to do this, an RTOS will provide mechanisms for:
 * allowing those tasks to park themselves until some future event happens (a message arrives on a queue, an interrupt fires, a timeout expires, etc)
 * selecting and running the highest priority task that is not currently parked
 
-My 'task', I mean executing a mechanism to execute a function indefinitely, but in such a way that execution of that 'task' can be paused so that a different 'task' can use the CPU for a short while. That way it appears like you are running N infinitely long tasks in parallel, but you are actually only running one at a time and swapping between them. This is not something novel - UNIX has been doing it since the 1970s, and it was not the first - and that means it is something that is pretty well understood and considered 'tried and tested'.
+By 'task', I mean a mechanism to execute a function indefinitely, but in such a way that execution of that 'task' can be paused so that a different 'task' can use the CPU for a short while. That way it appears like you are running N infinitely long tasks in parallel, but you are actually only running one at a time and swapping between them. This is not something novel - UNIX has been doing it since the 1970s, and it was not the first - and that means it is something that is pretty well understood and considered 'tried and tested'.
+
+*An aside on naming: If you're more familiar with Windows, macOS or Linux, what I call a Task maps closely to what you might know as a Thread. It should also be noted that what I call a Task isn't what Rust calls a [Task][rust-task], as those are specifically asynchronous tasks, which is something different. You might say, "But why didn't you just call them Threads?" and the answer is FreeRTOS [also calls them Tasks][freertos-task] and because to me, Threads are short-lived things you can spawn and then wait on, whilst Tasks are things that are created at start-up. Anyway, naming things is one of the hardest problems in computer science.*
+
+[rust-task]: https://doc.rust-lang.org/stable/std/task/index.html
+[freertos-task]: https://www.freertos.org/Documentation/02-Kernel/02-Kernel-features/01-Tasks-and-co-routines/00-Tasks-and-co-routines
 
 The tasks might be allocated statically (all tasks known at compile time) or it might be possible to dynamically add and remove tasks. I've seen both work well.
 
@@ -115,7 +120,7 @@ Having had to [write Interrupt Handlers in assembly language][cortex-ar] for Arm
 
 [cortex-ar]: https://github.com/rust-embedded/cortex-ar/blob/7da113558e828d991c7ffb3a17debc4eb98a6b2d/cortex-a-rt/src/lib.rs#L786
 
-It should be noted that exceptions can pre-empt each other. That is, if you are running Interrupt L, and some Interrupt H becomes ready, where H is at some higher priority than L (indiciated by H having a *lower* priority number than L), then the state of the handler for Interrupt L will be pushed to the stack and the handler for Interrupt H will be started. We don't generally want to block interrupts from running, because that impacts our response time to external events. Faults obviously have the highest priority - they typically mean it's game over and time to reboot.
+It should be noted that exceptions can pre-empt each other. That is, if you are running Interrupt L, and some Interrupt H becomes ready, where H is at some higher priority than L (indicated by H having a *lower* priority number than L), then the state of the handler for Interrupt L will be pushed to the stack and the handler for Interrupt H will be started. We don't generally want to block interrupts from running, because that impacts our response time to external events. Faults obviously have the highest priority - they typically mean it's game over and time to reboot.
 
 Now, to change tasks when some task has been running for too long, we need some periodic timer tick - an interrupt that fires every N clock cycles, where we can select the value for N. If we tick more often, we waste more time in the timer interrupt handler, but if we tick less often, we get a lower resolution 'clock'. Setting N such that the interrupt fires 100 times per second is fairly common. You could also be smart and set the timer to *only* fire when we actually know we have something to do (a so-called 'tickless' RTOS), but let's not worry about that fow now.
 
@@ -317,7 +322,7 @@ impl Scheduler {
 
 Having nothing to do would be bad, so we fail if we don't get at least one task to run.
 
-Now, to start, we need to push some data into each task's stack. Then we can hit the PendSV button to switch to the first task, and we're off! Note the extreme comment/code ratio - this stuff is almsot all load-bearing.
+Now, to start, we need to push some data into each task's stack. Then we can hit the PendSV button to switch to the first task, and we're off! Note the extreme comment/code ratio - this stuff is almost all load-bearing.
 
 ```rust
 impl Scheduler {

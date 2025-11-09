@@ -185,17 +185,48 @@ On the 705:
 
 ```console
 $ file /bin/ls
-
+/bin/ls:        s800 shared executable
+$ ls -l /bin/ls
+-r-xr-xr-x   6 bin      bin       172032 Jun  9  1995 /bin/ls
 ```
 
 On the 340:
 
 ```console
 $ file /bin/ls
-
+/bin/ls:        s200 demand-load executable -version 2
+$ ls -l /bin/ls
+-r-xr-xr-x   6 bin      bin       143360 Feb 27  1995 /bin/ls
 ```
 
-What on earth is going on? How is one file both a 68K binary and a PA-RISC binary at the same time? It's not the NEXTSTEP trick (inherited by Mac OS X) of so-called *fat binaries*, because look - the file sizes don't match.
+They are not the same file. But this is the same filesystem?
+
+On the 340, we can do this:
+
+```console
+$ uname -a
+HP-UX hp340 B.09.10 A 9000/340 080009034425 two-user license
+$ echo "this is a test" > /tmp/test
+$ cat /tmp/test
+this is a test
+$ mount
+/ on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
+/UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
+```
+
+On the 705, we see this:
+
+```console
+$ uname -a
+HP-UX hp705 A.09.07 A 9000/705 2001450354 two-user license
+$ cat /tmp/test
+this is a test
+$ mount
+/ on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
+/UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
+```
+
+Yeah, they have mounted the same filesystem. What on earth is going on? How is one file both a 68K binary and a PA-RISC binary at the same time? But other files are just the same file? It's not the NEXTSTEP trick of so-called *fat binaries* (as inherited by MacOS X and modern macOS), because look - the file sizes and timestamps don't match.
 
 I have bad news. That 20 minutes of thrashing when we set up cluster mode? We created ourselves a *Context Dependent Filesystem*. The contents of our filesystem are literally context-dependent.
 
@@ -205,12 +236,77 @@ Now we get to the point of the blog post. This filesystem is *wild* and I can to
 
 When a file is *context-dependent*, it in fact becomes a directory. Within this directory are files named after the various supported contexts. When you access the filename, you get the contents according to the context you are in. If you access the filename including a `+` character at the end, you can see the directory and the context-dependent files it contains.
 
+Directories can also be *context-dependent* and when that happens, each entry it contains is a directory for a specific context.
+
 ```console
-$ ls -l /bin/ls+
+$ ls -l /bin+
+total 10
+drwxr-xr-x   3 root     root        2060 Nov  9 17:44 HP-MC68020
+drwxr-xr-x   3 root     root        2048 May 23  1995 HP-PA
+$ ls -l /bin+/HP-PA/ls
+-r-xr-xr-x   6 bin      bin       172032 Jun  9  1995 /bin+/HP-PA/ls
+$ ls -l /bin+/HP-MC68020/ls
+-r-xr-xr-x   6 bin      bin       143360 Feb 27  1995 /bin+/HP-MC68020/ls
 ```
 
-Oh look, our two copies of `ls`!
+Oh look, our two copies of `ls`! It appears the context for the Series 700 files is `HP-PA` and the context for the Series 300 files is `HP-MC68020`. 
 
-Directories can also be *context-dependent* and when that happens, each entry it contains is a directory for a specific context. 
+(Side note: Don't worry about the dates - I moved the clock forward from the default of 1995 to 1997 before installing the 68K version because I got warnings on boot-up that files were newer than the current date/time)
 
-Files you create in the usual course of using the system will just be regular files. If you want to create a *CDF*, you use the `makecdf` command. This turns out to be important because if you try and run the VUE desktop on the Model 340, the X11 server will fail to start. This because in HP-UX 9.07 for Series 700, the library is called `FOOOBAR.sl`, and so when we created a cluster, that became a CDF. When we installed HP-UX 9.10 for Series 300, the library is called `FOOBAR2.sl`, which is not an existing CDF, and therefore the installation of the X11 package fails and that file ends up missing. The workaround is to create the CDF manually, and then move over the file from the package install directory, as noted in the error log.
+They use this system even if you don't have a mixed-architecture cluster. There are some config files in `/etc` where the context is the hostname of the machine that's accessing the file. That way each machine in the cluster can get a unique copy of the config file (like `/etc/checklist`) whilst they can all share the same copy of some files (like `/etc/passwd`).
+
+```console
+$ ls -l /etc/checklist+
+total 2
+-rw-rw-rw-   1 root     sys            0 Nov  9 19:08 hp340
+-r--r--r--   1 bin      bin          225 May 23  1995 hp705
+$ cat /etc/checklist+/hp705
+# System /etc/checklist file.  Static information about the file systems
+# See checklist(4) and sam(1M) for further details on configuring devices.
+/dev/dsk/c201d0s0   /               hfs    defaults  0 1 # Root device entry
+$ cat /etc/checklist+/hp340
+$
+```
+
+Files you create in the usual course of using the system will just be regular files - if you want to create a *CDF*, you must use the `makecdf` command. This turns out to be important because we need to fix a bug.
+
+## Fixing X11
+
+If you try and run the VUE desktop on the Model 340, the X11 server will fail to start due to a missing library called `libSXR5.sl`. After a lot of poking around online and finding extremely little about this file, I worked out that this because the `X11-SERV` did not install correctly when we installed HP-UX for Series 300. Looking at `/tmp/update.log` we see:
+
+```text
+       * Beginning customize script for fileset "X11-SERV" (163 of 174) using 
+         the command:  /system+/HP-MC68020/X11-SERV/customize HP-MC68020
+cp: cannot create /usr/lib/X11/extensions/libSXR5.sl+/HP-MC68020: No such file or directory
+NOTE:  couldn't copy /etc/newconfig+/HP-MC68020/X11R5/libSXR5.sl to 
+       /usr/lib/X11/extensions/libSXR5.sl+/HP-MC68020
+ERROR:   Customize script for fileset "X11-SERV" failed.  You might want to 
+         re-invoke it manually later.
+```
+
+That's interesting. It's trying to put the Series 300 file into a context called `HP-MC68020` but it cannot. Does that CDF exist? No it does not. But there is a file called `libSXR5A.sl`, which is not a CDF.
+
+It turns out that this because in HP-UX 9.07 for Series 700, the library is called `libSXR5A.sl`. I guess they updated it at some point and figured it needed a new name. However, when we created a cluster, it did not become a CDF. When we installed HP-UX 9.10 for Series 300, the library is called `libSXR5.sl`, and it tries to install it to an existing CDF of that name, which does not exist. Therefore the installation of the X11 package fails and that file ends up missing.
+
+The workaround is to create the CDF manually, and then retry the installation of that package.
+
+```console
+$ makecdf /usr/lib/X11/extensions/libSXR5.sl
+$ /system+/HP-MC68020/X11-SERV/customize HP-MC68020
+NOTE: copying /etc/newconfig+/HP-MC68020/X11R5/libSXR5.sl to /usr/lib/X11/extensions/libSXR5.sl+/HP-MC68020
+$ ls -l /usr/lib/X11/extensions/libSXR5.sl+
+total 36
+-r-xr-xr-x   1 root     sys        18262 Nov  9 18:22 HP-MC68020
+```
+
+Now we have the file, and we can run X11 on our 68K UNIX workstation.
+
+## Wrapping up
+
+You want to see the *original* version of the Sega classic Columns, running on a 68K UNIX workstation from 1989, in glorious 1280x1024 8-bit colour?
+
+{{ youtube(id="xioMIX66TdA") }}
+
+Turns out it was [written by HP employee Jay Geertsen](https://www.timeextension.com/news/2024/05/the-original-version-of-columns-for-the-hp-ux-has-just-been-found), and shipped as a game/demo in HP-UX. Sega later licensed it from the author, and you might remember playing it in the Arcade or on the Sega Mega Drive.
+
+But do you want to play this game, on *this* hardware? Then come to the Retro Computer Festival, 15-16 November 2026 at the Centre for Computing History. I'll be there with these two monsters, along with a few more HPs, my SGI Power Indigo 2, and a few Sun workstations for good measure. Tickets are available from <https://www.computinghistory.org.uk/> and are selling fast.

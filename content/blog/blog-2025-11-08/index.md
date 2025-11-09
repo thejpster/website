@@ -80,7 +80,7 @@ So, let's install HP-UX 9 on the Model 705 I got from Matt. I found [this guide 
 
 (Side note: look at that keyboard for more than a few seconds, and you'll realise *it's really weird*)
 
-Step 1 is to boot the Install CD, which I do using a BlueSCSI. This formats the hard disk - but only if it recognises the make and model from its `disktab` file. This is an annoyance that seems common to early UNIX systems - SunOS 4 has a similar problem - but I was able to swap some drives around and put a 2GB Seagate ST11200N into the machine, which it seems happy with. You'd certainly have no chance with a more modern 9.1GB drive. Once the format is done, it lays down a very root filesystem, and reboots into it.
+Step 1 is to boot the Install CD, which I do using a BlueSCSI. This formats the hard disk - but only if it recognises the make and model from its `disktab` file. This is an annoyance that seems common to early UNIX systems - SunOS 4 has a similar problem - but I was able to swap some drives around and put a 2GB Seagate ST11200N into the machine, which it seems happy with. You'd certainly have no chance with a more modern 9.1GB drive. Once the format is done, it lays down a very basic root filesystem, and reboots into it.
 
 Step 2 is the actual installation. I put the image onto the BlueSCSI (I'm using *HP-UX 9.07 Core OS B2826-13716*), and the installation picks it up and asks what packages I want to install. I pick *Select All Filesets on the Source Media*, because I've got plenty of disk space - I think a full install is only about 200 MiB. It takes about 20 minutes to copy the files over, and then we can set up the root password, hostname, IP address, DNS server, and so on.
 
@@ -179,27 +179,27 @@ Hmmm, OK, fine, I'll drop to single-user mode and do it on the console instead o
 
 Once we're in single user mode, it lets us set up a cluster. And once we've accepted that it's an irreversible process (weird), actually setting up the cluster takes an *age* to complete. It's not immediately clear why it needs to thrash the disk for 20 minutes, but once that's done, we reboot and then we can go back in to *SAM* and add a new machine to the cluster. But, it's only letting us as *S700* machines (i.e. PA-RISC machines), not *S300* machines (that have the 68K architecture).
 
-Another quick side-note here to shout-out to HP-UX for including a sensible `/etc/nsswitch.conf` out of the box - one that looks at the `/etc/hosts` file and then the DNS resolver configured in `/etc/resolv.conf`. Most of you think this a weird thing to celebrate, but some of you have had the pain of installing old versions of Sun Solaris before and you understand.
+Another quick side-note here to shout-out to HP-UX for including a sensible `/etc/nsswitch.conf` out of the box - one that looks at the `/etc/hosts` file and then the DNS resolver configured in `/etc/resolv.conf`. Most of you think this a weird thing to celebrate, but some of you have had the pain of installing old versions of SunOS and Solaris before, and you do not think this a weird thing to celebrate.
 
 ## HP-UX 9 for Series 300 (68K)
 
-HP-UX 9 for the Series 300 is a different set of install CDs, containg 68K binaries. It makes sense that we cannot add Series 300 machines to our cluster, because we have no 68K binaries for them to boot over the network.
+HP-UX 9 for the Series 300 is a different set of install CDs, containg 68K binaries. It makes sense that we cannot add Series 300 machines to our cluster, because we have no 68K binaries for them to load over the network.
 
-So how you do get Series 300 binaries on a Series 700 machine? You insert the Series 300 *CoreOS* disk (not the bootable *Install* disk), and you install HP-UX for Series 300. Over the top of the existing install.
+So how you do get Series 300 binaries on a Series 700 machine? You insert the Series 300 *Core OS* disk (not the bootable *Install* disk), and you install HP-UX 9 for Series 300. Over the top of the existing install.
 
-This is profoundly weird and when I first tried this, I was sure I was doing something wrong that was about to trash my whole machine. You can imagine my surprise when, having done this second install (of an alien architecture), I was now able to add an *S300* machine to my cluster. I simply specifyied the Ethernet MAC address of my Model 340, along with an IP address, and that was that. All configured.
+This is profoundly weird and when I first tried this, I was sure I was doing something wrong and that I was about to trash my whole machine. You can imagine my surprise when, having done this second install (of an alien architecture), the Model 705 carried on working. I could even reboot it. Not only that, but now I was now able to add an *S300* machine to my cluster too. I simply specifyied the Ethernet MAC address of my Model 340, along with a hostname (which it used to pick up the IP address from DNS, which was nice), and that was that. All configured.
 
-You can further imagine my surprise when I connect the Model 340 to the 10base2 network and it boots right up, into HP-UX 9 for 68K, over the network. The root password is the *same* root password I have set up on the Model 705. In fact, it's the same root filesystem. I can make a file on the 705 and see it on the 340, like this:
+You can further imagine my surprise when I connected the Model 340 to Model 705 with my new 10base2 cable (and T-pieces and terminators) and it boots right up, into HP-UX 9 for 68K, over the network. The root password is the *same* root password I have set up on the Model 705. In fact, it's the same root filesystem. I can make a file on the 340 and see it on the 705, like this:
 
 ```console
 $ uname -a
 HP-UX hp340 B.09.10 A 9000/340 080009034425 two-user license
-$ echo "this is a test" > /tmp/test
-$ cat /tmp/test
-this is a test
 $ mount
 / on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
 /UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
+$ echo "this is a test" > /tmp/test
+$ cat /tmp/test
+this is a test
 ```
 
 And on the other machine:
@@ -207,11 +207,11 @@ And on the other machine:
 ```console
 $ uname -a
 HP-UX hp705 A.09.07 A 9000/705 2001450354 two-user license
-$ cat /tmp/test
-this is a test
 $ mount
 / on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
 /UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
+$ cat /tmp/test
+this is a test
 ```
 
 But, binaries (like `/bin/ls`) are PA-RISC code on the 705 and 68K code on the 340. I know this, because the binaries work on each machine, but I can see this using the `file` command.
@@ -240,17 +240,23 @@ So ... they have mounted the same filesystem but the filesystem contents are dif
 
 You might think it's the NEXTSTEP trick of so-called *fat binaries* (as inherited by MacOS X and modern macOS). But look - the file sizes and timestamps don't match. So it's not one file with two binaries inside it.
 
-I have bad news. That 20 minutes of thrashing when we set up cluster mode? We created ourselves a *Context Dependent Filesystem*. The contents of our filesystem are literally context-dependent.
+I have bad news. That 20 minutes of thrashing when we set up cluster mode? We created ourselves a *Context Dependent Filesystem*. The contents of our filesystem are literally context-dependent. And the context comes from the machine you are logged in to.
 
 ## Context Dependent Filesystems
 
 Now we get to the point of the blog post. This filesystem is *wild* and I can totally see why HP ditched it in HP-UX 10.
 
-When a file is *context-dependent*, it in fact becomes a directory. Within this directory are files named after the various supported contexts. When you access the filename, you get the contents according to the context you are in. If you access the filename including a `+` character at the end, you can see the directory and the context-dependent files it contains.
+When a file is a *context-dependent file* (or *CDF*), it in fact becomes a directory. Within this directory are files named after the various supported contexts. When you access the filename, you get the contents according to the context you are in. But when you access the filename including a `+` character at the end, you can see the directory and the context-dependent files it contains.
 
 Directories can also be *context-dependent* and when that happens, each entry it contains is a directory for a specific context.
 
+Here's `/bin`:
+
 ```console
+$ ls -ld /bin
+drwxr-xr-x   3 root     root        2048 May 23  1995 /bin
+$ ls -ld /bin+
+drwsr-xr-x   4 root     root        1024 May 23  1995 /bin+
 $ ls -l /bin+
 total 10
 drwxr-xr-x   3 root     root        2060 Nov  9 17:44 HP-MC68020
@@ -265,13 +271,17 @@ Oh look, our two copies of `ls`! It appears the context for the Series 700 files
 
 (Side note: Don't worry about the dates - I moved the clock forward from the default of 1995 to 1997 before installing the 68K version because I got warnings on boot-up that files were newer than the current date/time)
 
-They use this system even if you don't have a mixed-architecture cluster. There are some config files in `/etc` where the context is the hostname of the machine that's accessing the file. That way each machine in the cluster can get a unique copy of the config file (like `/etc/checklist`) whilst they can all share the same copy of some files (like `/etc/passwd`).
+They use this system even if you don't have a mixed-architecture cluster. There are some config files in `/etc` where the context is the hostname of the machine that's accessing the file. That way each machine in the cluster can get a unique copy of the config file (like `/etc/checklist`) whilst they can all share the same copy of some files (like `/etc/passwd`, which is not a *CDF*).
 
 ```console
 $ ls -l /etc/checklist+
 total 2
 -rw-rw-rw-   1 root     sys            0 Nov  9 19:08 hp340
 -r--r--r--   1 bin      bin          225 May 23  1995 hp705
+$ cat /etc/checklist
+# System /etc/checklist file.  Static information about the file systems
+# See checklist(4) and sam(1M) for further details on configuring devices.
+/dev/dsk/c201d0s0   /               hfs    defaults  0 1 # Root device entry
 $ cat /etc/checklist+/hp705
 # System /etc/checklist file.  Static information about the file systems
 # See checklist(4) and sam(1M) for further details on configuring devices.
@@ -280,11 +290,13 @@ $ cat /etc/checklist+/hp340
 $
 ```
 
-Files you create in the usual course of using the system will just be regular files - if you want to create a *CDF*, you must use the `makecdf` command. This turns out to be important because we need to fix a bug.
+Files you create whilst using the system will just be regular files - if you want to create a *CDF*, you must use the `makecdf` command. This turns out to be important because we need to fix a bug.
 
-## Fixing X11
+## Fixing X11R5
 
-If you try and run the VUE desktop on the Model 340, the X11 server will fail to start due to a missing library called `libSXR5.sl`. After a lot of poking around online and finding extremely little about this file, I worked out that this because the `X11-SERV` did not install correctly when we installed HP-UX for Series 300. Looking at `/tmp/update.log` we see:
+If you try and run the VUE desktop on the Model 340 on this version of HP-UX, when booted from a Series 700 server running that version of HP-UX, the X11 server will fail to start. This is due to a missing library called `libSXR5.sl`.
+
+After a lot of poking around online and finding extremely little about this file, I worked out that this because the `X11-SERV` package did not install correctly when we installed HP-UX for Series 300. Looking at `/tmp/update.log` we see:
 
 ```text
        * Beginning customize script for fileset "X11-SERV" (163 of 174) using 
@@ -298,7 +310,7 @@ ERROR:   Customize script for fileset "X11-SERV" failed.  You might want to
 
 That's interesting. It's trying to put the Series 300 file into a context called `HP-MC68020` but it cannot. Does that CDF exist? No it does not. But there is a file called `libSXR5A.sl`, which is not a CDF.
 
-It turns out that this because in HP-UX 9.07 for Series 700, the library is called `libSXR5A.sl`. I guess they updated it at some point and figured it needed a new name. However, when we created a cluster, it did not become a CDF. When we installed HP-UX 9.10 for Series 300, the library is called `libSXR5.sl`, and it tries to install it to an existing CDF of that name, which does not exist. Therefore the installation of the X11 package fails and that file ends up missing.
+It turns out that this because in HP-UX 9.07 for Series 700, the library is called `libSXR5A.sl`. My theory is that they updated it at some point and figured it needed a new name. However, when we installed HP-UX 9.10 for Series 300, it still thinks the library is called `libSXR5.sl`, and it tries to install it to an existing CDF of that name, which does not exist. Therefore the installation of the `X11-SERV` package fails and that file ends up missing.
 
 The workaround is to create the CDF manually, and then retry the installation of that package.
 
@@ -311,7 +323,9 @@ total 36
 -r-xr-xr-x   1 root     sys        18262 Nov  9 18:22 HP-MC68020
 ```
 
-Now we have the file, and we can run X11 on our 68K UNIX workstation.
+If you ever try to replicate this setup, I hope this helps.
+
+Now we have the file, and we can run X11R5 and the VUE desktop on our 68K UNIX workstation.
 
 ## Wrapping up
 
@@ -322,3 +336,5 @@ You want to see the *original* version of the Sega classic Columns, running on a
 Turns out it was [written by HP employee Jay Geertsen](https://www.timeextension.com/news/2024/05/the-original-version-of-columns-for-the-hp-ux-has-just-been-found), and shipped as a game/demo in HP-UX. Sega later licensed it from the author, and you might remember playing it in the Arcade or on the Sega Mega Drive.
 
 But do you want to play this game, on *this* hardware? Then come to the Retro Computer Festival, 15-16 November 2026 at the Centre for Computing History. I'll be there with these two monsters, along with a few more HPs, my SGI Power Indigo 2, and a few Sun workstations for good measure. Tickets are available from <https://www.computinghistory.org.uk/> and are selling fast.
+
+If you'd like more details about HP-UX in Cluster Mode, Bitsavers have a copy of [*Managing Clusters of HP 9000 Computers: Sharing the HP-UX Filesystem*](https://bitsavers.trailing-edge.com/pdf/hp/9000_hpux/9.x/B1864-90015_Managing_Clusters_of_HP_9000_Computers_Aug92.pdf), along with many other interesting documents about HP-UX. Definitely worth taking a look.

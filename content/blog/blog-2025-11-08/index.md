@@ -46,11 +46,21 @@ The system specs for this machine are:
 * HIL interface for keyboard and mouse
 * 10base2 Ethernet interface
 
-What it does not have, is a floppy controller or a SCSI controller, or any kind of disk controller. You're supposed to either network boot it, or use an HP-IB disk drive.
+{{ image(img="/blog/blog-2025-11-08/340top.JPEG") }}
 
-I also did not have any 10base2 networking gear, a BNC to VGA adapter, any HP-IB cables or devices or a HIL keyboard (although I did have a bag of HIL mice). But, you know, eBay exists, and I was able to get the first three things in short order. The keyboards, however, are outrageously expensive, and being HIL interface, you can't just use a PC keyboard as a substitute.
+{{ image(img="/blog/blog-2025-11-08/ramgfx.JPEG") }}
 
-Here Matt comes to the rescue because it turned out he had an HP 9000 Model 705 kicking around, and that also uses HIL, and he had the keyboard to go with it and seeing as he now had a Model 715, he was happy to let me borrow the 705 and its keyboard in exchange.
+{{ image(img="/blog/blog-2025-11-08/340ram.JPEG") }}
+
+{{ image(img="/blog/blog-2025-11-08/340rear.JPEG") }}
+
+Sorry, you can't see the 68030 or the 68882 FPU - they are underneath the high-res graphics adapter, and I didn't want to take it apart.
+
+What you also cannot see - because it does not have them - is a floppy controller or a SCSI controller, or any kind of disk controller. You're supposed to either network boot it, or use an HP-IB disk drive.
+
+I do not (or rather, I did not) have any 10base2 networking gear, or a BNC to VGA adapter, or any HP-IB cables or devices, or an HIL keyboard (although I do have a bag of HIL mice). But, you know, eBay exists, and I was able to get the first three things in short order at fairly reasonable prices. The keyboards, however, are outrageously expensive, and being HIL interface, you can't just use a PC keyboard as a substitute.
+
+Here Matt comes to the rescue because it turned out he had an HP 9000 Model 705 kicking around, and that also uses HIL, and he had the keyboard to go with it. Seeing as he now had my Model 715 (which supports both PS/2 and HIL), he was happy to let me borrow the 705 and its keyboard in exchange.
 
 Amazingly, the Model 340 appears to be in great working order. When you turn it on, it does a self-test, and then fails to find any devices to boot from. I now do have an HP-IB card (well, a GPIB card) for my Windows XP PC, and a copy of [*HPDrive* from hp9845.net](https://www.hp9845.net/9845/projects/hpdrive/). This is an emulator for HP HP-IB drive units - floppy drives, hard disk drives and CD-ROM drives. I have booted the machine with it, but I found it to be quite slow.
 
@@ -76,7 +86,7 @@ Step 2 is the actual installation. I put the image onto the BlueSCSI (I'm using 
 
 {{ image(img="/blog/blog-2025-11-08/install.JPEG") }}
 
-## Cluster Mode, Activated
+## An absolute Cluster ... Server
 
 My first attempt at setting up HP-UX 9 on this machine was made difficult because the network card wasn't working. This was either because I had the switch on the rear of the machine in the *Factory Setup* position instead of the *Normal* position, or because I had the internal jumpers set to use the AUI port instead of the BNC, and it knew I didn't have an MAU attached to the AUI port. Either way, I resolved both issues at the same time and after that, the network started up on boot. If you cannot bring up a network interface on a Model 705, check both I guess.
 
@@ -177,9 +187,34 @@ HP-UX 9 for the Series 300 is a different set of install CDs, containg 68K binar
 
 So how you do get Series 300 binaries on a Series 700 machine? You insert the Series 300 *CoreOS* disk (not the bootable *Install* disk), and you install HP-UX for Series 300. Over the top of the existing install.
 
-This is profoundly weird and when I first tried this, I was sure I was doing something wrong about about to trash my whole machine. You can imagine my surprise when, having done this second install of an alien architecture, I was able to add an *S300* machine to my cluster, specifying the Ethernet MAC address of my Model 340, along with an IP address.
+This is profoundly weird and when I first tried this, I was sure I was doing something wrong that was about to trash my whole machine. You can imagine my surprise when, having done this second install (of an alien architecture), I was now able to add an *S300* machine to my cluster. I simply specifyied the Ethernet MAC address of my Model 340, along with an IP address, and that was that. All configured.
 
-You can further imagine my surprise when I connect the Model 340 to the 10base2 network and it boots right up, into HP-UX 9 for 68K, over the network. The root password is the *same* root password I have set up on the Model 705. In fact, it's the same root filesystem. I can make a file on the 705 and see it on the 340. But, binaries (like `/bin/ls`) are PA-RISC code on the 705 and 68K code on the 340. I know this, because the binaries work on each machine, but I can see this using the `file` command.
+You can further imagine my surprise when I connect the Model 340 to the 10base2 network and it boots right up, into HP-UX 9 for 68K, over the network. The root password is the *same* root password I have set up on the Model 705. In fact, it's the same root filesystem. I can make a file on the 705 and see it on the 340, like this:
+
+```console
+$ uname -a
+HP-UX hp340 B.09.10 A 9000/340 080009034425 two-user license
+$ echo "this is a test" > /tmp/test
+$ cat /tmp/test
+this is a test
+$ mount
+/ on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
+/UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
+```
+
+And on the other machine:
+
+```console
+$ uname -a
+HP-UX hp705 A.09.07 A 9000/705 2001450354 two-user license
+$ cat /tmp/test
+this is a test
+$ mount
+/ on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
+/UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
+```
+
+But, binaries (like `/bin/ls`) are PA-RISC code on the 705 and 68K code on the 340. I know this, because the binaries work on each machine, but I can see this using the `file` command.
 
 On the 705:
 
@@ -199,34 +234,11 @@ $ ls -l /bin/ls
 -r-xr-xr-x   6 bin      bin       143360 Feb 27  1995 /bin/ls
 ```
 
-They are not the same file. But this is the same filesystem?
+They are not the same file.
 
-On the 340, we can do this:
+So ... they have mounted the same filesystem but the filesystem contents are different. What on earth is going on? How is one file both a 68K binary and a PA-RISC binary at the same time? But other files are just the same file?
 
-```console
-$ uname -a
-HP-UX hp340 B.09.10 A 9000/340 080009034425 two-user license
-$ echo "this is a test" > /tmp/test
-$ cat /tmp/test
-this is a test
-$ mount
-/ on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
-/UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
-```
-
-On the 705, we see this:
-
-```console
-$ uname -a
-HP-UX hp705 A.09.07 A 9000/705 2001450354 two-user license
-$ cat /tmp/test
-this is a test
-$ mount
-/ on /dev+/localroot/dsk/c201d0s0 read/write on Tue May 23 19:48:13 1995 (hp705)
-/UPDATE_CDROM on /dev+/localroot/dsk/c201d4s0 read only on Sun Nov  9 17:20:59 1997 (hp705)
-```
-
-Yeah, they have mounted the same filesystem. What on earth is going on? How is one file both a 68K binary and a PA-RISC binary at the same time? But other files are just the same file? It's not the NEXTSTEP trick of so-called *fat binaries* (as inherited by MacOS X and modern macOS), because look - the file sizes and timestamps don't match.
+You might think it's the NEXTSTEP trick of so-called *fat binaries* (as inherited by MacOS X and modern macOS). But look - the file sizes and timestamps don't match. So it's not one file with two binaries inside it.
 
 I have bad news. That 20 minutes of thrashing when we set up cluster mode? We created ourselves a *Context Dependent Filesystem*. The contents of our filesystem are literally context-dependent.
 

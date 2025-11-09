@@ -5,7 +5,7 @@ date = "2025-11-08"
 
 ## Background
 
-A few weeks back I got a note on Bluesky my mate Rob, linking me to a website offering a free computer. The owner was in Cambridge, not far from me, and the computer was an HP 9000/300 Series - a Model 340, specifically.
+A few weeks back I got a note on Bluesky, linking me to a website offering a free computer. The owner was in Cambridge, not far from me, and the computer was an HP 9000/300 Series - a Model 340, specifically.
 
 The HP 9000 line of workstations and servers ran from the early 1980s through to the late 2000s (see this [great history page at openpa.net](https://www.openpa.net/systems/hp-9000_pa-risc_story.html) for more details). It encompassed many processor architectures, including Itanium, HP's own Precision Architecture (aka PA-RISC), and their earlier FOCUS architecture. Alongside the early FOCUS machines, they also had a line of Motorola 68K based UNIX workstations - the 300 series. This is a machine from that series, and I thought a 68030 based UNIX workstation just sounded fascinating. Something of the same kind of processor and vintage as the Macintosh IIx, but part of the lineage that led to my beloved [Visualize B132L+ and C3000 workstations](@/blog/blog-2025-03-22/index.md).
 

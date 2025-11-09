@@ -26,7 +26,7 @@ E-mails were exchanged with the owner, Ben, and I was invited to pop over and co
 
 {{ image(img="/blog/blog-2025-11-08/SPARCstation10.JPEG") }}
 
-This haul was frankly ridiculous, and huge thanks to Ben for his generosity. It was also more machines that I literally had space for at home (thanks to a [very large pile of SPARCstations](@/blog/blog-2025-08-20/index.md) I haven't yet moved on) and so I immediately called my friend Matt and arranged to drop of the SPARCstation 10 and the HP 9000 Model 715. I already have an HP 9000 Model 712 and they're similar enough I'm happy to let Matt hold on to the 715 for now. He also had his name down for the SPARCstation 10 I already had, so it made sense to let him have both in case one he needs spares.
+This haul was frankly ridiculous, and huge thanks to Ben for his generosity. It was also more machines that I literally had space for at home (thanks to a [very large pile of SPARCstations](@/blog/blog-2025-08-20/index.md) I haven't yet moved on) and so I immediately called my friend Matt and arranged to drop off the SPARCstation 10 and the HP 9000 Model 715. I already have an HP 9000 Model 712 and they're similar enough I'm happy to let Matt hold on to the 715 for now. He also had his name down for the SPARCstation 10 I already had, so it made sense to let him have both in case one he needs spares.
 
 Over at Matt's house we fired them up and were delighted to see the both booted up OK, which was very promising.
 

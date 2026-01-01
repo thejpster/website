@@ -149,7 +149,7 @@ Yes we can.
 ```bash
 mkdir woody_chroot
 cd woody_chroot
-sudo debootstrap --arch arm woody . http://archive.debian.org/debian
+sudo debootstrap --foreign --arch arm woody . http://archive.debian.org/debian
 sudo tar cvzf ../woody_chroot.tar.gz .
 ```
 

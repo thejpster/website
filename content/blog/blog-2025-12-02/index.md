@@ -98,7 +98,7 @@ I got back into the Potato installer, dropped to a shell and manually formatted 
 
 There is a file called [`base2_2.tgz`] online, which seems to contain a basic Potato install that we could unpack to `/target`. However, the Potato kernel is 2.2.19 but the modules in the Potato initrd are for 2.2.17 and cannot be loaded.  As the ADFS support is in a module, this means we cannot read our ADFS volume from Linux. I don't have working networking, and the floppy drive doesn't seem to work under Linux either.
 
-[`base2_2.tgz`: https://archive.debian.org/debian/dists/potato/main/disks-arm/current/base2_2.tgz
+[`base2_2.tgz`]: https://archive.debian.org/debian/dists/potato/main/disks-arm/current/base2_2.tgz
 
 What I did (I think) was boot with the Woody kernel (also 2.2.19, but built slightly later and I assume with a different config) and the Potato initrd, and then get the `drivers.tgz` file from the Woody CD-ROM (which I burned to one of my last remaining blank CD-Rs), which contains the correct kernel modules, from which I could unpack and load the `adfs.o` module, and from there I could access files from my RISC OS filesystem.
 

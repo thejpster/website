@@ -36,11 +36,11 @@ I have:
 
 Well.
 
-{{ image(img="/blog/blog-2026-01-06/IMG_1717.JPEG") }}
+{{ image(img="/blog/blog-2026-01-06/IMG_1717.jpeg") }}
 
 Safety first.
 
-{{ image(img="/blog/blog-2026-01-06/IMG_1718.JPEG") }}
+{{ image(img="/blog/blog-2026-01-06/IMG_1718.jpeg") }}
 
 Just your usual weekly shop.
 
@@ -50,11 +50,11 @@ Luckily there was a Bring and Buy at the Centre for Computing History a few days
 
 I nearly sold the Pioneer six-disc changers (as a pair), but I couldn't find a suitable SCSI card for them in my pile of SCSI cards, so the deal fell through. Never mind - they look 90's AF.
 
-{{ image(img="/blog/blog-2026-01-06/IMG_1740.JPEG") }}
+{{ image(img="/blog/blog-2026-01-06/IMG_1740.jpeg") }}
 
 I also didn't sell any of these CD-ROM drives, so the might go back into the enclosure ready. That Yamaha 4x2x6x drive brings back memories as we sold quite a few at the computer shop back in the day. They were especially popular with gentlemen in the *ahem* Video CD distribution business, as I recall.
 
-{{ image(img="/blog/blog-2026-01-06/IMG_1724.JPEG") }}
+{{ image(img="/blog/blog-2026-01-06/IMG_1724.jpeg") }}
 
 Unfortunately I did also buy an HP 9133 HP-IB Floppy Drive and MFM Hard Drive combo unit for my HP 9000 Model 340, and I picked up a Pentium 4 motherboard and a handful of PCI cards for £10 - for reasons which seemed plausible at the time but which now escape me. I also picked up a couple of EIDE hard drives of 20 to 40 GB capacity.
 
@@ -62,9 +62,9 @@ Unfortunately I did also buy an HP 9133 HP-IB Floppy Drive and MFM Hard Drive co
 
 This machine deserves a post on its own. It's a PowerPC applicance with 64 MiB of RAM. It has a ROM which is enough to control a few settings, and to load an OS over the network using DHCP and TFTP. It it supposed to boot into a Network Terminal environment from IBM, which lets you remotely log into X servers, or AS/400 machines, or various other things. But also it has NetBSD support, and there are some Linux kernel patches floating around. I've had it booting into all three, but unfortunately it's a bit crashy. Also the CPU heatsink fell off because it was only glued on. As I said, maybe I'll do another post about it if I can get it working reliably. For now, the RAM is in my RiscPC.
 
-{{ image(img="/blog/blog-2026-01-06/IMG_1728.JPEG") }}
+{{ image(img="/blog/blog-2026-01-06/IMG_1728.jpeg") }}
 
-{{ image(img="/blog/blog-2026-01-06/IMG_1730.JPEG") }}
+{{ image(img="/blog/blog-2026-01-06/IMG_1730.jpeg") }}
 
 
 ## The Sun Ultra 5

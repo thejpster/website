@@ -25,6 +25,8 @@ I have:
 * A Silicon Graphics "IndyCam"
 * A Sun Ultra 5
 * A *lot* of SCSI cables and terminators
+* A PCI SCSI card with the spicy High Voltage Differential signalling that destroys regular SCSI devices
+* Some more S-Bus cards
 * Half a dozen MAUs (the thing that turns an AUI port into a 10base2 or 10baseT physical interface)
 * A brand-new (still in the plastic wrapper) Sun Type 6 keyboard and mouse
 * Two Pioneer six-disc SCSI changers
@@ -52,11 +54,11 @@ I nearly sold the Pioneer six-disc changers (as a pair), but I couldn't find a s
 
 {{ image(img="/blog/blog-2026-01-06/IMG_1740.jpeg") }}
 
-I also didn't sell any of these CD-ROM drives, so the might go back into the enclosure ready. That Yamaha 4x2x6x drive brings back memories as we sold quite a few at the computer shop back in the day. They were especially popular with gentlemen in the *ahem* Video CD distribution business, as I recall.
+I also didn't sell any of these CD-ROM drives, so they might go back into the enclosure. That Yamaha 4x2x6x drive brings back memories as we sold quite a few at the computer shop back in the day. They were especially popular with gentlemen in the *ahem* Video CD distribution business, as I recall.
 
 {{ image(img="/blog/blog-2026-01-06/IMG_1724.jpeg") }}
 
-Unfortunately I did also buy an HP 9133 HP-IB Floppy Drive and MFM Hard Drive combo unit for my HP 9000 Model 340, and I picked up a Pentium 4 motherboard and a handful of PCI cards for £10 - for reasons which seemed plausible at the time but which now escape me. I also picked up a couple of EIDE hard drives of 20 to 40 GB capacity.
+Unfortunately I did also buy an HP 9133 HP-IB Floppy Drive and MFM Hard Drive combo unit for my HP 9000 Model 340. I also picked up a Pentium 4 motherboard and a handful of PCI cards for £10 - for reasons which seemed plausible at the time but which now escape me. And I picked up a couple of EIDE hard drives of 20 to 40 GB capacity. A pretty good day out, and well worth checking out when the next one is, because there's good stuff to be had.
 
 ## The IBM NetStation
 
@@ -65,7 +67,6 @@ This machine deserves a post on its own. It's a PowerPC applicance with 64 MiB o
 {{ image(img="/blog/blog-2026-01-06/IMG_1728.jpeg") }}
 
 {{ image(img="/blog/blog-2026-01-06/IMG_1730.jpeg") }}
-
 
 ## The Sun Ultra 5
 

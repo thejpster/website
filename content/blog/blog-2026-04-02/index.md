@@ -32,7 +32,7 @@ ADFS added the kind of hierarchical directory structure we are familiar with tod
 * 80 tracks per side
 * 2 sides
 
-This is known as ADFS 'L' format, and gives a formatted capacity of *256 × 16 × 80 × 2 = 640 KiB*. This is a against a gross maximum for the medium of 1.0 MiB, from which we must subtract sector headers, checksums, padding, and so on. There were many other variations, that you can read about at [mdfs.net](https://mdfs.net/Docs/Comp/Disk/Format/ADFS).
+This is known as ADFS 'L' format, and gives a formatted capacity of *256 × 16 × 80 × 2 = 640 KiB*. This is well with the gross maximum for the medium of 1.0 MiB, from which we must subtract sector headers, checksums, padding, and so on. There were many other variations, that you can read about at [mdfs.net](https://mdfs.net/Docs/Comp/Disk/Format/ADFS).
 
 ADFS retained the unusual property (at least unusual to PC folk) that the root directory was called `$` and the directory separator was the `.` character. That is, the file `DATA` in the `DOCS` directory had the full path `$.DOCS.DATA` (or `ADFS::0.$.DOCS.DATA` if you include the volume). This convention has been retained in RISC OS right up to the present day, whilst under MS-DOS (and even Windows 11 for 64-bit Arm) you'd call that file something like `A:\DOCS\DATA` instead.
 
@@ -401,10 +401,12 @@ dd if=DOSPLUS_IMD.dmg bs=256 skip=2 count=5 | hexdump -C
 Yeah, a block starting `Hugo` is an ADFS directory. Each directory entry is 26 bytes, starting at offset 5. ADFS stores filenames as 7-bit ASCII and hides the attribute information in the top bit of the first five bytes of the filename. Which is why it didn't turn up in a `grep` of the disk image :/
 
 ```text
+                                 Load Addr    Exec Addr     Length       Start   Cy
+                                |----------| |----------| |----------| |-------| ||
 e4 ef 73 62  6f 6f 74 0d  00 00 00 00  00 04 00 00  00 04 ff 08  00 00 07 00  00 54
-
-44 4f 73 62  6f 6f 74 0d  00 00 = DOsboot\r\0
-80 80 00 00  00 = Readable, Writable, Not Locked, Not Subdirectory, Not Execute Only
+|-----------------------------|
+64 6f 73 62  6f 6f 74 0d  00 00 = dosboot\r\0
+80 80 00 00  00                 = Read, Write, ~Lock, ~Subdir, ~ExecuteOnly
 ```
 
 The load and exec addresses of 0x04000000, and the file size of 0x08ff (2303 bytes) all match what we saw in `*CAT` earlier. Interestingly, it doesn't seem like there's a file protecting the FAT portion of the floppy disk - probably because ADFS uses a free space bitmap, and the bitmap shows that there isn't any free space.

@@ -51,7 +51,7 @@ The THUMB instruction set was added in ARMv4T and all ARM processors from then o
 
 [^2]: Does this help you with the previous footnote?
 
-ARMv4T is the oldest version of the ARM architecture supported by Rust. You can use the `armv4t-none-eabi` and `thumbv4t-none-eabi` targets to run bare-metal code on it, and this is supported by [`aarch32-rt`] and [`aarch32-cpu`]. The choice of target basically only decides which instruction set the compiler will produce by default - using the `#[instruction_set(arm::a32)]` or `#[instruction_set(arm::t32)]` attribute, you can compile individual functions with the 'other' instruction set.
+ARMv4T is the oldest version of the ARM architecture supported by Rust. You can use the [`armv4t-none-eabi`] and `thumbv4t-none-eabi` targets to run bare-metal code on it, and this is supported by [`aarch32-rt`] and [`aarch32-cpu`]. The choice of target basically only decides which instruction set the compiler will produce by default - using the `#[instruction_set(arm::a32)]` or `#[instruction_set(arm::t32)]` attribute, you can compile individual functions with the 'other' instruction set.
 
 [`armv4t-none-eabi`]:  https://doc.rust-lang.org/rustc/platform-support/armv4t-none-eabi.html
 

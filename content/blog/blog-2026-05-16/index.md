@@ -68,7 +68,7 @@ For ARMv7, the architecture was split three ways. This is also the point at whic
 
 ### Application Profile
 
-The [Armv7-A architecture](https://developer.arm.com/documentation/ddi0406/c/) is the *Application-profile* of Armv7. In this profile, the Memory Management Unit is mandatory, and so this is the architecture designed to run Linux, Android, Apple iOS, Windows CE, and so on. I belive the floating point unit is mandatory, but you might want to avoid using it if you're writing a kernel and don't want the pain of stacking all the floating point registers when switching kernel threads. If you're programming these systems bare-metal then, OK, that's a certainly a choice (perhaps you are writing a bootloader, or a kernel). You will want the [`armv7a-none-eabi`] target, and friends;
+The [Armv7-A architecture](https://developer.arm.com/documentation/ddi0406/c/) is the *Application-profile* of Armv7. In this profile, the Memory Management Unit is mandatory, and so this is the architecture designed to run Linux, Android, Apple iOS, Windows CE, and so on. I believe the floating point unit is mandatory, but you might want to avoid using it if you're writing a kernel and don't want the pain of stacking all the floating point registers when switching kernel threads. If you're programming these systems bare-metal then, OK, that's a certainly a choice (perhaps you are writing a bootloader, or a kernel). You will want the [`armv7a-none-eabi`] target, and friends;
 
 [`armv7a-none-eabi`]: https://doc.rust-lang.org/rustc/platform-support/armv7a-none-eabi.html
 
@@ -76,7 +76,7 @@ The Armv7-A architecture was followed with [Armv8-A](https://developer.arm.com/d
 
 ### Real-time Profile
 
-The [Armv7-R architecture](https://developer.arm.com/documentation/ddi0406/c/) is the *real-time profile* of Armv7. It has some of the new instructions of Armv7, but the MMU is not available. This is the architecture used by vehicle ECUs, or the chip on the back of your hard disk drive. As with Armv8-A, Armv8-R adds both an optional 64-bit mode. Unlike Application-profile architctures, here your processor is *either* [AArch64](https://developer.arm.com/documentation/ddi0628/aa/) or [AArch32](https://developer.arm.com/documentation/ddi0568/a-c/) - there are none that do both, because backwards compatibility is less of an issue for an embedded system. You can program these systems with the [`armv7r-none-eabi`], `armv7r-none-eabihf` and `armv8r-none-eabihf` targets, and their Thumb equivalents.
+The [Armv7-R architecture](https://developer.arm.com/documentation/ddi0406/c/) is the *real-time profile* of Armv7. It has some of the new instructions of Armv7, but the MMU is not available. This is the architecture used by vehicle ECUs, or the chip on the back of your hard disk drive. As with Armv8-A, Armv8-R adds both an optional 64-bit mode. Unlike Application-profile architectures, here your processor is *either* [AArch64](https://developer.arm.com/documentation/ddi0628/aa/) or [AArch32](https://developer.arm.com/documentation/ddi0568/a-c/) - there are none that do both, because backwards compatibility is less of an issue for an embedded system. You can program these systems with the [`armv7r-none-eabi`], `armv7r-none-eabihf` and `armv8r-none-eabihf` targets, and their Thumb equivalents.
 
 [`armv7r-none-eabi`]: https://doc.rust-lang.org/rustc/platform-support/armv7r-none-eabi.html
 
@@ -96,7 +96,7 @@ I use the term AArch32 in my libraries to mean:
 * ARMv7-R, as used in the Arm Cortex-R5
 * ARMv8-R in AArch32 mode, as used in the Arm Cortex-R52
 
-These architectures all work in fundementally the same way, with the same exception table, the same kind of reset function, the same processor registers, and so on. There's some differences, as you would expect with at least 20 years of evolution of an architecture, but it's easy enough to cover them with the same library.
+These architectures all work in fundamentally the same way, with the same exception table, the same kind of reset function, the same processor registers, and so on. There's some differences, as you would expect with at least 20 years of evolution of an architecture, but it's easy enough to cover them with the same library.
 
 ## OK, but about that time thing
 

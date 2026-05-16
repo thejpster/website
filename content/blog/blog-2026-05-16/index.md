@@ -72,7 +72,9 @@ The [Armv7-A architecture](https://developer.arm.com/documentation/ddi0406/c/) i
 
 [`armv7a-none-eabi`]: https://doc.rust-lang.org/rustc/platform-support/armv7a-none-eabi.html
 
-The Armv7-A architecture was followed with [Armv8-A](https://developer.arm.com/documentation/ddi0487/mb/). This introduced a third mode of operation - a 64-bit mode mode called AArch64. The previous two modes became known as A32 and T32, or collectively called AArch32. More revisions have followed, and we're now on Armv9.2-A or something.
+The Armv7-A architecture was followed with [Armv8-A](https://developer.arm.com/documentation/ddi0487/mb/). This introduced a third mode of operation - a 64-bit mode mode called AArch64. The ARM and THUMB instruction sets became were renamed A32 and T32, both of which execute in AArch32 mode. Most Armv8-A processors support both AArch64 and AArch32 modes (you might have an AArch64 kernel running an AArch32 user-land program, for example), but there are some 64-bit only implementations and some 32-bit only implementations, or implementations that support 32-bit code only running at EL0 (i.e. user-land) and not at EL1 or higher (i.e. kernel mode, hypervisor mode or secure mode).
+
+More revisions have followed, and we're now on Armv9.2-A or something.
 
 ### Real-time Profile
 

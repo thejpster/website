@@ -1,4 +1,5 @@
 # Compiled output
 public/
 static/processed_images
-
+# Apple metadata crap
+**/.DS_Store

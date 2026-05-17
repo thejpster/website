@@ -14,7 +14,7 @@ jobs:
           submodules: true
       - uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.19.1
+          tool: zola@0.22.1
       - run: zola build
       - env:
           SSH_PASS: ${{ secrets.YALI_PASS }}

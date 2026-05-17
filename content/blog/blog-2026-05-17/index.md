@@ -82,7 +82,7 @@ It turns out that if you want to run Embassy on Armv8-R, a bunch of work had bee
 
 So, it was relatively easy to copy over one of my examples for the MPS3-AN536 Arm Cortex-R52 evaluation board that QEMU can emulate, and start the Embassy thread-mode async executor using their `embassy_executor::main` attribute macro:
 
-```rust
+```rust,linenos
 #[embassy_executor::main(entry = "aarch32_rt::entry")]
 async fn main(_spawner: embassy_executor::Spawner) -> ! {
     let p = embassy_mps3_an536_examples::Board::new().unwrap();
@@ -98,7 +98,7 @@ Yeah, I'm going to need need something for my tasks to wait for, and I don't hav
 
 The [`embassy-time`] is the user-facing part of time on Embassy. It allows you to write code like this:
 
-```rust
+```rust,linenos
 use embassy_time::{Duration, Timer};
 
 async fn sleep_for_a_second() {
@@ -118,7 +118,7 @@ First, we need a timer queue. This maintains a sorted list (or maybe a heap?) of
 
 Here's our global timer:
 
-```rust
+```rust,linenos
 /// Our timer queue, containing shared mutable state wrapped
 /// in an critical-section based embassy Mutex
 struct Aarch32VirtualTimerQueue {
@@ -146,7 +146,7 @@ embassy_time_driver::time_driver_impl!(
 
 We implement the `embassy_time_driver::Driver` trait on `Aarch32VirtualTimerQueue` to give it the required functionality:
 
-```rust
+```rust,linenos
 impl embassy_time_driver::Driver for Aarch32VirtualTimerQueue {
     /// A free-standing function that does an atomic 64-bit System Register read
     fn now(&self) -> u64 {
@@ -165,7 +165,7 @@ impl embassy_time_driver::Driver for Aarch32VirtualTimerQueue {
 
 Let's also give ourselves a function we can call from the interrupt handler:
 
-```rust
+```rust,linenos
 impl Aarch32VirtualTimerQueue {
     /// Call this from the interrupt handler when it goes off
     fn on_irq(&self) {
@@ -179,7 +179,7 @@ impl Aarch32VirtualTimerQueue {
 
 And now we need some methods on that juicy inner mutable state that we've protected with the mutex:
 
-```rust
+```rust,linenos
 impl Aarch32VirtualTimerQueueInner {
     /// Schedule a wake-up for the next thing in the queue
     fn schedule_wake(&mut self, at: u64, waker: &Waker) {
@@ -215,7 +215,7 @@ Rather than carry around an `El1VirtualTimer` inside the time structure, I elect
 
 Now, I'm not an expert on `embassy-time`, but I think is correct. It certainly seems to let me run a couple of async tasks that print periodically. If you have QEMU 9 or newer, you can try it for yourself with this example I wrote:
 
-```rust
+```rust,linenos
 #![no_std]
 #![no_main]
 

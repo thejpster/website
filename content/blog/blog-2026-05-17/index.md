@@ -69,7 +69,7 @@ Even if we assume a generous 2 GHz clock speed, our 64-bit counter gives us a ma
 
 For reasons I don't fully understand, the Arm Generic Timer implementation provided as part of QEMU's emulation of the MPS3-AN536 board (and its Cortex-R52 Armv8-R AArch32 processor) runs at 62.5 GHz, trimming our maximum period down to a mere 9.3 years. Weird, but I guess I can live with that.
 
-There's actually a third timer available called the Hyp Timer, but that's designed to be exclusively used by a hypervisor at EL2 - I guess so it can measure when the timeslice is up and the running guest OS needs to be swapped over. And, if you are on a system that supports Secure Mode, you will also have a fourth, called the Secure Mode Physical Timer. But they're fairly specialist use-cases, so I'm ignoring them.
+Oh and for completeness, there's actually a third timer available called the Hyp Timer, but that's designed to be exclusively used by a hypervisor at EL2 - I guess so it can measure when the timeslice is up and the running guest OS needs to be swapped over. And, if you are on a system that supports Secure Mode, you will also have a fourth, called the Secure Mode Physical Timer. But they're fairly specialist use-cases, so I'm ignoring them.
 
 ## Embassy
 

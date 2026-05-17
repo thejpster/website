@@ -60,8 +60,8 @@ The [Arm Generic Timer](https://developer.arm.com/documentation/ddi0406/c/System
 The Arm Generic Timer provides two of:
 
 * a 64-bit free-running counter, which starts at 0 on reset
-* a 64-bit count-down timer, which can trigger an interrupt when it hits zero
 * a 64-bit compare value, which will trigger an interrupt when the free-running counter exceeds this value
+* a 32-bit count-down timer, which can trigger an interrupt when it hits zero
 
 The Arm Generic Timer calls its two timers the Physical Timer and the Virtual Timer and the difference is only apparent when you are running an OS inside a hypervisor. The Physical Timer is counting "wall time" as you would see elapsed on a clock hanging on the wall, whilst the Virtual Timer only counts time when the guest OS is running. You'd probably use the Physical Timer for operations involving external things (a timeout for a byte over a UART) but the Virtual Timer for operations the OS is performing (benchmarking a CRC algorithm, for example). Think about it, you wouldn't want your benchmark results to be messed up because the guest OS got swapped out for 10ms, but equally, being swapped out for 10ms doesn't mean you want to extend your UART timeouts by that amount - the device should have responded whether or not the guest OS was running at that moment. The way a hypervisor accounts for this is to set an offset value in the `CNTVOFF` register. This amount is then subtracted from the free-running Physical Timer counter (the `CNTPCT` register) to generate the free-running Virtual Timer counter (the `CNTVCT` register). If the hypervisor isn't setting that register to account for 'lost' time whenever the guest OS is swapped back in (or if you don't have a hypervisor), then you basically have two identical timers you can use.
 

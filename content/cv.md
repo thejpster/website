@@ -6,7 +6,7 @@ template = "static-page-cv.html"
 
 # Curriculum Vitae
 
-I am an Embedded Systems engineer specialising in safe, secure, reliable embedded systems design and development. I have a background in Local Government, having been elected to St Ives Town Council twice, and having served as Deputy Town Mayor and Town Mayor. I am also an experienced public speaker. In 2023 I joined the new Rust Leadership Council as the representative for the *Launching Pad* team.
+I am an Embedded Systems engineer specialising in safe, secure, reliable embedded systems design and development. I have a background in Local Government, having been elected to St Ives Town Council twice, and having served as Deputy Town Mayor and Town Mayor. I am also an experienced public speaker. In 2023 I joined the new Rust Leadership Council for a year as the representative for the *Launching Pad* team.
 
 ## **Technical Experience**
 
@@ -19,10 +19,12 @@ In the course of my career I have worked with a huge variety of embedded systems
     * ST Micro STM32
     * Texas Instruments Tiva-C, CC1310
     * Silicon Labs EFM32
+  * Arm Cortex-R
+    * NXP S32Z2
+    * Renesas R-Car V4H
+    * Texas Instruments Sitara AM2434
   * Arm Cortex-A/ARM11
-    * Texas Instruments Sitara AM335x
-    * Texas Instruments Sitara AM57x
-    * Texas Instruments DaVinci DM81x
+    * Texas Instruments Sitara AM335x and AM57x, DaVinci DM81x
     * Broadcom BCM283x
   * SPARC
     * Gaisler LEON3 (SPARC V8)
@@ -167,6 +169,7 @@ Outside of work (and occasionally in work), I have developed the following open-
 * [Neotron OS] - a portable MS-DOS alike single-tasking OS, written in Rust
 * [Neotron Pico BIOS] - the BIOS for the Neotron Pico, with SD Card, Audio and software-generated bitmap and text mode video
 * [The Monotron] - a single-board computer based around the Texas Instruments Tiva-C Launchpad, written in Rust
+* [aarch32] - low-level `no-std` Rust support for Cortex-A, Cortex-R and legacy 32-bit Arm processors
 * [tlv320aic23] - a driver for the Texas Instruments TLV320AIC23B audio CODEC
 * [nau88c22] - a driver for the Nuvoton NAU88C22 audio CODEC
 * [embedded-sdmmc] - a SD/MMC block device driver and FAT16/FAT32 implementation written in Rust
@@ -189,6 +192,7 @@ Outside of work (and occasionally in work), I have developed the following open-
 [Neotron Pico]: https://github.com/neotron-compute/neotron-pico
 [Neotron OS]: https://github.com/neotron-compute/neotron-os
 [Neotron Pico BIOS]: https://github.com/neotron-compute/neotron-pico-bios
+[aarch32]: https://github.com/rust-embedded/aarch32
 [embedded-sdmmc]: https://github.com/rust-embedded-community/embedded-sdmmc-rs
 [The Monotron]: https://github.com/thejpster/monotron
 [tlv320aic23]: https://github.com/neotron-compute/tlv320aic23
@@ -215,13 +219,13 @@ These works and more can be found at my [personal Github account](https://github
 
 ### The Rust Project
 
+#### Embedded Devices Working Group: 2018 - 2024, 2025 - present
+
+I helped found Rust's Embedded Devices Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attend the weekly meetings, as well as helping review PRs on their [Github page](https://github.com/rust-embedded). I am the lead maintainer for the AArch32 support libraries and actively test a number of AArch32 targets within the Rust compiler.
+
 #### Member of the Rust Leadership Council: 2023 - 2024
 
 Council representative for the Launching Pad Team.
-
-#### Embedded Devices Working Group: 2018 - 2024
-
-I helped found Rust's Embedded Devices Working Group, after meeting like-minded developers through my work getting Rust code running on the Texas Instruments Stellaris Launchpad. I regularly attended the weekly meetings, as well as reviewed and submitted PRs on their [Github page](https://github.com/rust-embedded).
 
 #### Foundation Grant Recipient: 2022
 

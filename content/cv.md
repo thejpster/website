@@ -315,6 +315,7 @@ Listed in alphabetical order.
 
 ### Centre for Computing History
 
+* Cambridge, 2025, *Retro Computer Festival - Gaming on UNIX*
 * Cambridge, 2024, *Retro Computer Festival - Backwards Compatibility*
 * Cambridge, 2024, *Synthesised - The History of PC Sound*
 * Cambridge, 2023, *Retro Computer Festival - The History of Arm*
@@ -338,6 +339,10 @@ Listed in alphabetical order.
 ### Engineering Design Show
 
 * Coventry, 2016, *Using off-the-shelf boards in commercial products*
+
+### Embedded Insiders Podcast
+
+* Online, 2025, *DevTalk with Rich and Vin: Rust* ([embedded-computing.com](https://embeddedcomputing.com/technology/software-and-os/ides-application-programming/devtalk-with-rich-and-vin-rust))
 
 ### EuroRust
 
@@ -369,7 +374,8 @@ Listed in alphabetical order.
 
 ### Oxidize
 
-* Berlin, 2024, *Workshop: Introduction to Rust for Safety Critical Systems* ([oxidizeconf.com](https://oxidizeconf.com/sessions/intro-safety-critical/))
+* Berlin, 2025, *Workshop: Introduction to Rust for Safety Critical Systems*
+* Berlin, 2024, *Workshop: Introduction to Rust for Safety Critical Systems*
 * On-line, 2020, *How We Got QUIC Running on the nRF9160 Before Everyone Else* ([youtube.com](https://www.youtube.com/watch?v=zPuELAzJyno))
 * Berlin, 2019, Event Host
 
@@ -380,6 +386,7 @@ Listed in alphabetical order.
 
 ### Raspberry Pi / Cambridge Raspberry Jam
 
+* Cambridge, 2026, *Using Raspberry Pi for Retro*
 * On-line, 2024, *Rust on RP2350*, ([raspberrypi.com](https://www.raspberrypi.com/news/rust-on-rp2350/))
 * Cambridge, 2024, *Is a Pi Pico a computer?* ([youtube.com](https://www.youtube.com/watch?v=7Fa-69AhxPg))
 * Cambridge, 2017, *Rust as an alternative to Python* ([raspberrypi.org](https://www.raspberrypi.org/app/uploads/2017/02/Birthday-Schedule-Saturday-_-Sunday.pdf))
@@ -405,6 +412,12 @@ Listed in alphabetical order.
 ### Safety Critical Systems Club
 
 * London, 2022, *Rust for Safety Critical Systems* (last-minute stand-in)
+* York, 2025, *Rust for Safety Critical Systems*
+
+### STEAM - Museum of the Great Western Railway
+
+* Swindon, 2026, *UNIX @ RetroFest'26*
+* Swindon, 2025, *UNIX @ RetroFest'25*
 
 ### UK Embedded
 

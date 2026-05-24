@@ -411,8 +411,8 @@ Listed in alphabetical order.
 
 ### Safety Critical Systems Club
 
-* London, 2022, *Rust for Safety Critical Systems* (last-minute stand-in)
 * York, 2025, *Rust for Safety Critical Systems*
+* London, 2022, *Rust for Safety Critical Systems* (last-minute stand-in)
 
 ### STEAM - Museum of the Great Western Railway
 

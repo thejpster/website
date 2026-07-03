@@ -47,7 +47,7 @@ Because a thumb is a smaller version of an arm.
 
 What else did you expect from the people who knowingly named a document the ARM ARM ARM?
 
-So, the THUMB instruction set was added in ARMv4T and all ARM processors from then on supported both instruction sets. Indeed, you can switch between instructions sets on a per-function basis - an ARM function can call a THUMB function which can call an ARM function. Because ARM instructions all live at addresses that are a multiple of four[^2], and all THUMB instructions live at an address that is a multiple of 2, the least significant bit of the Program Counter is always unused told the processor whether it was in THUMB Mode or ARM Mode. This addition did involve the dropping of 26-bit compatibility mode though.
+So, the THUMB instruction set was added in ARMv4T and all ARM processors from then on supported both instruction sets. Indeed, you can switch between instructions sets on a per-function basis - an ARM function can call a THUMB function which can call an ARM function. Because ARM instructions all live at addresses that are a multiple of four[^2], and all THUMB instructions live at an address that is a multiple of 2, the least significant bit of the Program Counter is always unused. In ARMv4T, this bit is now used to tell the processor whether the function it was jumping to should be executed in THUMB Mode or ARM Mode, and the jumps were handled through a new *Branch with Exchange* (`BX`) instruction. This addition did involve the dropping of 26-bit compatibility mode though.
 
 [^2]: Does this help you with the previous footnote?
 
@@ -55,7 +55,7 @@ ARMv4T is the oldest version of the ARM architecture supported by Rust. You can 
 
 [`armv4t-none-eabi`]:  https://doc.rust-lang.org/rustc/platform-support/armv4t-none-eabi.html
 
-[ARMv5TE](https://www.intel.com/programmable/technical-pdfs/654202.pdf) is the next major revision of the architecture (I think there was an ARMv5T, without the E, but I'm skipping it). The E standards for *Enhanced DSP Instructions*, but it is fully ARMv4T compatible. It is supported for bare-metal developing in Rust using the [`armv5te-none-eabi`] and `thumbv5te-none-eabi` targets.
+[ARMv5TE](https://www.intel.com/programmable/technical-pdfs/654202.pdf) is the next major revision of the architecture (I think there was an ARMv5T, without the E, but I'm skipping it). The E standards for *Enhanced DSP Instructions*, but it is fully ARMv4T compatible. It is supported for bare-metal development in Rust using the [`armv5te-none-eabi`] and `thumbv5te-none-eabi` targets.
 
 [`armv5te-none-eabi`]: https://doc.rust-lang.org/rustc/platform-support/armv5te-none-eabi.html
 

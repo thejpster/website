@@ -1,5 +1,7 @@
 # theJPster.org.uk
 
+:rotating_light: This repository has moved to https://codeberg.org/thejpster/website :rotating_light:
+
 This is the source code for <https://www.thejpster.org.uk>. This is a static site built using [Zola](https://www.getzola.org/documentation/getting-started/overview/).
 
 ## License
